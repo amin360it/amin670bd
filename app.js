@@ -45,54 +45,68 @@ const DATA = Vue.reactive({
     { title: 'Office & Admin', icon: 'mail', items: ['Excel Automation', 'Google Workspace', 'Report Generation', 'PDF Editing', 'Email Automation', 'Social Media Mgmt'] }
   ],
   experience: [
-    { title: 'Sr. Officer (In-Charge, Barcode)', company: 'Dhaka Thai ALCOMAXX PLC', location: 'Ashuliya, Savar, Dhaka', period: 'Sep 2025 - Present', highlights: [
-      'Lead barcode operations, product labeling, bundling, and production coordination across packing lines',
-      'Developed and maintained C# desktop applications for weight scale integration with LightHouse ERP',
-      'Oversaw troubleshooting of utility software, printer systems, and IT infrastructure for production floor',
-      'Improved workflow efficiency and reduced downtime through barcode system optimization',
-      'Designed and implemented automated label printing systems increasing daily output from 2,500 to 8,000+ labels',
-      'Coordinated with production and quality teams to ensure accurate product tracking and traceability'
-    ] },
-    { title: 'Officer - IT (G-Pro)', company: 'Keya Cosmetic Ltd.', location: 'Gazipur, Dhaka', period: 'May 2022 - Jul 2025', highlights: [
-      'Administered GPRO ERP modules including cutting, store, production, payroll, billing, and inventory management',
-      'Configured, maintained, and troubleshot 50+ PCs, printers, and network infrastructure across the facility',
-      'Managed RFID and barcode ERP systems for RMG factory operations ensuring real-time inventory accuracy',
-      'Provided IT training and support to 30+ end-users on ERP modules and software tools',
-      'Monitored and maintained server health, backup systems, and network security protocols',
-      'Automated routine data entry and reporting tasks using Excel macros and ERP export tools'
-    ] },
-    { title: 'IT Assistant', company: 'Rahamat Sweaters Ltd.', location: 'Gazipur, Dhaka', period: 'Jan 2022 - May 2022', highlights: [
-      'Designed barcode and label systems for production tracking and warehouse management',
-      'Performed ERP data entry, verification, and synchronization across multiple departments',
-      'Provided hardware and software support for production floor workstations',
-      'Assisted in inventory reconciliation and stock movement documentation'
-    ] },
-    { title: 'Web Developer', company: 'Faith Media Ltd.', location: 'Mohakhali, Dhaka', period: 'Jan 2021 - Jul 2021', highlights: [
-      'Developed and maintained WordPress/WooCommerce websites with custom themes and plugins',
-      'Created SEO-optimized content, product listings, and competitive pricing strategies for e-commerce clients',
-      'Designed infographics, promotional banners, and website visuals using Photoshop and Illustrator',
-      'Implemented LMS and membership plugins for client educational platforms',
-      'Optimized site performance through caching, image compression, and database optimization'
-    ] },
-    { title: 'Remote IT Assistant to CEO', company: 'TIC Accessories Inc.', location: 'New York, USA', period: 'Jan 2020 - Dec 2020', highlights: [
-      'Managed Amazon Seller Central and eBay Seller Hub — listings, pricing, inventory sync, and order processing for 200+ products',
-      'Automated Excel reports and email marketing campaigns for sales and inventory tracking',
-      'Provided remote IT support via AnyDesk and TeamViewer to New York office staff',
-      'Created professional product photography and edited images for marketplace listings',
-      'Monitored competitor pricing and adjusted listings to maintain competitive edge'
-    ] },
-    { title: 'ICT Teacher & IT Trainer', company: 'EEE & IT Training Center', location: 'Naogaon', period: 'Jul 2019 - Dec 2019', highlights: [
-      'Trained SSC and HSC students in MS Office, programming fundamentals, and hardware troubleshooting',
-      'Developed practical IT curriculum modules with hands-on exercises for real-world skill building',
-      'Guided students through computer assembly, OS installation, and basic networking labs',
-      'Conducted assessments and provided one-on-one mentoring to improve student outcomes'
-    ] },
-    { title: 'IT Assistant', company: 'ZSN Computers', location: 'Naogaon', period: 'Jul 2018 - Dec 2018', highlights: [
-      'Assembled custom PCs and installed operating systems, drivers, and essential software',
-      'Provided hardware diagnostics, repair services, and software troubleshooting for walk-in clients',
-      'Maintained workshop inventory of components and managed customer service requests',
-      'Performed system upgrades including RAM, storage, and graphics card installations'
-    ] }
+    {
+      title: 'Sr. Officer (In-Charge, Barcode)', company: 'Dhaka Thai ALCOMAXX PLC', location: 'Ashuliya, Savar, Dhaka', period: 'Sep 2025 - Present', highlights: [
+        'Lead barcode operations, product labeling, bundling, and production coordination across packing lines',
+        'Developed and maintained C# desktop applications for weight scale integration with LightHouse ERP',
+        'Oversaw troubleshooting of utility software, printer systems, and IT infrastructure for production floor',
+        'Improved workflow efficiency and reduced downtime through barcode system optimization',
+        'Designed and implemented automated label printing systems increasing daily output from 2,500 to 8,000+ labels',
+        'Coordinated with production and quality teams to ensure accurate product tracking and traceability'
+      ]
+    },
+    {
+      title: 'Officer - IT (G-Pro)', company: 'Keya Cosmetic Ltd.', location: 'Gazipur, Dhaka', period: 'May 2022 - Jul 2025', highlights: [
+        'Administered GPRO ERP modules including cutting, store, production, payroll, billing, and inventory management',
+        'Configured, maintained, and troubleshot 50+ PCs, printers, and network infrastructure across the facility',
+        'Managed RFID and barcode ERP systems for RMG factory operations ensuring real-time inventory accuracy',
+        'Provided IT training and support to 30+ end-users on ERP modules and software tools',
+        'Monitored and maintained server health, backup systems, and network security protocols',
+        'Automated routine data entry and reporting tasks using Excel macros and ERP export tools'
+      ]
+    },
+    {
+      title: 'IT Assistant', company: 'Rahamat Sweaters Ltd.', location: 'Gazipur, Dhaka', period: 'Jan 2022 - May 2022', highlights: [
+        'Designed barcode and label systems for production tracking and warehouse management',
+        'Performed ERP data entry, verification, and synchronization across multiple departments',
+        'Provided hardware and software support for production floor workstations',
+        'Assisted in inventory reconciliation and stock movement documentation'
+      ]
+    },
+    {
+      title: 'Web Developer', company: 'Faith Media Ltd.', location: 'Mohakhali, Dhaka', period: 'Jan 2021 - Jul 2021', highlights: [
+        'Developed and maintained WordPress/WooCommerce websites with custom themes and plugins',
+        'Created SEO-optimized content, product listings, and competitive pricing strategies for e-commerce clients',
+        'Designed infographics, promotional banners, and website visuals using Photoshop and Illustrator',
+        'Implemented LMS and membership plugins for client educational platforms',
+        'Optimized site performance through caching, image compression, and database optimization'
+      ]
+    },
+    {
+      title: 'Remote IT Assistant to CEO', company: 'TIC Accessories Inc.', location: 'New York, USA', period: 'Jan 2020 - Dec 2020', highlights: [
+        'Managed Amazon Seller Central and eBay Seller Hub — listings, pricing, inventory sync, and order processing for 200+ products',
+        'Automated Excel reports and email marketing campaigns for sales and inventory tracking',
+        'Provided remote IT support via AnyDesk and TeamViewer to New York office staff',
+        'Created professional product photography and edited images for marketplace listings',
+        'Monitored competitor pricing and adjusted listings to maintain competitive edge'
+      ]
+    },
+    {
+      title: 'ICT Teacher & IT Trainer', company: 'EEE & IT Training Center', location: 'Naogaon', period: 'Jul 2019 - Dec 2019', highlights: [
+        'Trained SSC and HSC students in MS Office, programming fundamentals, and hardware troubleshooting',
+        'Developed practical IT curriculum modules with hands-on exercises for real-world skill building',
+        'Guided students through computer assembly, OS installation, and basic networking labs',
+        'Conducted assessments and provided one-on-one mentoring to improve student outcomes'
+      ]
+    },
+    {
+      title: 'IT Assistant', company: 'ZSN Computers', location: 'Naogaon', period: 'Jul 2018 - Dec 2018', highlights: [
+        'Assembled custom PCs and installed operating systems, drivers, and essential software',
+        'Provided hardware diagnostics, repair services, and software troubleshooting for walk-in clients',
+        'Maintained workshop inventory of components and managed customer service requests',
+        'Performed system upgrades including RAM, storage, and graphics card installations'
+      ]
+    }
   ],
   education: [
     { degree: 'Diploma in Computer Engineering', school: 'Bogura Polytechnic Institute', year: '2018', grade: 'CGPA: 2.92 / 4.00' },
@@ -118,6 +132,10 @@ const DATA = Vue.reactive({
     'BPI Virtual Institute - Champion, ICT Fair 2017, Bogura District & Rajshahi Division Level'
   ],
   references: [
+    { name: 'Md. Mamunur Rashid', title: 'Manager (IT, G-Pro)', company: 'Keya Knit Composite Ltd.', phone: '01906-472201' },
+    { name: 'Md. Al Amin', title: 'Sr. Officer (IT, G-Pro)', company: 'Keya Knit Composite Ltd.', phone: '01521-447631' },
+    { name: 'Md. Abdur Rahim', title: 'Head of Sales & Marketing', company: 'Alpha.Net.Bd', phone: '01712-685203' },
+    { name: 'Md. Sagar Islam', title: 'Production Coordinator', company: 'Casual Garments Ltd.', phone: '01727-831168' },
     { name: 'Md. Mamunur Rashid', title: 'Manager (IT, G-Pro)', company: 'Keya Knit Composite Ltd.', phone: '01906-472201' },
     { name: 'Md. Al Amin', title: 'Sr. Officer (IT, G-Pro)', company: 'Keya Knit Composite Ltd.', phone: '01521-447631' },
     { name: 'Md. Abdur Rahim', title: 'Head of Sales & Marketing', company: 'Alpha.Net.Bd', phone: '01712-685203' },
@@ -161,10 +179,10 @@ const HomeView = {
       </p>
       <div class="flex flex-wrap gap-3 mb-10">
         <router-link to="/contact" class="btn-shimmer inline-flex items-center gap-2 px-6 py-3 gradient-bg text-white font-semibold rounded-xl shadow-lg hover:opacity-90 transition-all duration-300" style="box-shadow:0 4px 15px rgba(14,165,233,0.3)">
-          <i class="material-icons text-sm">send</i> Contact Me
+          <i class="material-icons text-lg">send</i> Contact Me
         </router-link>
         <router-link to="/projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:border-primary" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
-          View Portfolio <i class="material-icons text-sm">arrow_forward</i>
+          View Portfolio <i class="material-icons text-lg">arrow_forward</i>
         </router-link>
       </div>
 
@@ -175,8 +193,8 @@ const HomeView = {
             <i class="material-icons text-white" style="font-size:20px">{{ h.icon }}</i>
           </div>
           <div>
-            <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ h.title }}</h4>
-            <p class="text-xs mt-0.5" style="color:var(--text-muted)">{{ h.text }}</p>
+            <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ h.title }}</h4>
+            <p class="text-md mt-0.5" style="color:var(--text-muted)">{{ h.text }}</p>
           </div>
         </router-link>
       </div>
@@ -186,7 +204,7 @@ const HomeView = {
         <div v-for="(s,i) in DATA.stats" :key="i" class="flex items-center gap-4">
           <div class="text-center">
             <div class="hero-stat-value">{{ s.value }}</div>
-            <div class="text-sm" style="color:var(--text-muted)">{{ s.label }}</div>
+            <div class="text-lg" style="color:var(--text-muted)">{{ s.label }}</div>
           </div>
           <div v-if="i < DATA.stats.length-1" style="width:1px;height:40px;background:var(--border)"></div>
         </div>
@@ -254,12 +272,12 @@ const AboutView = {
 
           <!-- Photo & Identity -->
           <div class="card-glass text-center section-reveal">
-            <div class="mx-auto mb-4 w-28 h-28 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
+            <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
               <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
             <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
-            <p class="text-sm font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
-            <p class="text-sm mt-1" style="color:var(--text-muted)">{{ DATA.personal.title }}</p>
+            <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
+            <p class="text-lg mt-1" style="color:var(--text-muted)">{{ DATA.personal.title }}</p>
             <div class="flex justify-center gap-2 mt-4">
               <a :href="'mailto:' + DATA.personal.email" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(14,165,233,0.08);color:var(--primary)">
                 <i class="material-icons" style="font-size:18px">email</i>
@@ -275,8 +293,8 @@ const AboutView = {
 
           <!-- Personal Details -->
           <div class="card-glass section-reveal">
-            <h4 class="text-sm font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i> Personal Details</h4>
-            <div class="space-y-2 text-sm">
+            <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i> Personal Details</h4>
+            <div class="space-y-2 text-lg">
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Date of Birth</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.dob }}</span></div>
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Blood Group</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.blood }}</span></div>
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Religion</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.religion }}</span></div>
@@ -288,10 +306,10 @@ const AboutView = {
 
           <!-- Languages -->
           <div class="card-glass section-reveal">
-            <h4 class="text-sm font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i> Languages</h4>
+            <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i> Languages</h4>
             <div class="space-y-3">
               <div v-for="l in DATA.languages" :key="l.name">
-                <div class="flex justify-between text-sm mb-1"><span>{{ l.name }}</span><span style="color:var(--text-muted)">{{ l.level }}</span></div>
+                <div class="flex justify-between text-lg mb-1"><span>{{ l.name }}</span><span style="color:var(--text-muted)">{{ l.level }}</span></div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" :style="{ width: l.pct + '%' }"></div></div>
               </div>
             </div>
@@ -299,8 +317,8 @@ const AboutView = {
 
           <!-- Employment Details -->
           <div class="card-glass section-reveal">
-            <h4 class="text-sm font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">work</i> Employment Details</h4>
-            <div class="space-y-2 text-sm">
+            <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">work</i> Employment Details</h4>
+            <div class="space-y-2 text-lg">
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
@@ -315,31 +333,31 @@ const AboutView = {
 
           <!-- Objective -->
           <div class="card-glass section-reveal p-6">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">psychology</i> Career Objective</h3>
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">psychology</i> Career Objective</h3>
             <p class="leading-relaxed" style="color:var(--text)">{{ DATA.objective }}</p>
           </div>
 
           <!-- Professional Summary + Stats -->
           <div class="card-glass section-reveal p-6">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">assignment</i> Professional Summary</h3>
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">assignment</i> Professional Summary</h3>
             <p class="leading-relaxed mb-5" style="color:var(--text)">{{ DATA.summary }}</p>
             <div class="grid grid-cols-3 gap-3">
               <div v-for="s in DATA.stats" :key="s.label" class="text-center py-4 rounded-xl" style="background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.1)">
                 <div class="text-2xl font-extrabold gradient-text">{{ s.value }}</div>
-                <div class="text-xs font-medium mt-1" style="color:var(--text-muted)">{{ s.label }}</div>
+                <div class="text-md font-medium mt-1" style="color:var(--text-muted)">{{ s.label }}</div>
               </div>
             </div>
           </div>
 
           <!-- Training & Certifications -->
           <div class="card-glass section-reveal p-6">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Training & Certifications</h3>
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Training & Certifications</h3>
             <div class="space-y-3">
               <div v-for="t in DATA.training" :key="t.title" class="flex items-start gap-3 p-3 rounded-xl" style="background:rgba(14,165,233,0.04);border:1px solid rgba(14,165,233,0.06)">
                 <i class="material-icons" style="color:var(--primary);font-size:20px">check_circle</i>
                 <div>
-                  <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ t.title }}</h4>
-                  <p class="text-xs" style="color:var(--text-muted)">{{ t.institution }} — {{ t.duration }}, {{ t.year }}</p>
+                  <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ t.title }}</h4>
+                  <p class="text-md" style="color:var(--text-muted)">{{ t.institution }} — {{ t.duration }}, {{ t.year }}</p>
                 </div>
               </div>
             </div>
@@ -347,13 +365,13 @@ const AboutView = {
 
           <!-- Education -->
           <div class="card-glass section-reveal p-6">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">school</i> Education</h3>
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">school</i> Education</h3>
             <div class="space-y-3">
               <div v-for="e in DATA.education" :key="e.degree" class="flex items-start gap-3 p-3 rounded-xl" style="background:rgba(14,165,233,0.04);border:1px solid rgba(14,165,233,0.06)">
                 <i class="material-icons" style="color:var(--primary);font-size:20px">book</i>
                 <div>
-                  <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ e.degree }}</h4>
-                  <p class="text-xs" style="color:var(--text-muted)">{{ e.school }} — {{ e.year }} | {{ e.grade }}</p>
+                  <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ e.degree }}</h4>
+                  <p class="text-md" style="color:var(--text-muted)">{{ e.school }} — {{ e.year }} | {{ e.grade }}</p>
                 </div>
               </div>
             </div>
@@ -379,7 +397,7 @@ const SkillsView = {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div v-for="(skill,i) in DATA.skills" :key="i" class="card-glass section-reveal" :style="{ transitionDelay: (i * 0.08) + 's' }">
           <h3 class="text-base font-bold mb-4 flex items-center gap-2" style="color:var(--text-heading)">
-            <i class="material-icons text-sm" style="color:var(--primary)">{{ skill.icon }}</i> {{ skill.title }}
+            <i class="material-icons text-lg" style="color:var(--primary)">{{ skill.icon }}</i> {{ skill.title }}
           </h3>
           <div class="flex flex-wrap">
             <span v-for="(item,j) in skill.items" :key="j" class="skill-pill" :style="{transitionDelay: (j * 0.03) + 's'}">{{ item }}</span>
@@ -406,9 +424,9 @@ const ExperienceView = {
           <div class="timeline-dot"></div>
           <span class="timeline-date">{{ exp.period }}</span>
           <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ exp.title }}</h3>
-          <p class="text-sm font-medium mb-2" style="color:var(--primary)">{{ exp.company }} <span style="color:var(--text-muted)">| {{ exp.location }}</span></p>
-          <ul class="space-y-1 text-sm" style="color:var(--text)">
-            <li v-for="(h,j) in exp.highlights" :key="j" class="flex items-start gap-2">
+          <p class="text-lg font-medium mb-2" style="color:var(--primary)">{{ exp.company }} <span style="color:var(--text-muted)">| {{ exp.location }}</span></p>
+          <ul class="space-y-1 text-lg" style="color:var(--text)">
+            <li v-for="(h,j) in exp.highlights" :key="j" class="flex items-start gap-2 text-sm">
               <i class="material-icons" style="font-size:6px;color:var(--primary)">circle</i>
               <span>{{ h }}</span>
             </li>
@@ -434,18 +452,18 @@ const EducationView = {
         <div class="card-glass section-reveal">
           <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">account_balance</i> Academic Background</h3>
           <div v-for="(edu,i) in DATA.education" :key="i" class="mb-4 pb-4" :style="i < DATA.education.length-1 ? 'border-bottom:1px solid var(--border)' : ''">
-            <h4 class="font-bold text-sm" style="color:var(--text-heading)">{{ edu.degree }}</h4>
-            <p class="text-xs" style="color:var(--text-muted)">{{ edu.school }} ({{ edu.year }})</p>
-            <span class="inline-block mt-1 text-xs font-semibold px-2 py-0.5 rounded" style="background:rgba(14,165,233,0.1);color:var(--primary)">{{ edu.grade }}</span>
+            <h4 class="font-bold text-lg" style="color:var(--text-heading)">{{ edu.degree }}</h4>
+            <p class="text-md" style="color:var(--text-muted)">{{ edu.school }} ({{ edu.year }})</p>
+            <span class="inline-block mt-1 text-md font-semibold px-2 py-0.5 rounded" style="background:rgba(14,165,233,0.1);color:var(--primary)">{{ edu.grade }}</span>
           </div>
         </div>
         <div class="card-glass section-reveal">
           <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Professional Training</h3>
           <div v-for="(t,i) in DATA.training" :key="i" class="flex gap-3 mb-4">
-            <div class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">{{ i+1 }}</div>
+            <div class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-white text-md font-bold flex-shrink-0 mt-0.5">{{ i+1 }}</div>
             <div>
-              <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ t.title }}</h4>
-              <p class="text-xs" style="color:var(--text-muted)">{{ t.institution }} | {{ t.year }} | {{ t.duration }}</p>
+              <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ t.title }}</h4>
+              <p class="text-md" style="color:var(--text-muted)">{{ t.institution }} | {{ t.year }} | {{ t.duration }}</p>
             </div>
           </div>
         </div>
@@ -492,7 +510,7 @@ const ProjectsView = {
 
       <!-- Featured Project -->
       <div v-if="DATA.featuredProject.title" class="card-glass-alt p-6 lg:p-8 mb-10 section-reveal">
-        <span class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 gradient-bg text-white">🏆 Top Achievement</span>
+        <span class="inline-block text-md font-bold px-3 py-1 rounded-full mb-4 gradient-bg text-white">🏆 Top Achievement</span>
         <h3 class="text-xl lg:text-2xl font-extrabold mb-4" style="color:var(--sidebar-heading)">{{ DATA.featuredProject.title }}</h3>
         <div v-if="DATA.featuredProject.images && DATA.featuredProject.images.length" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
           <div class="md:col-span-2 rounded-xl overflow-hidden" style="background:var(--sidebar-divider)">
@@ -504,15 +522,15 @@ const ProjectsView = {
             </div>
           </div>
         </div>
-        <p class="text-sm mb-2" v-if="DATA.featuredProject.tech"><span class="font-semibold">Technologies:</span> {{ DATA.featuredProject.tech }}</p>
-        <p class="text-sm mb-4" v-if="DATA.featuredProject.company"><span class="font-semibold">Company:</span> {{ DATA.featuredProject.company }}</p>
-        <ul class="space-y-2 text-sm mb-5" v-if="DATA.featuredProject.details">
-          <li v-for="(d,i) in DATA.featuredProject.details" :key="i" class="flex items-start gap-2">
+        <p class="text-lg mb-2" v-if="DATA.featuredProject.tech"><span class="font-semibold">Technologies:</span> {{ DATA.featuredProject.tech }}</p>
+        <p class="text-lg mb-4" v-if="DATA.featuredProject.company"><span class="font-semibold">Company:</span> {{ DATA.featuredProject.company }}</p>
+        <ul class="space-y-2 text-lg mb-5" v-if="DATA.featuredProject.details">
+          <li v-for="(d,i) in DATA.featuredProject.details" :key="i" class="flex items-start gap-2 text-sm">
             <i class="material-icons" style="color:var(--primary-light);font-size:18px">check_circle</i>
             <span>{{ d }}</span>
           </li>
         </ul>
-        <router-link :to="'/project/' + DATA.featuredProject.id" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg gradient-bg text-white text-sm font-semibold hover:opacity-90 transition" v-if="DATA.featuredProject.id">
+        <router-link :to="'/project/' + DATA.featuredProject.id" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg gradient-bg text-white text-lg font-semibold hover:opacity-90 transition" v-if="DATA.featuredProject.id">
           Project Details <i class="material-icons" style="font-size:14px">open_in_new</i>
         </router-link>
       </div>
@@ -527,22 +545,67 @@ const ProjectsView = {
           {{ cat.label }}
         </button>
       </div>
-      <transition-group :key="activeFilter" name="project" tag="div" class="grid grid-cols-1 sm:grid-cols-2 gap-5" mode="out-in" v-if="filteredProjects.length">
-        <div v-for="(project,i) in filteredProjects" :key="project.id || i" class="card-glass section-reveal flex flex-col">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1" style="background:rgba(14,165,233,0.08);color:var(--primary)">
-              <i class="material-icons" style="font-size:14px">{{ project.categoryIcon }}</i> {{ project.categoryName }}
-            </span>
-            <span v-if="project.tech" class="text-sm" style="color:var(--text-muted)">{{ project.tech }}</span>
-          </div>
-          <router-link v-if="project.id" :to="'/project/' + project.id" class="font-semibold text-lg hover:underline" style="color:var(--text-heading)">{{ project.title }}</router-link>
-          <span v-else class="font-semibold text-lg" style="color:var(--text-heading)">{{ project.title }}</span>
-          <p class="text-base mt-1 mb-3 leading-relaxed" style="color:var(--text-muted)">{{ project.description }}</p>
-          <router-link v-if="project.id" :to="'/project/' + project.id" class="text-sm font-semibold inline-flex items-center gap-1 self-start mt-auto" style="color:var(--primary)">
-            View Details <i class="material-icons" style="font-size:14px">arrow_forward</i>
-          </router-link>
-        </div>
-      </transition-group>
+    <transition-group
+  :key="activeFilter"
+  name="project"
+  tag="div"
+  class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+  mode="out-in"
+  v-if="filteredProjects.length"
+>
+  <div
+    v-for="(project, i) in filteredProjects"
+    :key="project.id || i"
+    class="bg-slate-800/60 backdrop-blur-md rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border border-slate-700"
+  >
+    <div class="flex items-center justify-between mb-3">
+      <span
+        class="text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1 bg-cyan-900/30 text-cyan-400"
+      >
+        <i class="material-icons text-xs">{{ project.categoryIcon }}</i>
+        {{ project.categoryName }}
+      </span>
+      <span
+        v-if="project.tech"
+        class="text-xs text-slate-400 ml-2"
+      >
+        {{ project.tech }}
+      </span>
+    </div>
+
+    <router-link
+      v-if="project.id"
+      :to="'/project/' + project.id"
+      class="font-semibold text-base hover:text-cyan-300 transition-colors"
+      style="color:var(--text-heading)"
+    >
+      {{ project.title }}
+    </router-link>
+    <span
+      v-else
+      class="font-semibold text-base"
+      style="color:var(--text-heading)"
+    >
+      {{ project.title }}
+    </span>
+
+    <p
+      class="text-sm mt-2 mb-4 leading-relaxed text-slate-400"
+    >
+      {{ project.description }}
+    </p>
+
+    <router-link
+      v-if="project.id"
+      :to="'/project/' + project.id"
+      class="text-sm font-semibold inline-flex items-center gap-1 self-start mt-auto text-cyan-400 hover:text-cyan-300 transition-colors"
+    >
+      View Details
+      <i class="material-icons text-xs">arrow_forward</i>
+    </router-link>
+  </div>
+</transition-group>
+
       <div v-if="!allProjects.length && !DATA.featuredProject.title" class="text-center py-8" style="color:var(--text-muted)">
         Loading projects...
       </div>
@@ -565,10 +628,10 @@ const AchievementsView = {
       <h2 class="section-title">Professional Achievements</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div v-for="(a,i) in DATA.achievements" :key="i" class="achievement-card flex gap-3 section-reveal" :style="{ transitionDelay: (i * 0.08) + 's' }">
-          <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-bold text-sm flex-shrink-0">{{ i+1 }}</div>
+          <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-bold text-lg flex-shrink-0">{{ i+1 }}</div>
           <div>
-            <p class="text-sm leading-relaxed" style="color:var(--text)">{{ a }}</p>
-            <span v-if="a.includes('Champion')" class="inline-block mt-2 text-xs font-bold px-2 py-0.5 rounded" style="background:rgba(245,158,11,0.15);color:#f59e0b">
+            <p class="text-lg leading-relaxed" style="color:var(--text)">{{ a }}</p>
+            <span v-if="a.includes('Champion')" class="inline-block mt-2 text-md font-bold px-2 py-0.5 rounded" style="background:rgba(245,158,11,0.15);color:#f59e0b">
               <i class="material-icons" style="font-size:14px">emoji_events</i> Award
             </span>
           </div>
@@ -595,10 +658,10 @@ const ReferencesView = {
         <div v-for="(ref,i) in DATA.references" :key="i" class="ref-card flex items-start gap-4 section-reveal" :style="{ transitionDelay: (i * 0.08) + 's' }">
           <div class="ref-avatar">{{ ref.name.charAt(0) }}</div>
           <div>
-            <h4 class="font-bold text-sm" style="color:var(--text-heading)">{{ ref.name }}</h4>
-            <p class="text-xs font-medium" style="color:var(--primary)">{{ ref.title }}</p>
-            <p class="text-xs mb-2" style="color:var(--text-muted)">{{ ref.company }}</p>
-            <a :href="'tel:' + ref.phone" class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full transition" style="background:rgba(14,165,233,0.08);color:var(--primary)">
+            <h4 class="font-bold text-md" style="color:var(--text-heading)">{{ ref.name }}</h4>
+            <p class=" font-medium" style="color:var(--primary)">{{ ref.title }}</p>
+            <p class="font-medium mb-2" style="color:var(--text-muted)">{{ ref.company }}</p>
+            <a :href="'tel:' + ref.phone" class="inline-flex items-center gap-1.5 text-md font-medium px-3 py-1 rounded-full transition" style="background:rgba(14,165,233,0.08);color:var(--primary)">
               <i class="material-icons" style="font-size:12px;color:var(--primary)">call</i> {{ ref.phone }}
         </router-link>
           </div>
@@ -634,7 +697,7 @@ const ContactView = {
       }
     },
     submitForm() {
-      ['name','email','message'].forEach(f => this.validateField(f));
+      ['name', 'email', 'message'].forEach(f => this.validateField(f));
       if (this.form.name && this.form.email && this.form.message) {
         this.submitted = true;
         // Web3Forms submission
@@ -659,8 +722,8 @@ const ContactView = {
         <!-- Info -->
         <div class="lg:col-span-2 space-y-5">
           <div class="card-glass section-reveal">
-            <h3 class="text-sm font-bold mb-4" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i>Contact Info</h3>
-            <div class="space-y-3 text-sm">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i>Contact Info</h3>
+            <div class="space-y-3 text-lg">
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone1 }}</div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone2 }}</div></div></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">email</i><div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.email }}</div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.email2 }}</div></div></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">location_on</i><span>{{ DATA.personal.location }}</span></div>
@@ -670,18 +733,18 @@ const ContactView = {
           </div>
 
           <div class="card-glass section-reveal">
-            <h3 class="text-sm font-bold mb-4" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i>Languages</h3>
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i>Languages</h3>
             <div class="space-y-3">
               <div v-for="(l,i) in DATA.languages" :key="i">
-                <div class="flex justify-between text-sm mb-1"><span>{{ l.name }}</span><span style="color:var(--text-muted)">{{ l.level }}</span></div>
+                <div class="flex justify-between text-lg mb-1"><span>{{ l.name }}</span><span style="color:var(--text-muted)">{{ l.level }}</span></div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" :style="{ width: l.pct + '%' }"></div></div>
               </div>
             </div>
           </div>
 
           <div class="card-glass section-reveal">
-            <h3 class="text-sm font-bold mb-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">info</i>Availability</h3>
-            <div class="space-y-2 text-sm">
+            <h3 class="text-lg font-bold mb-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">info</i>Availability</h3>
+            <div class="space-y-2 text-lg">
               <div class="flex justify-between"><span style="color:var(--text-muted)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
               <div class="flex justify-between"><span style="color:var(--text-muted)">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
               <div class="flex justify-between"><span style="color:var(--text-muted)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
@@ -693,18 +756,18 @@ const ContactView = {
         <!-- Form -->
         <div class="lg:col-span-3">
           <div class="card-glass section-reveal">
-            <h3 class="text-sm font-bold mb-4" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">send</i>Send a Message</h3>
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">send</i>Send a Message</h3>
             <form @submit.prevent="submitForm" class="space-y-4">
               <div>
-                <label class="text-xs font-medium mb-1 block" style="color:var(--text-muted)">Your Name</label>
+                <label class="text-md font-medium mb-1 block" style="color:var(--text-muted)">Your Name</label>
                 <input type="text" v-model="form.name" required class="contact-input" :class="{ error: formError.name, success: formSuccess.name }" placeholder="Enter your name" @blur="validateField('name')">
               </div>
               <div>
-                <label class="text-xs font-medium mb-1 block" style="color:var(--text-muted)">Your Email</label>
+                <label class="text-md font-medium mb-1 block" style="color:var(--text-muted)">Your Email</label>
                 <input type="email" v-model="form.email" required class="contact-input" :class="{ error: formError.email, success: formSuccess.email }" placeholder="Enter your email" @blur="validateField('email')">
               </div>
               <div>
-                <label class="text-xs font-medium mb-1 block" style="color:var(--text-muted)">Message</label>
+                <label class="text-md font-medium mb-1 block" style="color:var(--text-muted)">Message</label>
                 <textarea v-model="form.message" required class="contact-input" :class="{ error: formError.message, success: formSuccess.message }" placeholder="Write your message..." @blur="validateField('message')"></textarea>
               </div>
               <button type="submit" :disabled="submitted" class="btn-shimmer w-full py-3 px-6 gradient-bg text-white font-semibold rounded-xl hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2" :style="{opacity: submitted ? 0.7 : 1}">
@@ -785,7 +848,7 @@ const ProjectDetailView = {
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div v-for="m in project.metrics" :key="m.label" class="card-glass text-center py-5 section-reveal">
             <div class="text-3xl font-extrabold gradient-text">{{ m.value }}</div>
-            <div class="text-xs font-medium mt-1" style="color:var(--text-muted)">{{ m.label }}</div>
+            <div class="text-md font-medium mt-1" style="color:var(--text-muted)">{{ m.label }}</div>
           </div>
         </div>
       </div>
@@ -796,27 +859,27 @@ const ProjectDetailView = {
           <div class="lg:col-span-2 space-y-6">
             <!-- Abstract -->
             <div class="card-glass section-reveal">
-              <h2 class="text-lg font-bold mb-4" style="border-left:4px solid var(--primary);padding-left:12px">System Abstract & Objective</h2>
+              <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">System Abstract & Objective</h2>
               <p style="color:var(--text)">{{ project.abstract }}</p>
             </div>
             <!-- Flow -->
             <div class="card-glass section-reveal">
-              <h2 class="text-lg font-bold mb-4" style="border-left:4px solid var(--primary);padding-left:12px">Precision Engineering & Program Flow</h2>
+              <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">Precision Engineering & Program Flow</h2>
               <div v-for="(step,i) in project.flow" :key="i" class="flex gap-3 mb-4">
                 <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white flex-shrink-0">
                   <i class="material-icons" style="font-size:20px">{{ step.icon }}</i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-sm" style="color:var(--text-heading)">{{ step.title }}</h4>
-                  <p class="text-sm mt-1" style="color:var(--text)">{{ step.text }}</p>
+                  <h4 class="font-bold text-lg" style="color:var(--text-heading)">{{ step.title }}</h4>
+                  <p class="text-lg mt-1" style="color:var(--text)">{{ step.text }}</p>
                 </div>
               </div>
             </div>
             <!-- Details -->
             <div class="card-glass section-reveal">
-              <h2 class="text-lg font-bold mb-4" style="border-left:4px solid var(--primary);padding-left:12px">Key Achievements</h2>
+              <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">Key Achievements</h2>
               <ul class="space-y-2">
-                <li v-for="(d,i) in project.details" :key="i" class="flex items-start gap-2 text-sm">
+                <li v-for="(d,i) in project.details" :key="i" class="flex items-start gap-2 text-md">
                   <i class="material-icons" style="color:var(--primary);font-size:18px">check_circle</i>
                   <span>{{ d }}</span>
                 </li>
@@ -826,19 +889,19 @@ const ProjectDetailView = {
           <!-- Sidebar -->
           <div class="space-y-4">
             <div class="card-glass section-reveal">
-              <span class="text-xs font-bold uppercase tracking-wider" style="color:var(--primary)">Tech Stack</span>
+              <span class="text-md font-bold uppercase tracking-wider" style="color:var(--primary)">Tech Stack</span>
               <div class="flex flex-wrap gap-2 mt-3">
                 <span v-for="t in project.tech" :key="t" class="skill-pill">{{ t }}</span>
               </div>
             </div>
             <div class="card-glass section-reveal" style="background:var(--sidebar-bg);color:var(--sidebar-text)">
-              <h4 class="font-bold text-sm mb-3" style="color:var(--sidebar-heading)">Need Something Similar?</h4>
-              <p class="text-xs mb-4">I build specialized industrial digital solutions, ERP integrations, and automation tools.</p>
-              <router-link to="/contact" class="inline-block w-full py-2.5 text-center text-sm font-semibold rounded-xl gradient-bg text-white hover:opacity-90 transition">
+              <h4 class="font-bold text-lg mb-3" style="color:var(--sidebar-heading)">Need Something Similar?</h4>
+              <p class="text-md mb-4">I build specialized industrial digital solutions, ERP integrations, and automation tools.</p>
+              <router-link to="/contact" class="inline-block w-full py-2.5 text-center text-lg font-semibold rounded-xl gradient-bg text-white hover:opacity-90 transition">
                 Hire Me for This Project
               </router-link>
             </div>
-            <router-link to="/projects" class="inline-flex items-center gap-2 text-sm font-medium hover:underline section-reveal" style="color:var(--primary)">
+            <router-link to="/projects" class="inline-flex items-center gap-2 text-lg font-medium hover:underline section-reveal" style="color:var(--primary)">
               <i class="material-icons" style="font-size:16px">arrow_back</i> Back to Projects
             </router-link>
           </div>
@@ -947,7 +1010,7 @@ const App = {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          $(entry.target).find('.skill-bar-fill').each(function() {
+          $(entry.target).find('.skill-bar-fill').each(function () {
             const w = this.style.width;
             $(this).css('width', '0');
             setTimeout(() => $(this).css('width', w), 100);
@@ -981,25 +1044,25 @@ const App = {
       <transition name="offcanvas">
         <aside v-if="mobileMenuOpen" class="fixed top-0 right-0 h-full w-72 z-50 overflow-y-auto" style="background:var(--sidebar-bg)">
           <div class="p-6 text-center">
-            <div class="mx-auto mb-4 w-20 h-20 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
+            <div class="mx-auto mb-4  rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
               <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
             <h2 class="text-base font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
-            <p class="text-sm font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
-            <p class="text-xs mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
+            <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
+             <p class="text-md mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
           </div>
           <div class="px-6 space-y-2.5 mb-4">
-            <div class="flex items-center gap-3 text-xs"><i class="material-icons" style="color:var(--primary);font-size:16px">phone</i><div><div>{{ DATA.personal.phone1 }}</div><div>{{ DATA.personal.phone2 }}</div></div></div>
-            <div class="flex items-center gap-3 text-xs"><i class="material-icons" style="color:var(--primary);font-size:16px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
-            <div class="flex items-center gap-3 text-xs"><i class="material-icons" style="color:var(--primary);font-size:16px">location_on</i><span>{{ DATA.personal.location }}</span></div>
-            <div class="flex items-center gap-3 text-xs"><i class="material-icons" style="color:var(--primary);font-size:16px">link</i><a :href="'https://' + DATA.personal.linkedin" target="_blank" style="color:var(--primary-light)">{{ DATA.personal.linkedin }}</a></div>
-            <div class="flex items-center gap-3 text-xs"><i class="material-icons" style="color:var(--primary);font-size:16px">language</i><a :href="DATA.personal.website" target="_blank" style="color:var(--primary-light)">amin670bd.github.io</a></div>
+             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">phone</i><div><div>{{ DATA.personal.phone1 }}</div><div>{{ DATA.personal.phone2 }}</div></div></div>
+             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
+             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">location_on</i><span>{{ DATA.personal.location }}</span></div>
+             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">link</i><a :href="'https://' + DATA.personal.linkedin" target="_blank" style="color:var(--primary-light)">{{ DATA.personal.linkedin }}</a></div>
+             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">language</i><a :href="DATA.personal.website" target="_blank" style="color:var(--primary-light)">amin670bd.github.io</a></div>
           </div>
           <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
           <div class="px-4 py-3 space-y-0.5">
             <router-link v-for="item in menuItems" :key="item.path"
               @click="closeMobile" :to="item.path"
-              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg  font-medium transition"
               :style="$route.path === item.path ?
                 { background: 'rgba(14,165,233,0.12)', color: 'var(--primary-light)' } :
                 { color: 'var(--sidebar-text)' }">
@@ -1010,12 +1073,12 @@ const App = {
           <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
           <div class="px-6 py-4 space-y-3">
             <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
-              class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white text-sm font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
+              class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
               style="box-shadow:0 4px 12px rgba(14,165,233,0.25)">
               <i class="material-icons">download</i> Download CV
             </a>
             <div class="flex items-center justify-between">
-              <span class="text-sm flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
+              <span class=" flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
               <button @click="toggleDark" class="theme-toggle" :style="{ background: 'transparent', borderColor: 'var(--sidebar-divider)' }">
                 <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
               </button>
@@ -1027,20 +1090,19 @@ const App = {
       <!-- Sidebar -->
       <aside class="sidebar">
         <div class="p-6 text-center">
-            <div class="mx-auto mb-4 w-24 h-24 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
+            <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
               <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
           <h2 class="text-lg font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
-          <p class="text-sm font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
-          <p class="text-sm mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
+          <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
+          <p class="text-lg mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
         </div>
 
         <div class="px-6 space-y-3 mb-4">
-          <div class="flex items-center gap-3 text-sm"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div>{{ DATA.personal.phone1 }}</div><div>{{ DATA.personal.phone2 }}</div></div></div>
-          <div class="flex items-center gap-3 text-sm"><i class="material-icons" style="color:var(--primary);font-size:18px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
-          <div class="flex items-center gap-3 text-sm"><i class="material-icons" style="color:var(--primary);font-size:18px">location_on</i><span>{{ DATA.personal.location }}</span></div>
-          <div class="flex items-center gap-3 text-sm"><i class="material-icons" style="color:var(--primary);font-size:18px">link</i><a :href="'https://' + DATA.personal.linkedin" target="_blank" style="color:var(--primary-light)">{{ DATA.personal.linkedin }}</a></div>
-          <div class="flex items-center gap-3 text-sm"><i class="material-icons" style="color:var(--primary);font-size:18px">language</i><a :href="DATA.personal.website" target="_blank" style="color:var(--primary-light)">amin670bd.github.io</a></div>
+          <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div>{{ DATA.personal.phone1 }}</div><div>{{ DATA.personal.phone2 }}</div></div></div>
+          <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
+          <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">location_on</i><span>{{ DATA.personal.location }}</span></div>
+          
         </div>
 
         <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
@@ -1049,7 +1111,7 @@ const App = {
         <div class="px-4 py-3 space-y-0.5">
           <router-link v-for="item in menuItems" :key="item.path"
             :to="item.path"
-            class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-lg  font-medium transition"
             :style="$route.path === item.path ?
               { background: 'rgba(14,165,233,0.12)', color: 'var(--primary-light)' } :
               { color: 'var(--sidebar-text)' }"
@@ -1064,12 +1126,12 @@ const App = {
         <!-- Download + Theme -->
         <div class="px-6 py-4 space-y-3">
           <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
-            class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white text-sm font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
+            class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
             style="box-shadow:0 4px 12px rgba(14,165,233,0.25)">
             <i class="material-icons">download</i> Download CV
           </a>
           <div class="flex items-center justify-between">
-            <span class="text-sm flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
+            <span class="text-lg flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
             <button @click="toggleDark" class="theme-toggle" :style="{ background: 'transparent', borderColor: 'var(--sidebar-divider)' }">
               <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
             </button>
