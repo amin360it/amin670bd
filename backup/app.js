@@ -154,24 +154,24 @@ const HomeView = {
       <h1 class="hero-title">{{ DATA.personal.name }} <br><span class="gradient-text">({{ DATA.personal.nickname }})</span></h1>
       <p class="text-lg lg:text-xl mt-4 mb-2 max-w-2xl" style="color:var(--text)">
         <span>A unique fusion of </span>
-        <strong><span class="typewriter-cursor">{{ currentRole }}</span></strong>
+        <strong style="color:var(--text-heading)"><span class="typewriter-cursor">{{ currentRole }}</span></strong>
       </p>
       <p class="text-base mb-8 max-w-2xl" style="color:var(--text-muted)">
         Dedicated to automating workflows, reducing production costs, and modernizing digital infrastructure.
       </p>
       <div class="flex flex-wrap gap-3 mb-10">
-        <router-link to="/contact" class="btn-shimmer inline-flex items-center gap-2 px-6 py-3 gradient-bg text-white font-semibold rounded-xl shadow-lg hover:opacity-90 transition-all duration-300" style="box-shadow:0 4px 15px rgba(14,165,233,0.3)">
+        <router-link to="/contact" class="inline-flex items-center gap-2 px-6 py-3 gradient-bg text-white font-semibold rounded-xl shadow-lg hover:opacity-90 transition-all duration-300" style="box-shadow:0 4px 15px rgba(14,165,233,0.3)">
           <i class="material-icons text-sm">send</i> Contact Me
         </router-link>
-        <router-link to="/projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:border-primary" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
+        <router-link to="/projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
           View Portfolio <i class="material-icons text-sm">arrow_forward</i>
         </router-link>
       </div>
 
       <!-- Highlights -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 max-w-4xl">
-        <router-link v-for="(h,i) in highlights" :key="i" :to="h.link" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl section-reveal" :style="{transitionDelay: (i * 0.1) + 's',textDecoration:'none',display:'flex'}">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 gradient-bg" :style="{animation:'float 3s ease-in-out infinite',animationDelay: (i * 0.3) + 's'}">
+        <router-link v-for="(h,i) in highlights" :key="i" :to="h.link" class="flex items-start gap-3 p-4 rounded-xl section-reveal" style="background:rgba(14,165,233,0.04);border:1px solid rgba(14,165,233,0.08);text-decoration:none;display:flex">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
             <i class="material-icons text-white" style="font-size:20px">{{ h.icon }}</i>
           </div>
           <div>
@@ -255,7 +255,7 @@ const AboutView = {
           <!-- Photo & Identity -->
           <div class="card-glass text-center section-reveal">
             <div class="mx-auto mb-4 w-28 h-28 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
-              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
+              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover">
             </div>
             <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
             <p class="text-sm font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
@@ -382,7 +382,7 @@ const SkillsView = {
             <i class="material-icons text-sm" style="color:var(--primary)">{{ skill.icon }}</i> {{ skill.title }}
           </h3>
           <div class="flex flex-wrap">
-            <span v-for="(item,j) in skill.items" :key="j" class="skill-pill" :style="{transitionDelay: (j * 0.03) + 's'}">{{ item }}</span>
+            <span v-for="(item,j) in skill.items" :key="j" class="skill-pill">{{ item }}</span>
           </div>
         </div>
       </div>
@@ -496,11 +496,11 @@ const ProjectsView = {
         <h3 class="text-xl lg:text-2xl font-extrabold mb-4" style="color:var(--sidebar-heading)">{{ DATA.featuredProject.title }}</h3>
         <div v-if="DATA.featuredProject.images && DATA.featuredProject.images.length" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
           <div class="md:col-span-2 rounded-xl overflow-hidden" style="background:var(--sidebar-divider)">
-            <img :src="DATA.featuredProject.images[0]" alt="Project screenshot" class="w-full h-auto object-cover" loading="lazy">
+            <img :src="DATA.featuredProject.images[0]" alt="Project screenshot" class="w-full h-auto object-cover">
           </div>
           <div class="space-y-3">
             <div v-for="(img,i) in DATA.featuredProject.images.slice(1)" :key="i" class="rounded-xl overflow-hidden" style="background:var(--sidebar-divider)">
-              <img :src="img" alt="Project screenshot" class="w-full h-auto object-cover" loading="lazy">
+              <img :src="img" alt="Project screenshot" class="w-full h-auto object-cover">
             </div>
           </div>
         </div>
@@ -618,23 +618,11 @@ const ContactView = {
     return {
       DATA,
       form: { name: '', email: '', message: '' },
-      submitted: false,
-      formError: { name: false, email: false, message: false },
-      formSuccess: { name: false, email: false, message: false }
+      submitted: false
     };
   },
   methods: {
-    validateField(field) {
-      if (this.form[field].trim()) {
-        this.formError[field] = false;
-        this.formSuccess[field] = true;
-      } else {
-        this.formError[field] = true;
-        this.formSuccess[field] = false;
-      }
-    },
     submitForm() {
-      ['name','email','message'].forEach(f => this.validateField(f));
       if (this.form.name && this.form.email && this.form.message) {
         this.submitted = true;
         // Web3Forms submission
@@ -697,18 +685,18 @@ const ContactView = {
             <form @submit.prevent="submitForm" class="space-y-4">
               <div>
                 <label class="text-xs font-medium mb-1 block" style="color:var(--text-muted)">Your Name</label>
-                <input type="text" v-model="form.name" required class="contact-input" :class="{ error: formError.name, success: formSuccess.name }" placeholder="Enter your name" @blur="validateField('name')">
+                <input type="text" v-model="form.name" required class="contact-input" placeholder="Enter your name">
               </div>
               <div>
                 <label class="text-xs font-medium mb-1 block" style="color:var(--text-muted)">Your Email</label>
-                <input type="email" v-model="form.email" required class="contact-input" :class="{ error: formError.email, success: formSuccess.email }" placeholder="Enter your email" @blur="validateField('email')">
+                <input type="email" v-model="form.email" required class="contact-input" placeholder="Enter your email">
               </div>
               <div>
                 <label class="text-xs font-medium mb-1 block" style="color:var(--text-muted)">Message</label>
-                <textarea v-model="form.message" required class="contact-input" :class="{ error: formError.message, success: formSuccess.message }" placeholder="Write your message..." @blur="validateField('message')"></textarea>
+                <textarea v-model="form.message" required class="contact-input" placeholder="Write your message..."></textarea>
               </div>
-              <button type="submit" :disabled="submitted" class="btn-shimmer w-full py-3 px-6 gradient-bg text-white font-semibold rounded-xl hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2" :style="{opacity: submitted ? 0.7 : 1}">
-                <i class="material-icons" :class="{ 'animate-spin': submitted }">{{ submitted ? 'sync' : 'send' }}</i> {{ submitted ? 'Sending...' : 'Send Message' }}
+              <button type="submit" class="w-full py-3 px-6 gradient-bg text-white font-semibold rounded-xl hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="material-icons">send</i> {{ submitted ? 'Sending...' : 'Send Message' }}
               </button>
             </form>
           </div>
@@ -767,11 +755,11 @@ const ProjectDetailView = {
       <div v-if="hasImages(project)" style="margin-top:-60px;margin-bottom:2rem;padding:0 60px">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
           <div class="lg:col-span-2 rounded-2xl overflow-hidden project-card" style="border:1px solid var(--border);box-shadow:var(--shadow-lg);height:400px">
-            <img :src="firstImage(project)" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
+            <img :src="firstImage(project)" @error="placeholderImg" class="w-full h-full" style="object-fit:cover">
           </div>
           <div class="space-y-3">
             <div v-for="img in project.images.slice(1)" :key="img" class="rounded-2xl overflow-hidden project-card" style="border:1px solid var(--border);height:192px">
-              <img :src="img" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
+              <img :src="img" @error="placeholderImg" class="w-full h-full" style="object-fit:cover">
             </div>
           </div>
         </div>
@@ -982,7 +970,7 @@ const App = {
         <aside v-if="mobileMenuOpen" class="fixed top-0 right-0 h-full w-72 z-50 overflow-y-auto" style="background:var(--sidebar-bg)">
           <div class="p-6 text-center">
             <div class="mx-auto mb-4 w-20 h-20 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
-              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
+              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover">
             </div>
             <h2 class="text-base font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
             <p class="text-sm font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
@@ -1010,14 +998,14 @@ const App = {
           <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
           <div class="px-6 py-4 space-y-3">
             <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
-              class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white text-sm font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
+              class="flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white text-sm font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
               style="box-shadow:0 4px 12px rgba(14,165,233,0.25)">
               <i class="material-icons">download</i> Download CV
             </a>
             <div class="flex items-center justify-between">
-              <span class="text-sm flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
+              <span class="text-sm flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:#22c55e"></span> Available</span>
               <button @click="toggleDark" class="theme-toggle" :style="{ background: 'transparent', borderColor: 'var(--sidebar-divider)' }">
-                <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
+                <i class="material-icons">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
               </button>
             </div>
           </div>
@@ -1027,9 +1015,9 @@ const App = {
       <!-- Sidebar -->
       <aside class="sidebar">
         <div class="p-6 text-center">
-            <div class="mx-auto mb-4 w-24 h-24 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
-              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
-            </div>
+          <div class="mx-auto mb-4 w-24 h-24 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
+            <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover">
+          </div>
           <h2 class="text-lg font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
           <p class="text-sm font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
           <p class="text-sm mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
@@ -1064,14 +1052,14 @@ const App = {
         <!-- Download + Theme -->
         <div class="px-6 py-4 space-y-3">
           <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
-            class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white text-sm font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
+            class="flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white text-sm font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
             style="box-shadow:0 4px 12px rgba(14,165,233,0.25)">
             <i class="material-icons">download</i> Download CV
           </a>
           <div class="flex items-center justify-between">
-            <span class="text-sm flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
+            <span class="text-sm flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:#22c55e"></span> Available</span>
             <button @click="toggleDark" class="theme-toggle" :style="{ background: 'transparent', borderColor: 'var(--sidebar-divider)' }">
-              <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
+              <i class="material-icons">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
             </button>
           </div>
         </div>
@@ -1096,15 +1084,14 @@ const App = {
           bottom: '24px', right: '24px',
           background: darkMode ? '#1e293b' : 'white',
           border: '1px solid ' + (darkMode ? '#334155' : '#e2e8f0'),
-          color: darkMode ? '#fbbf24' : '#475569',
-          boxShadow: darkMode ? '0 4px 15px rgba(0,0,0,0.4)' : '0 4px 15px rgba(0,0,0,0.1)'
+          color: darkMode ? '#fbbf24' : '#475569'
         }">
-        <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
+        <i class="material-icons">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
       </button>
 
       <!-- Scroll to top -->
-      <button @click="scrollToTop" class="scroll-top gradient-bg" :class="{ visible: showScrollTop }" :style="{boxShadow: '0 4px 15px rgba(14,165,233,0.4)'}">
-        <i class="material-icons" style="transition:transform 0.3s ease">arrow_upward</i>
+      <button @click="scrollToTop" class="scroll-top" :class="{ visible: showScrollTop }">
+        <i class="material-icons">arrow_upward</i>
       </button>
     </div>
   `
