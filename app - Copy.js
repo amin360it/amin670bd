@@ -505,10 +505,32 @@ const ExperienceView = {
 const EducationView = {
   name: 'EducationView',
   template: `
-   <div class="section"><span class="section-tag">Knowledge Base</span><h2 class="section-title">Education &amp; Certifications</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><div class="card-glass">
-
-    <div class="space-y-4"><h3 class="text-lg font-bold flex items-center gap-3" style="color: var(--text-heading);"><i class="material-icons" style="color: var(--primary);">school</i> Education</h3><div class="card-glass p-5"><div class="flex items-start gap-3"><i class="material-icons" style="color: var(--primary); font-size: 20px;">book</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">Diploma in Computer Engineering</h4><p class="text-md" style="color: var(--text-muted);">Bogura Polytechnic Institute — 2018 | CGPA: 2.92 / 4.00</p></div></div></div><div class="card-glass p-5"><div class="flex items-start gap-3"><i class="material-icons" style="color: var(--primary); font-size: 20px;">book</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">S.S.C. (Vocational, ICT)</h4><p class="text-md" style="color: var(--text-muted);">Naogaon Technical School &amp; College — 2013 | GPA: 4.88 / 5.00</p></div></div></div></div>
-</div><div class="card-glass p-6"><h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: var(--text-heading);"><i class="material-icons" style="color: var(--primary);">verified</i> Training &amp; Certifications</h3><div class="space-y-3"><div class="flex items-start gap-3 p-3 rounded-xl" style="background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.06);"><i class="material-icons" style="color: var(--primary); font-size: 20px;">check_circle</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">Web Design &amp; Development (WordPress, PHP &amp; MySQL)</h4><p class="text-md" style="color: var(--text-muted);">Bangladesh IT Institute, Dhaka — 3 months, 2017</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl" style="background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.06);"><i class="material-icons" style="color: var(--primary); font-size: 20px;">check_circle</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">Software Development (Win-Forms, C#.NET &amp; SQL Server)</h4><p class="text-md" style="color: var(--text-muted);">Smart Softwares &amp; Training Center, Bogura — 6 months, 2016</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl" style="background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.06);"><i class="material-icons" style="color: var(--primary); font-size: 20px;">check_circle</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">Graphics Design (Photoshop &amp; Illustrator)</h4><p class="text-md" style="color: var(--text-muted);">Rahim IT Solutions, Bogura — 3 months, 2015</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl" style="background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.06);"><i class="material-icons" style="color: var(--primary); font-size: 20px;">check_circle</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">CompTIA A+ (Hardware, Software, IT-ICT &amp; MS Office)</h4><p class="text-md" style="color: var(--text-muted);">Opurbo Computers &amp; Training Center, Naogaon — 6 months, 2013</p></div></div></div></div></div></div>
+    <div class="section">
+      <span class="section-tag">Knowledge Base</span>
+      <h2 class="section-title">Education & Certifications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="card-glass">
+          <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">account_balance</i> Academic Background</h3>
+          <div v-for="(edu,i) in DATA.education" :key="i" class="mb-4 pb-4 flex items-start gap-3" :style="i < DATA.education.length-1 ? 'border-bottom:1px solid var(--border)' : ''">
+            <span class="text-lg mt-0.5" style="color:var(--primary)">•</span>
+            <div>
+              <h4 class="font-bold text-lg" style="color:var(--text-heading)">{{ edu.degree }}</h4>
+              <p class="text-md" style="color:var(--text-muted)">{{ edu.school }} | {{ edu.grade }} | {{ edu.year }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-glass">
+          <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Trainings & Courses</h3>
+          <div v-for="(t,i) in DATA.training" :key="i" class="flex gap-3 mb-4">
+            <span class="text-lg mt-0.5" style="color:var(--primary)">•</span>
+            <div>
+              <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ t.title }}</h4>
+              <p class="text-md" style="color:var(--text-muted)">{{ t.institution }} | {{ t.year }} | {{ t.duration }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   `,
   data() { return { DATA }; },
   mounted() {
