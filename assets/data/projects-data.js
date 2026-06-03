@@ -77,7 +77,9 @@ const PROJECTS_DATA = {
           "title": "ZenBreaths — Guided Breathing App",
           "tech": "HTML, Tailwind CSS, Vue 3, Nuxt, Capacitor",
           "description": "Meditation and guided breathing exercise app with customizable session durations and visual cues."
-        },
+        }
+      ]
+    },
     {
       "name": "Web & E-Commerce",
       "key": "web",
@@ -1262,4 +1264,3 @@ const PROJECTS_DATA = {
   }
 }
 ;
-

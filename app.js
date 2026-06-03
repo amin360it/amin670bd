@@ -17,7 +17,6 @@ const DATA = Vue.reactive({
     dob: '22/01/1997',
     blood: 'O+',
     religion: 'Islam',
-    father: 'Abul Kalam Azad',
     currentSalary: '21,800 BDT',
     expectedSalary: 'Negotiable',
     available: 'Immediately'
@@ -45,7 +44,7 @@ const DATA = Vue.reactive({
     { title: 'Frontend Stack', icon: 'code', items: ['Vue 3 (Options / Composition API)', 'Vue Router', 'Pinia', 'Vite', 'HTML / CSS / JavaScript', 'Tailwind / Bootstrap 4/5', 'jQuery', 'Responsive Design'] },
     { title: 'Databases & SQL', icon: 'table_chart', items: ['MySQL / phpMyAdmin', 'MySQL Workbench', 'SQL Server', 'MS Access', 'Excel VBA Macros'] },
     { title: 'AI & Automation Tools', icon: 'smart_toy', items: ['Prompt Engineering', 'GitHub Copilot', 'ChatGPT', 'Opencode / OpenRouter', 'Qwen AI / Gemini', 'n8n Workflow Automation'] },
-    { title: 'Web Dev & CMS', icon: 'travel_explore', items: ['WordPress (Theme Customization, Elementor, WooCommerce, LMS, Plugin Dev, Payment Systems, ACF, Custom Post Types, REST API, Child Themes)', 'SEO Plugins'] },
+    { title: 'Web Dev & CMS', icon: 'travel_explore', items: ['WordPress', 'Elementor', 'WooCommerce', 'LMS', 'Plugin Dev', 'Payment Systems', 'ACF', 'Custom Post Types', 'REST API', 'Child Themes', 'SEO Plugins'] },
     { title: 'IT Support & System Admin', icon: 'dns', items: ['Windows / Linux OS Install', 'Hard / Soft Diagnostics', 'Remote IT Support', 'System Maintenance', 'User Training', 'Driver Setup', 'PC Assembly & Upgrade'] },
     { title: 'System Integration & Hardware', icon: 'settings_ethernet', items: ['Barcode Printer Configuration', 'Automated Label Printing', 'Weight Scale Integration', 'NXP MCU RFID Terminals', 'MOXA Serial Cards', 'Network Configuration'] },
     { title: 'Email & Communication', icon: 'forward_to_inbox', items: ['Corporate Email Setup', 'Bulk Mailing Tools', 'Email Automation', 'Face-to-Face Communication', 'Social Media Management'] },
@@ -200,25 +199,41 @@ const HomeView = {
   template: `
     <div class="hero-section">
       <span class="section-tag">{{ expYears }}+ Years Experience</span>
-      <h1 class="hero-title">{{ DATA.personal.name }} <br><span class="gradient-text">({{ DATA.personal.nickname }})</span></h1>
-      <p class="text-lg lg:text-xl mt-4 mb-2 " style="color:var(--text)">
+
+      <!-- Title + Image row -->
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-4">
+        <div class="flex-1">
+          <h1 class="hero-title">{{ DATA.personal.name }} <br><span class="gradient-text">({{ DATA.personal.nickname }})</span></h1>
+        </div>
+        <div class="lg:shrink-0 w-full lg:w-48 xl:w-56">
+          <img :src="DATA.personal.photo" :alt="DATA.personal.name"
+            class="w-full h-auto rounded-2xl object-cover"
+            style="box-shadow:0 8px 32px rgba(20,184,166,0.15);border:2px solid var(--border)">
+        </div>
+      </div>
+
+      <p class="hero-subtitle mt-4 mb-2" style="color:var(--text)">
         <span>A unique fusion of </span>
         <strong><span class="typewriter-cursor">{{ currentRole }}</span></strong>
       </p>
-      <p class="text-base mb-8 " style="color:var(--text-muted)">
+      <p class="text-base mb-8" style="color:var(--text-muted)">
         Dedicated to automating workflows, reducing production costs, and modernizing digital infrastructure.
       </p>
+
       <div class="flex flex-wrap gap-3 mb-10">
-        <router-link to="/contact" class="btn-shimmer inline-flex items-center gap-2 px-6 py-3 gradient-bg text-white font-semibold rounded-xl shadow-lg hover:opacity-90 transition-all duration-300" style="box-shadow:0 4px 15px rgba(8,145,178,0.3)">
+        <router-link to="/contact" class="hero-btn btn-shimmer inline-flex items-center gap-2 px-6 py-3 gradient-bg text-white font-semibold rounded-xl shadow-lg transition-all duration-300" style="box-shadow:0 4px 15px rgba(20,184,166,0.3)">
           <i class="material-icons text-lg">send</i> Contact Me
         </router-link>
-        <router-link to="/projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:border-primary" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
+        <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
+          <i class="material-icons text-lg">download</i> Download CV
+        </a>
+        <router-link to="/projects" class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
           View Portfolio <i class="material-icons text-lg">arrow_forward</i>
         </router-link>
       </div>
 
       <!-- Highlights -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 ">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
         <router-link v-for="(h,i) in highlights" :key="i" :to="h.link" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex">
           <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 gradient-bg" :style="{animation:'float 3s ease-in-out infinite',animationDelay: (i * 0.3) + 's'}">
             <i class="material-icons text-white" style="font-size:20px">{{ h.icon }}</i>
@@ -293,43 +308,59 @@ const HomeView = {
 const AboutView = {
   name: 'AboutView',
   template: `
-    <div class="section">
-      <span class="section-tag">About Me</span>
-      <h2 class="section-title">Who I Am</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <div class="section">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who I Am</h2>
 
-        <!-- Left Column -->
-        <div class="lg:col-span-2 space-y-5">
-
-          <!-- Photo & Identity -->
-          <div class="card-glass text-center">
-            <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(8,145,178,0.3)">
-              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
+        <!-- Full-width Visiting Card -->
+        <div class="card-glass p-6 mb-6">
+          <div class="flex flex-col sm:flex-row items-start gap-5">
+            <div class="w-full sm:w-44 md:w-52 lg:w-60 shrink-0 rounded-2xl overflow-hidden aspect-square" style="border:3px solid rgba(20,184,166,0.3)">
+              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover">
             </div>
-            <h3 class="text-xl font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
-            <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
-            <p class="text-lg mt-1" style="color:var(--text-muted)">{{ DATA.personal.title }}</p>
-            <div class="flex justify-center gap-2 mt-4">
-              <a :href="'mailto:' + DATA.personal.email" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(8,145,178,0.08);color:var(--primary)">
-                <i class="material-icons" style="font-size:18px">email</i>
-              </a>
-              <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(8,145,178,0.08);color:var(--primary)">
-                <i class="material-icons" style="font-size:18px">link</i>
-              </a>
-              <a :href="DATA.personal.website" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(8,145,178,0.08);color:var(--primary)">
-                <i class="material-icons" style="font-size:18px">language</i>
-              </a>
+            <div class="min-w-0 flex-1">
+              <h3 class="text-xl font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
+              <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
+              <p class="text-base mt-1" style="color:var(--text-muted)">{{ DATA.personal.title }}</p>
+              <hr class="my-4" style="border-color:var(--border)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-base">
+                <div class="flex items-center gap-3">
+                  <i class="material-icons" style="color:var(--primary);font-size:20px">phone</i>
+                  <span style="color:var(--text)">{{ DATA.personal.phone1 }} / {{ DATA.personal.phone2 }}</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i class="material-icons" style="color:var(--primary);font-size:20px">email</i>
+                  <span style="color:var(--text)">{{ DATA.personal.email }}</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i class="material-icons" style="color:var(--primary);font-size:20px">location_on</i>
+                  <span style="color:var(--text)">{{ DATA.personal.location }}</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i class="material-icons" style="color:var(--primary);font-size:20px">link</i>
+                  <a :href="'https://' + DATA.personal.linkedin" target="_blank" style="color:var(--primary)">{{ DATA.personal.linkedin }}</a>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i class="material-icons" style="color:var(--primary);font-size:20px">language</i>
+                  <a :href="DATA.personal.website" target="_blank" style="color:var(--primary)">amin670bd.github.io</a>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- Personal Details -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+
+          <!-- Left Column -->
+          <div class="lg:col-span-2 space-y-5">
+
+            <!-- Personal Details -->
           <div class="card-glass">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i> Personal Details</h4>
-            <div class="space-y-2 text-lg">
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Date of Birth</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.dob }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Blood Group</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.blood }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Religion</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.religion }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Father's Name</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.father }}</span></div>
+            <div class="space-y-2">
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Date of Birth</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.dob }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Blood Group</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.blood }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Religion</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.religion }}</span></div>
             </div>
           </div>
 
@@ -338,7 +369,7 @@ const AboutView = {
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i> Languages</h4>
             <div class="space-y-3">
               <div v-for="l in DATA.languages" :key="l.name">
-                <div class="flex justify-between text-lg mb-1"><span>{{ l.name }}</span><span style="color:var(--text-muted)">{{ l.level }}</span></div>
+                <div class="flex justify-between mb-1"><span style="font-size:0.9rem">{{ l.name }}</span><span style="color:var(--text-muted);font-size:0.9rem">{{ l.level }}</span></div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" :style="{ width: l.pct + '%' }"></div></div>
               </div>
             </div>
@@ -347,11 +378,11 @@ const AboutView = {
           <!-- Employment Details -->
           <div class="card-glass">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">work</i> Employment Details</h4>
-            <div class="space-y-2 text-lg">
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
-              <div class="flex justify-between py-1"><span style="color:var(--text-muted)">Location</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.location }}</span></div>
+            <div class="space-y-2">
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
+              <div class="flex justify-between py-1"><span style="color:var(--text-muted);font-size:0.9rem">Location</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.location }}</span></div>
             </div>
           </div>
 
@@ -371,7 +402,7 @@ const AboutView = {
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">assignment</i> Professional Summary</h3>
             <p class="leading-relaxed mb-5" style="color:var(--text)">{{ DATA.summary }}</p>
             <div class="grid grid-cols-3 gap-3">
-              <div v-for="s in DATA.stats" :key="s.label" class="text-center py-4 rounded-xl" style="background:rgba(8,145,178,0.06);border:1px solid rgba(8,145,178,0.1)">
+              <div v-for="s in DATA.stats" :key="s.label" class="text-center py-4 rounded-xl" style="background:rgba(20,184,166,0.06);border:1px solid rgba(20,184,166,0.1)">
                 <div class="text-2xl font-extrabold gradient-text">{{ s.value }}</div>
                 <div class="text-md font-medium mt-1" style="color:var(--text-muted)">{{ s.label }}</div>
               </div>
@@ -382,7 +413,7 @@ const AboutView = {
           <div class="card-glass p-6">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Training & Certifications</h3>
             <div class="space-y-3">
-              <div v-for="t in DATA.training" :key="t.title" class="flex items-start gap-3 p-3 rounded-xl" style="background:rgba(8,145,178,0.04);border:1px solid rgba(8,145,178,0.06)">
+              <div v-for="t in DATA.training" :key="t.title" class="flex items-start gap-3 p-3 rounded-xl" style="background:rgba(20,184,166,0.04);border:1px solid rgba(20,184,166,0.06)">
                 <i class="material-icons" style="color:var(--primary);font-size:20px">check_circle</i>
                 <div>
                   <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ t.title }}</h4>
@@ -453,7 +484,7 @@ const ExperienceView = {
           <div class="timeline-dot"></div>
           <span class="timeline-date">{{ exp.period }}</span>
           <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ exp.title }}</h3>
-          <p class="text-lg font-medium mb-2" style="color:var(--primary)">{{ exp.company }} <span style="color:var(--text-muted)">| {{ exp.location }}</span></p>
+          <p class="text-base sm:text-lg font-medium mb-2" style="color:var(--primary)">{{ exp.company }} <span style="color:var(--text-muted)">| {{ exp.location }}</span></p>
           <ul class="space-y-1 text-lg" style="color:var(--text)">
             <li v-for="(h,j) in exp.highlights" :key="j" class="flex items-start gap-2 text-sm">
               <i class="material-icons" style="font-size:6px;color:var(--primary)">circle</i>
@@ -477,7 +508,7 @@ const EducationView = {
     <div class="section">
       <span class="section-tag">Knowledge Base</span>
       <h2 class="section-title">Education & Certifications</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div class="card-glass">
           <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">account_balance</i> Academic Background</h3>
           <div v-for="(edu,i) in DATA.education" :key="i" class="mb-4 pb-4 flex items-start gap-3" :style="i < DATA.education.length-1 ? 'border-bottom:1px solid var(--border)' : ''">
@@ -561,7 +592,7 @@ const ProjectsView = {
             <span>{{ d }}</span>
           </li>
         </ul>
-        <router-link :to="'/project/' + DATA.featuredProject.id" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg gradient-bg text-white text-lg font-semibold hover:opacity-90 transition" v-if="DATA.featuredProject.id">
+        <router-link :to="'/project/' + DATA.featuredProject.id" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg gradient-bg text-white text-lg font-semibold transition" v-if="DATA.featuredProject.id">
           Project Details <i class="material-icons" style="font-size:14px">open_in_new</i>
         </router-link>
       </div>
@@ -587,11 +618,11 @@ const ProjectsView = {
   <div
     v-for="(project, i) in filteredProjects"
     :key="project.id || i"
-    class="bg-slate-800/60 backdrop-blur-md rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border border-slate-700"
+      class="project-card-item rounded-xl p-5 flex flex-col"
   >
     <div class="flex items-center justify-between mb-3">
       <span
-        class="text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1 bg-cyan-900/30 text-cyan-300"
+        class="project-cat-tag text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1"
       >
         <i class="material-icons text-xs">{{ project.categoryIcon }}</i>
         {{ project.categoryName }}
@@ -608,8 +639,7 @@ const ProjectsView = {
     <router-link
       v-if="project.id"
       :to="'/project/' + project.id"
-      class="font-semibold text-base hover:text-cyan-300 transition-colors"
-      style="color:var(--text-heading)"
+      class="project-title-link font-semibold text-base"
     >
       {{ project.title }}
     </router-link>
@@ -644,6 +674,12 @@ const ProjectsView = {
       </div>
     </div>
   `,
+  beforeRouteLeave(to, from, next) {
+    if (to.path.startsWith('/project/')) {
+      sessionStorage.setItem('projectsScrollY', window.scrollY);
+    }
+    next();
+  },
   mounted() {
     // fade handled by Vue transition
   }
@@ -693,7 +729,7 @@ const ReferencesView = {
             <h4 class="font-bold text-md" style="color:var(--text-heading)">{{ ref.name }}</h4>
             <p class=" font-medium" style="color:var(--primary)">{{ ref.title }}</p>
             <p class="font-medium mb-2" style="color:var(--text-muted)">{{ ref.company }}</p>
-            <a :href="'tel:' + ref.phone" class="inline-flex items-center gap-1.5 text-md font-medium px-3 py-1 rounded-full transition" style="background:rgba(8,145,178,0.08);color:var(--primary)">
+            <a :href="'tel:' + ref.phone" class="inline-flex items-center gap-1.5 text-md font-medium px-3 py-1 rounded-full transition" style="background:rgba(20,184,166,0.08);color:var(--primary)">
               <i class="material-icons" style="font-size:12px;color:var(--primary)">call</i> {{ ref.phone }}
         </router-link>
           </div>
@@ -753,24 +789,13 @@ const ContactView = {
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <!-- Info -->
         <div class="lg:col-span-2 space-y-5">
-          <div class="card-glass">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i>Contact Info</h3>
+          <div class="card-glass contact-info">
             <div class="space-y-3 text-lg">
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone1 }}</div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone2 }}</div></div></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">email</i><div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.email }}</div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.email2 }}</div></div></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">location_on</i><span>{{ DATA.personal.location }}</span></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">link</i><a :href="'https://' + DATA.personal.linkedin" target="_blank" class="hover:underline">{{ DATA.personal.linkedin }}</a></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">language</i><a :href="DATA.personal.website" target="_blank" class="hover:underline">{{ DATA.personal.website }}</a></div>
-            </div>
-          </div>
-
-          <div class="card-glass">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i>Languages</h3>
-            <div class="space-y-3">
-              <div v-for="(l,i) in DATA.languages" :key="i">
-                <div class="flex justify-between text-lg mb-1"><span>{{ l.name }}</span><span style="color:var(--text-muted)">{{ l.level }}</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" :style="{ width: l.pct + '%' }"></div></div>
-              </div>
             </div>
           </div>
 
@@ -802,7 +827,7 @@ const ContactView = {
                 <label class="text-md font-medium mb-1 block" style="color:var(--text-muted)">Message</label>
                 <textarea v-model="form.message" required class="contact-input" :class="{ error: formError.message, success: formSuccess.message }" placeholder="Write your message..." @blur="validateField('message')"></textarea>
               </div>
-              <button type="submit" :disabled="submitted" class="btn-shimmer w-full py-3 px-6 gradient-bg text-white font-semibold rounded-xl hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2" :style="{opacity: submitted ? 0.7 : 1}">
+              <button type="submit" :disabled="submitted" class="btn-shimmer w-full py-3 px-6 gradient-bg text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2" :style="{opacity: submitted ? 0.7 : 1}">
                 <i class="material-icons" :class="{ 'animate-spin': submitted }">{{ submitted ? 'sync' : 'send' }}</i> {{ submitted ? 'Sending...' : 'Send Message' }}
               </button>
             </form>
@@ -847,9 +872,17 @@ const ProjectDetailView = {
   },
   template: `
     <div v-if="project">
+      <!-- Breadcrumb Nav (desktop/tablet only) -->
+      <div class="hidden lg:flex items-center gap-2 text-sm font-medium px-6 py-3 sticky top-0 z-20" style="background:var(--bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);color:var(--text-muted)">
+        <router-link to="/" style="color:var(--primary)" class="hover:underline">Home</router-link>
+        <i class="material-icons" style="font-size:14px">chevron_right</i>
+        <router-link to="/projects" style="color:var(--primary)" class="hover:underline">Projects</router-link>
+        <i class="material-icons" style="font-size:14px">chevron_right</i>
+        <span class="truncate max-w-xs" style="color:var(--text-heading)">{{ project.title }}</span>
+      </div>
       <!-- Hero -->
       <div class="section" style="background:var(--sidebar-bg);color:var(--sidebar-text);border-radius:0 0 40px 40px;padding-bottom:60px">
-        <span class="section-tag" style="background:rgba(8,145,178,0.15);padding:4px 14px;border-radius:20px">TOP ACHIEVEMENT</span>
+        <span class="section-tag" style="background:rgba(20,184,166,0.15);padding:4px 14px;border-radius:20px">TOP ACHIEVEMENT</span>
         <h1 class="section-title" style="color:var(--sidebar-heading);font-size:2.2rem;margin-top:12px">{{ project.title }}</h1>
         <p style="color:var(--sidebar-text);font-size:1.1rem;opacity:0.8">{{ project.subtitle }}</p>
         <div class="flex flex-wrap gap-5 mt-6" style="color:var(--sidebar-text)">
@@ -929,7 +962,7 @@ const ProjectDetailView = {
             <div class="card-glass" style="background:var(--sidebar-bg);color:var(--sidebar-text)">
               <h4 class="font-bold text-lg mb-3" style="color:var(--sidebar-heading)">Need Something Similar?</h4>
               <p class="text-md mb-4">I build specialized industrial digital solutions, ERP integrations, and automation tools.</p>
-              <router-link to="/contact" class="inline-block w-full py-2.5 text-center text-lg font-semibold rounded-xl gradient-bg text-white hover:opacity-90 transition">
+              <router-link to="/contact" class="inline-block w-full py-2.5 text-center text-lg font-semibold rounded-xl gradient-bg text-white transition">
                 Hire Me for This Project
               </router-link>
             </div>
@@ -970,7 +1003,16 @@ const routes = [
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHashHistory(),
   routes,
-  scrollBehavior() { return { top: 0, behavior: 'smooth' }; }
+  scrollBehavior(to, from, savedPosition) {
+    if (to.path === '/projects') {
+      const savedY = sessionStorage.getItem('projectsScrollY');
+      if (savedY) {
+        sessionStorage.removeItem('projectsScrollY');
+        return { top: parseInt(savedY), behavior: 'smooth' };
+      }
+    }
+    return { top: 0, behavior: 'smooth' };
+  }
 });
 
 /* ===================================================
@@ -1024,7 +1066,7 @@ const App = {
     closeMobile() { this.mobileMenuOpen = false; },
     scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); },
     handleScroll() {
-      this.showScrollTop = window.scrollY > 600;
+      this.showScrollTop = window.scrollY > 100;
     },
     getInitials(name) {
       return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
@@ -1058,9 +1100,20 @@ const App = {
       <nav class="mobile-nav">
         <div class="flex items-center justify-between px-4 py-3">
           <router-link to="/" @click="closeMobile" class="text-lg font-extrabold tracking-tight gradient-text">Amin670BD</router-link>
-          <button @click="toggleMobile" class="text-xl p-2" :style="{ color: darkMode ? '#cbd5e1' : '#475569' }">
-            <i class="material-icons">{{ mobileMenuOpen ? 'close' : 'menu' }}</i>
-          </button>
+          <div class="flex items-center gap-2">
+            <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
+              class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-lg transition-all duration-300"
+              style="border:1px solid var(--primary);color:var(--primary)">
+              <i class="material-icons" style="font-size:16px">download</i>
+              <span class="download-cv-short">CV</span><span class="download-cv-full">Download CV</span>
+            </a>
+            <button @click="toggleDark" class="theme-toggle" style="width:32px;height:32px">
+              <i class="material-icons" style="font-size:18px">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
+            </button>
+            <button @click="toggleMobile" class="text-xl p-2" style="color:var(--text)">
+              <i class="material-icons">{{ mobileMenuOpen ? 'close' : 'menu' }}</i>
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -1073,7 +1126,7 @@ const App = {
       <transition name="offcanvas">
         <aside v-if="mobileMenuOpen" class="fixed top-0 right-0 h-full w-72 z-50 overflow-y-auto" style="background:var(--sidebar-bg)">
           <div class="p-6 text-center">
-            <div class="mx-auto mb-4  rounded-2xl overflow-hidden" style="border:3px solid rgba(8,145,178,0.3)">
+            <div class="w-full sm:w-44 md:w-52 lg:w-60 mx-auto mb-4 rounded-2xl overflow-hidden aspect-square" style="border:3px solid rgba(20,184,166,0.3)">
               <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
             <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
@@ -1100,14 +1153,13 @@ const App = {
           <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
           <div class="px-6 py-4 space-y-3">
             <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
-              class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
-              style="box-shadow:0 4px 12px rgba(8,145,178,0.25)">
+              class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg transition-all duration-300"
+              style="box-shadow:0 4px 12px rgba(20,184,166,0.25)">
               <i class="material-icons">download</i> Download CV
             </a>
             <div class="flex items-center justify-between">
-              <span class=" flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
             <span class="text-lg flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
-            <button @click="toggleDark" class="theme-toggle" :style="{ background: 'transparent', borderColor: 'var(--sidebar-divider)' }">
+            <button @click="toggleDark" class="theme-toggle">
                 <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
               </button>
             </div>
@@ -1119,7 +1171,7 @@ const App = {
       <aside class="sidebar">
         <div class="sidebar-scroll">
           <div class="p-6 text-center">
-              <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(8,145,178,0.3)">
+              <div class="w-full sm:w-44 md:w-52 lg:w-60 mx-auto mb-4 rounded-2xl overflow-hidden aspect-square" style="border:3px solid rgba(20,184,166,0.3)">
                 <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
               </div>
             <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
@@ -1154,12 +1206,13 @@ const App = {
         <!-- Download + Theme (fixed at bottom) -->
         <div class="px-6 py-4 space-y-3" style="border-top:1px solid var(--sidebar-divider)">
           <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
-            class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
-            style="box-shadow:0 4px 12px rgba(8,145,178,0.25)">
+            class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg transition-all duration-300"
+            style="box-shadow:0 4px 12px rgba(20,184,166,0.25)">
             <i class="material-icons">download</i> Download CV
           </a>
           <div class="flex items-center justify-between">
-            <button @click="toggleDark" class="theme-toggle" :style="{ background: 'transparent', borderColor: 'var(--sidebar-divider)' }">
+            <span class="text-lg flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
+            <button @click="toggleDark" class="theme-toggle">
               <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
             </button>
           </div>
@@ -1174,21 +1227,8 @@ const App = {
         </div>
       </main>
 
-      <!-- Mobile FAB Theme -->
-      <button @click="toggleDark"
-        class="fixed z-50 flex items-center justify-center w-11 h-11 rounded-full shadow-lg transition-all duration-300 lg:hidden"
-        :style="{
-          bottom: '24px', right: '24px',
-          background: darkMode ? '#1e293b' : 'white',
-          border: '1px solid ' + (darkMode ? '#334155' : '#e2e8f0'),
-          color: darkMode ? '#fbbf24' : '#475569',
-          boxShadow: darkMode ? '0 4px 15px rgba(0,0,0,0.4)' : '0 4px 15px rgba(0,0,0,0.1)'
-        }">
-        <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
-      </button>
-
       <!-- Scroll to top -->
-      <button @click="scrollToTop" class="scroll-top gradient-bg" :class="{ visible: showScrollTop }" :style="{boxShadow: '0 4px 15px rgba(8,145,178,0.4)'}">
+      <button @click="scrollToTop" class="scroll-top gradient-bg" :class="{ visible: showScrollTop }" :style="{boxShadow: '0 4px 15px rgba(20,184,166,0.4)'}">
         <i class="material-icons" style="transition:transform 0.3s ease">arrow_upward</i>
       </button>
     </div>
