@@ -22,7 +22,7 @@ const PROJECTS_DATA = {
     {
       "name": "Software Development",
       "key": "software",
-      "icon": "laptop-mac",
+      "icon": "laptop_mac",
       "items": [
         {
           "id": "weight-checker",
@@ -69,17 +69,15 @@ const PROJECTS_DATA = {
         {
           "id": "tasbih",
           "title": "Tasbih — Digital Prayer Counter",
-          "tech": "Android, Java",
+          "tech": "MIT App Inventor",
           "description": "Android app for digital tasbih (prayer bead) counting with multiple counter profiles and history tracking."
         },
         {
           "id": "zenbreaths",
           "title": "ZenBreaths — Guided Breathing App",
-          "tech": "Android, Java",
+          "tech": "HTML, Tailwind CSS, Vue 3, Nuxt, Capacitor",
           "description": "Meditation and guided breathing exercise app with customizable session durations and visual cues."
-        }
-      ]
-    },
+        },
     {
       "name": "Web & E-Commerce",
       "key": "web",
@@ -155,7 +153,7 @@ const PROJECTS_DATA = {
         {
           "id": "keya-group-it",
           "title": "Keya Group [IT-GPRO]",
-          "description": "IT Support, OS, ERP administration, Maintenance across 50+ workstations for RMG factory.",
+          "description": "GPRO ERP administration across all modules (cutting, store, production, payroll, billing, inventory), IT support for 30+ production floor workstations, RFID terminal management across 30+ production lines with NXP MCU devices over RS-485, IP camera installation, and user training for 30+ staff.",
           "url": ""
         },
         {
@@ -996,7 +994,7 @@ const PROJECTS_DATA = {
       "subtitle": "Android Tasbih Counting App",
       "company": "Personal Project",
       "developer": "Md. Asaduzzaman (Aminur)",
-      "tech": ["Android", "Java", "SQLite", "Material Design"],
+      "tech": ["MIT App Inventor", "Android", "TinyDB"],
       "images": ["assets/images/placeholder.png"],
       "metrics": [
         { "value": "Android", "label": "Mobile App" },
@@ -1030,16 +1028,16 @@ const PROJECTS_DATA = {
     },
     "zenbreaths": {
       "title": "ZenBreaths — Guided Breathing App",
-      "subtitle": "Meditation & Breathing Exercise App",
+      "subtitle": "Cross-Platform Mindfulness App",
       "company": "Personal Project",
       "developer": "Md. Asaduzzaman (Aminur)",
-      "tech": ["Android", "Java", "Animation Engine", "Audio"],
+      "tech": ["HTML", "Tailwind CSS", "Vue 3", "Nuxt", "Capacitor", "Android Studio"],
       "images": ["assets/images/placeholder.png"],
       "metrics": [
         { "value": "Guided", "label": "Breathing Sessions" },
         { "value": "Custom", "label": "Duration Settings" }
       ],
-      "abstract": "A guided breathing and meditation Android app that helps users practice mindfulness through structured breathing exercises. Features include customizable session durations, visual breathing guides (inhale/hold/exhale animations), and ambient sound options.",
+      "abstract": "A cross-platform guided breathing and meditation app built with Vue 3 + Nuxt, wrapped as a native Android app via Capacitor. Features customizable session durations, visual breathing guides (inhale/hold/exhale animations), haptic feedback, and ambient sound options.",
       "flow": [
         {
           "icon": "air",
@@ -1062,7 +1060,7 @@ const PROJECTS_DATA = {
         "Customizable session duration (1-30 minutes)",
         "Ambient sound options for relaxation",
         "Session history and streak tracking",
-        "Minimalist Material Design interface"
+        "Minimalist UI styled with Tailwind CSS"
       ]
     },
     "hakimadapp-website": {

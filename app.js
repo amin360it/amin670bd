@@ -17,9 +17,7 @@ const DATA = Vue.reactive({
     dob: '22/01/1997',
     blood: 'O+',
     religion: 'Islam',
-    height: "5'9\"",
     father: 'Abul Kalam Azad',
-    mother: 'Mst. Anju Ara',
     currentSalary: '21,800 BDT',
     expectedSalary: 'Negotiable',
     available: 'Immediately'
@@ -37,15 +35,21 @@ const DATA = Vue.reactive({
     { value: '100+', label: 'Users Managed' }
   ],
   skills: [
-    { title: 'Office & Reporting', icon: 'description', items: ['MS Office (Word, Excel, PowerPoint, Outlook)', 'Google Workspace', 'Excel Automation', 'Report Generation', 'PDF Editing'] },
-    { title: 'Design, Graphics & Video', icon: 'palette', items: ['Photoshop', 'Illustrator', 'Canva', 'Filmora (Video)', 'Infographics', 'Posters / Labels', 'Invoices', 'Logos', 'AI Image Manipulation & Editing', 'AI Audio & Multimedia'] },
+    { title: 'Office & Productivity', icon: 'description', items: ['MS Office (Word, Excel, PowerPoint, Outlook)', 'Google Workspace', 'Excel Automation & Macros', 'Report Generation', 'PDF Editing'] },
+    { title: 'Design & Graphics', icon: 'palette', items: ['Photoshop', 'Illustrator', 'Canva', 'Infographics', 'Posters / Labels', 'Logos', 'Invoices'] },
+    { title: 'Video & AI Multimedia', icon: 'movie', items: ['Filmora (Video Editing)', 'AI Image Manipulation & Editing', 'AI Audio & Multimedia'] },
     { title: 'ERP & Business Systems', icon: 'storage', items: ['GPRO ERP (All Modules)', 'Inventory Management', 'Payroll / Billing', 'Data Entry & Verification', 'POS Systems', 'File Handling', 'ERP Install & Support', 'Garments Systems', 'RFID Tag Generation'] },
-    { title: 'E-Commerce Management', icon: 'shopping_cart', items: ['Product Listing', 'Order / Shipping Handling', 'Customer Support', 'WooCommerce', 'WordPress', 'Bundle Tracking', 'Amazon Seller Central', 'eBay'] },
-    { title: 'Programming & Software', icon: 'code', items: ['C / C++', 'C# & WinForms', '.NET SDK 9/10', 'ADO.NET', 'Crystal Reports', '.NET Framework', 'MS Access', 'Laravel', 'Blade', 'Eloquent ORM', 'Artisan CLI', 'REST APIs', 'MVC', 'Vue', 'Vue Router', 'Options / Composition API', 'Pinia', 'Vite', 'HTML', 'CSS', 'JavaScript', 'Tailwind', 'Responsive Design', 'Custom Config', 'Bootstrap 4/5', 'jQuery', 'PHP & MySQL', 'phpMyAdmin', 'PDO', 'MySQL Workbench', 'SQL Server', 'Excel VBA Macros', 'Prompt Engineering', 'GitHub Copilot', 'ChatGPT', 'Opencode', 'OpenRouter', 'Qwen AI', 'Gemini', 'n8n'] },
-    { title: 'Web Development & SEO', icon: 'travel_explore', items: ['WordPress (Theme Customization, Elementor Page Builder, WooCommerce, LMS, Plugin Development, Payment Systems, ACF, Custom Post Types, REST API, Child Themes)', 'SEO Plugins'] },
-    { title: 'IT Support & System Admin', icon: 'dns', items: ['Windows / Linux OS Install', 'Hard / Soft Diagnostics', 'Remote IT Support', 'System Maintenance', 'User Training', 'Driver Setup', 'PC Assembly & Upgrade', 'Network Configuration', 'Barcode Printer Config', 'Automated Label Printing', 'Weight Scale Integration', 'NXP MCU RFID Terminals', 'MOXA Serial Cards'] },
+    { title: 'E-Commerce & Marketplaces', icon: 'shopping_cart', items: ['Product Listing', 'Order / Shipping Handling', 'Customer Support', 'Bundle Tracking', 'Amazon Seller Central', 'eBay', 'WooCommerce', 'WordPress'] },
+    { title: 'C / C++ & .NET Stack', icon: 'code', items: ['C / C++', 'C# & WinForms', '.NET SDK 9/10', 'ADO.NET', 'Crystal Reports', '.NET Framework', 'MS Access'] },
+    { title: 'PHP & Laravel Stack', icon: 'code', items: ['Laravel', 'Blade Templates', 'Eloquent ORM', 'Artisan CLI', 'REST APIs', 'MVC Architecture', 'PHP & MySQL', 'PDO'] },
+    { title: 'Frontend Stack', icon: 'code', items: ['Vue 3 (Options / Composition API)', 'Vue Router', 'Pinia', 'Vite', 'HTML / CSS / JavaScript', 'Tailwind / Bootstrap 4/5', 'jQuery', 'Responsive Design'] },
+    { title: 'Databases & SQL', icon: 'table_chart', items: ['MySQL / phpMyAdmin', 'MySQL Workbench', 'SQL Server', 'MS Access', 'Excel VBA Macros'] },
+    { title: 'AI & Automation Tools', icon: 'smart_toy', items: ['Prompt Engineering', 'GitHub Copilot', 'ChatGPT', 'Opencode / OpenRouter', 'Qwen AI / Gemini', 'n8n Workflow Automation'] },
+    { title: 'Web Dev & CMS', icon: 'travel_explore', items: ['WordPress (Theme Customization, Elementor, WooCommerce, LMS, Plugin Dev, Payment Systems, ACF, Custom Post Types, REST API, Child Themes)', 'SEO Plugins'] },
+    { title: 'IT Support & System Admin', icon: 'dns', items: ['Windows / Linux OS Install', 'Hard / Soft Diagnostics', 'Remote IT Support', 'System Maintenance', 'User Training', 'Driver Setup', 'PC Assembly & Upgrade'] },
+    { title: 'System Integration & Hardware', icon: 'settings_ethernet', items: ['Barcode Printer Configuration', 'Automated Label Printing', 'Weight Scale Integration', 'NXP MCU RFID Terminals', 'MOXA Serial Cards', 'Network Configuration'] },
     { title: 'Email & Communication', icon: 'forward_to_inbox', items: ['Corporate Email Setup', 'Bulk Mailing Tools', 'Email Automation', 'Face-to-Face Communication', 'Social Media Management'] },
-    { title: 'Networking & Security', icon: 'lan', items: ['IP Config & Subnetting', 'LAN / Router Setup', 'File / Printer Sharing', 'Firewall', 'Antivirus', 'IP Camera Installation', 'Network Cabling', 'RS-485 Cabling'] }
+    { title: 'Networking & Security', icon: 'lan', items: ['IP Config & Subnetting', 'LAN / Router Setup', 'File / Printer Sharing', 'Firewall & Antivirus', 'IP Camera Installation', 'Network Cabling', 'RS-485 Cabling'] }
   ],
   experience: [
     {
@@ -205,7 +209,7 @@ const HomeView = {
         Dedicated to automating workflows, reducing production costs, and modernizing digital infrastructure.
       </p>
       <div class="flex flex-wrap gap-3 mb-10">
-        <router-link to="/contact" class="btn-shimmer inline-flex items-center gap-2 px-6 py-3 gradient-bg text-white font-semibold rounded-xl shadow-lg hover:opacity-90 transition-all duration-300" style="box-shadow:0 4px 15px rgba(14,165,233,0.3)">
+        <router-link to="/contact" class="btn-shimmer inline-flex items-center gap-2 px-6 py-3 gradient-bg text-white font-semibold rounded-xl shadow-lg hover:opacity-90 transition-all duration-300" style="box-shadow:0 4px 15px rgba(8,145,178,0.3)">
           <i class="material-icons text-lg">send</i> Contact Me
         </router-link>
         <router-link to="/projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:border-primary" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
@@ -215,7 +219,7 @@ const HomeView = {
 
       <!-- Highlights -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 ">
-        <router-link v-for="(h,i) in highlights" :key="i" :to="h.link" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl section-reveal" :style="{transitionDelay: (i * 0.1) + 's',textDecoration:'none',display:'flex'}">
+        <router-link v-for="(h,i) in highlights" :key="i" :to="h.link" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex">
           <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 gradient-bg" :style="{animation:'float 3s ease-in-out infinite',animationDelay: (i * 0.3) + 's'}">
             <i class="material-icons text-white" style="font-size:20px">{{ h.icon }}</i>
           </div>
@@ -298,41 +302,39 @@ const AboutView = {
         <div class="lg:col-span-2 space-y-5">
 
           <!-- Photo & Identity -->
-          <div class="card-glass text-center section-reveal">
-            <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
+          <div class="card-glass text-center">
+            <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(8,145,178,0.3)">
               <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
             <h3 class="text-xl font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
             <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
             <p class="text-lg mt-1" style="color:var(--text-muted)">{{ DATA.personal.title }}</p>
             <div class="flex justify-center gap-2 mt-4">
-              <a :href="'mailto:' + DATA.personal.email" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(14,165,233,0.08);color:var(--primary)">
+              <a :href="'mailto:' + DATA.personal.email" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(8,145,178,0.08);color:var(--primary)">
                 <i class="material-icons" style="font-size:18px">email</i>
               </a>
-              <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(14,165,233,0.08);color:var(--primary)">
+              <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(8,145,178,0.08);color:var(--primary)">
                 <i class="material-icons" style="font-size:18px">link</i>
               </a>
-              <a :href="DATA.personal.website" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(14,165,233,0.08);color:var(--primary)">
+              <a :href="DATA.personal.website" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(8,145,178,0.08);color:var(--primary)">
                 <i class="material-icons" style="font-size:18px">language</i>
               </a>
             </div>
           </div>
 
           <!-- Personal Details -->
-          <div class="card-glass section-reveal">
+          <div class="card-glass">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i> Personal Details</h4>
             <div class="space-y-2 text-lg">
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Date of Birth</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.dob }}</span></div>
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Blood Group</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.blood }}</span></div>
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Religion</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.religion }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Height</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.height }}</span></div>
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Father's Name</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.father }}</span></div>
-              <div class="flex justify-between py-1"><span style="color:var(--text-muted)">Mother's Name</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.mother }}</span></div>
             </div>
           </div>
 
           <!-- Languages -->
-          <div class="card-glass section-reveal">
+          <div class="card-glass">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i> Languages</h4>
             <div class="space-y-3">
               <div v-for="l in DATA.languages" :key="l.name">
@@ -343,7 +345,7 @@ const AboutView = {
           </div>
 
           <!-- Employment Details -->
-          <div class="card-glass section-reveal">
+          <div class="card-glass">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">work</i> Employment Details</h4>
             <div class="space-y-2 text-lg">
               <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
@@ -359,17 +361,17 @@ const AboutView = {
         <div class="lg:col-span-3 space-y-5">
 
           <!-- Objective -->
-          <div class="card-glass section-reveal p-6">
+          <div class="card-glass p-6">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">psychology</i> Career Objective</h3>
             <p class="leading-relaxed" style="color:var(--text)">{{ DATA.objective }}</p>
           </div>
 
           <!-- Professional Summary + Stats -->
-          <div class="card-glass section-reveal p-6">
+          <div class="card-glass p-6">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">assignment</i> Professional Summary</h3>
             <p class="leading-relaxed mb-5" style="color:var(--text)">{{ DATA.summary }}</p>
             <div class="grid grid-cols-3 gap-3">
-              <div v-for="s in DATA.stats" :key="s.label" class="text-center py-4 rounded-xl" style="background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.1)">
+              <div v-for="s in DATA.stats" :key="s.label" class="text-center py-4 rounded-xl" style="background:rgba(8,145,178,0.06);border:1px solid rgba(8,145,178,0.1)">
                 <div class="text-2xl font-extrabold gradient-text">{{ s.value }}</div>
                 <div class="text-md font-medium mt-1" style="color:var(--text-muted)">{{ s.label }}</div>
               </div>
@@ -377,10 +379,10 @@ const AboutView = {
           </div>
 
           <!-- Training & Certifications -->
-          <div class="card-glass section-reveal p-6">
+          <div class="card-glass p-6">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Training & Certifications</h3>
             <div class="space-y-3">
-              <div v-for="t in DATA.training" :key="t.title" class="flex items-start gap-3 p-3 rounded-xl" style="background:rgba(14,165,233,0.04);border:1px solid rgba(14,165,233,0.06)">
+              <div v-for="t in DATA.training" :key="t.title" class="flex items-start gap-3 p-3 rounded-xl" style="background:rgba(8,145,178,0.04);border:1px solid rgba(8,145,178,0.06)">
                 <i class="material-icons" style="color:var(--primary);font-size:20px">check_circle</i>
                 <div>
                   <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ t.title }}</h4>
@@ -391,10 +393,10 @@ const AboutView = {
           </div>
 
           <!-- Education -->
-          <div class="card-glass section-reveal p-6">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">school</i> Education</h3>
-            <div class="space-y-3">
-              <div v-for="e in DATA.education" :key="e.degree" class="flex items-start gap-3 p-3 rounded-xl" style="background:rgba(14,165,233,0.04);border:1px solid rgba(14,165,233,0.06)">
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">school</i> Education</h3>
+            <div v-for="e in DATA.education" :key="e.degree" class="card-glass p-5">
+              <div class="flex items-start gap-3">
                 <i class="material-icons" style="color:var(--primary);font-size:20px">book</i>
                 <div>
                   <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ e.degree }}</h4>
@@ -422,12 +424,12 @@ const SkillsView = {
       <span class="section-tag">Tech Stack Matrix</span>
       <h2 class="section-title">Technical & Creative Inventory</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div v-for="(skill,i) in DATA.skills" :key="i" class="card-glass section-reveal" :style="{ transitionDelay: (i * 0.08) + 's' }">
+        <div v-for="(skill,i) in DATA.skills" :key="i" class="card-glass">
           <h3 class="text-base font-bold mb-4 flex items-center gap-2" style="color:var(--text-heading)">
             <i class="material-icons text-lg" style="color:var(--primary)">{{ skill.icon }}</i> {{ skill.title }}
           </h3>
           <div class="flex flex-wrap">
-            <span v-for="(item,j) in skill.items" :key="j" class="skill-pill" :style="{transitionDelay: (j * 0.03) + 's'}">{{ item }}</span>
+            <span v-for="(item,j) in skill.items" :key="j" class="skill-pill">{{ item }}</span>
           </div>
         </div>
       </div>
@@ -447,7 +449,7 @@ const ExperienceView = {
       <span class="section-tag">Career Trajectory</span>
       <h2 class="section-title">Employment History</h2>
       <div class="timeline ">
-          <div v-for="(exp,i) in DATA.experience" :key="i" class="timeline-item section-reveal" :style="{ transitionDelay: (i * 0.08) + 's' }">
+          <div v-for="(exp,i) in DATA.experience" :key="i" class="timeline-item">
           <div class="timeline-dot"></div>
           <span class="timeline-date">{{ exp.period }}</span>
           <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ exp.title }}</h3>
@@ -476,7 +478,7 @@ const EducationView = {
       <span class="section-tag">Knowledge Base</span>
       <h2 class="section-title">Education & Certifications</h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <div class="card-glass section-reveal">
+        <div class="card-glass">
           <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">account_balance</i> Academic Background</h3>
           <div v-for="(edu,i) in DATA.education" :key="i" class="mb-4 pb-4 flex items-start gap-3" :style="i < DATA.education.length-1 ? 'border-bottom:1px solid var(--border)' : ''">
             <span class="text-lg mt-0.5" style="color:var(--primary)">•</span>
@@ -486,7 +488,7 @@ const EducationView = {
             </div>
           </div>
         </div>
-        <div class="card-glass section-reveal">
+        <div class="card-glass">
           <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Trainings & Courses</h3>
           <div v-for="(t,i) in DATA.training" :key="i" class="flex gap-3 mb-4">
             <span class="text-lg mt-0.5" style="color:var(--primary)">•</span>
@@ -538,7 +540,7 @@ const ProjectsView = {
       <h2 class="section-title">Key Projects & Recent Works</h2>
 
       <!-- Featured Project -->
-      <div v-if="DATA.featuredProject.title" class="card-glass-alt p-6 lg:p-8 mb-10 section-reveal">
+      <div v-if="DATA.featuredProject.title" class="card-glass-alt p-6 lg:p-8 mb-10">
         <span class="inline-block text-md font-bold px-3 py-1 rounded-full mb-4 gradient-bg text-white">🏆 Top Achievement</span>
         <h3 class="text-xl lg:text-2xl font-extrabold mb-4" style="color:var(--sidebar-heading)">{{ DATA.featuredProject.title }}</h3>
         <div v-if="DATA.featuredProject.images && DATA.featuredProject.images.length" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
@@ -567,7 +569,7 @@ const ProjectsView = {
       <!-- All Projects Grid -->
       <span class="section-tag">All Works</span>
       <h2 class="section-title">Projects & Client Works</h2>
-      <div class="flex flex-wrap gap-2 mb-6" v-if="allProjects.length">
+      <div class="sticky top-0 z-10 flex flex-wrap gap-2 mb-6 pt-4 pb-3 -mx-6 px-6" style="background:var(--bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)" v-if="allProjects.length">
         <button v-for="cat in [{key:'all',label:'All'}].concat(DATA.projectCategories.map(c=>({key:c.key,label:c.name})))" :key="cat.key"
           @click="setFilter(cat.key)"
           class="project-filter-btn" :class="{ active: activeFilter === cat.key }">
@@ -589,14 +591,15 @@ const ProjectsView = {
   >
     <div class="flex items-center justify-between mb-3">
       <span
-        class="text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1 bg-cyan-900/30 text-cyan-400"
+        class="text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1 bg-cyan-900/30 text-cyan-300"
       >
         <i class="material-icons text-xs">{{ project.categoryIcon }}</i>
         {{ project.categoryName }}
       </span>
       <span
         v-if="project.tech"
-        class="text-xs text-slate-400 ml-2"
+        class="text-xs ml-2"
+        style="color:var(--text-muted)"
       >
         {{ project.tech }}
       </span>
@@ -619,7 +622,8 @@ const ProjectsView = {
     </span>
 
     <p
-      class="text-sm mt-2 mb-4 leading-relaxed text-slate-400"
+      class="text-sm mt-2 mb-4 leading-relaxed"
+      style="color:var(--text)"
     >
       {{ project.description }}
     </p>
@@ -627,7 +631,7 @@ const ProjectsView = {
     <router-link
       v-if="project.id"
       :to="'/project/' + project.id"
-      class="text-sm font-semibold inline-flex items-center gap-1 self-start mt-auto text-cyan-400 hover:text-cyan-300 transition-colors"
+      class="btn-outline self-start mt-auto"
     >
       View Details
       <i class="material-icons text-xs">arrow_forward</i>
@@ -660,7 +664,7 @@ const AchievementsView = {
           <i class="material-icons">{{ cat.icon }}</i> {{ cat.title }}
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div v-for="(a,ai) in cat.items" :key="ai" class="achievement-card section-reveal" :style="{ borderLeftColor: cat.color, transitionDelay: ((ci * cat.items.length + ai) * 0.06) + 's' }">
+          <div v-for="(a,ai) in cat.items" :key="ai" class="achievement-card" :style="{ borderLeftColor: cat.color }">
             <p class="leading-relaxed" style="color:var(--text)">{{ a }}</p>
           </div>
         </div>
@@ -683,13 +687,13 @@ const ReferencesView = {
       <span class="section-tag">Endorsements</span>
       <h2 class="section-title">References</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-        <div v-for="(ref,i) in DATA.references" :key="i" class="ref-card flex items-start gap-4 section-reveal" :style="{ transitionDelay: (i * 0.08) + 's' }">
+        <div v-for="(ref,i) in DATA.references" :key="i" class="ref-card flex items-start gap-4">
           <div class="ref-avatar">{{ ref.name.charAt(0) }}</div>
           <div>
             <h4 class="font-bold text-md" style="color:var(--text-heading)">{{ ref.name }}</h4>
             <p class=" font-medium" style="color:var(--primary)">{{ ref.title }}</p>
             <p class="font-medium mb-2" style="color:var(--text-muted)">{{ ref.company }}</p>
-            <a :href="'tel:' + ref.phone" class="inline-flex items-center gap-1.5 text-md font-medium px-3 py-1 rounded-full transition" style="background:rgba(14,165,233,0.08);color:var(--primary)">
+            <a :href="'tel:' + ref.phone" class="inline-flex items-center gap-1.5 text-md font-medium px-3 py-1 rounded-full transition" style="background:rgba(8,145,178,0.08);color:var(--primary)">
               <i class="material-icons" style="font-size:12px;color:var(--primary)">call</i> {{ ref.phone }}
         </router-link>
           </div>
@@ -749,7 +753,7 @@ const ContactView = {
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <!-- Info -->
         <div class="lg:col-span-2 space-y-5">
-          <div class="card-glass section-reveal">
+          <div class="card-glass">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i>Contact Info</h3>
             <div class="space-y-3 text-lg">
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone1 }}</div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone2 }}</div></div></div>
@@ -760,7 +764,7 @@ const ContactView = {
             </div>
           </div>
 
-          <div class="card-glass section-reveal">
+          <div class="card-glass">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i>Languages</h3>
             <div class="space-y-3">
               <div v-for="(l,i) in DATA.languages" :key="i">
@@ -770,7 +774,7 @@ const ContactView = {
             </div>
           </div>
 
-          <div class="card-glass section-reveal">
+          <div class="card-glass">
             <h3 class="text-lg font-bold mb-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">info</i>Availability</h3>
             <div class="space-y-2 text-lg">
               <div class="flex justify-between"><span style="color:var(--text-muted)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
@@ -783,7 +787,7 @@ const ContactView = {
 
         <!-- Form -->
         <div class="lg:col-span-3">
-          <div class="card-glass section-reveal">
+          <div class="card-glass">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">send</i>Send a Message</h3>
             <form @submit.prevent="submitForm" class="space-y-4">
               <div>
@@ -844,8 +848,8 @@ const ProjectDetailView = {
   template: `
     <div v-if="project">
       <!-- Hero -->
-      <div class="section section-reveal" style="background:var(--sidebar-bg);color:var(--sidebar-text);border-radius:0 0 40px 40px;padding-bottom:60px">
-        <span class="section-tag" style="background:rgba(14,165,233,0.15);padding:4px 14px;border-radius:20px">TOP ACHIEVEMENT</span>
+      <div class="section" style="background:var(--sidebar-bg);color:var(--sidebar-text);border-radius:0 0 40px 40px;padding-bottom:60px">
+        <span class="section-tag" style="background:rgba(8,145,178,0.15);padding:4px 14px;border-radius:20px">TOP ACHIEVEMENT</span>
         <h1 class="section-title" style="color:var(--sidebar-heading);font-size:2.2rem;margin-top:12px">{{ project.title }}</h1>
         <p style="color:var(--sidebar-text);font-size:1.1rem;opacity:0.8">{{ project.subtitle }}</p>
         <div class="flex flex-wrap gap-5 mt-6" style="color:var(--sidebar-text)">
@@ -874,7 +878,7 @@ const ProjectDetailView = {
       <!-- Metrics -->
       <div style="padding:0 60px;margin-bottom:2rem">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div v-for="m in project.metrics" :key="m.label" class="card-glass text-center py-5 section-reveal">
+          <div v-for="m in project.metrics" :key="m.label" class="card-glass text-center py-5">
             <div class="text-3xl font-extrabold gradient-text">{{ m.value }}</div>
             <div class="text-md font-medium mt-1" style="color:var(--text-muted)">{{ m.label }}</div>
           </div>
@@ -886,12 +890,12 @@ const ProjectDetailView = {
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div class="lg:col-span-2 space-y-6">
             <!-- Abstract -->
-            <div class="card-glass section-reveal">
+            <div class="card-glass">
               <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">System Abstract & Objective</h2>
               <p style="color:var(--text)">{{ project.abstract }}</p>
             </div>
             <!-- Flow -->
-            <div class="card-glass section-reveal">
+            <div class="card-glass">
               <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">Precision Engineering & Program Flow</h2>
               <div v-for="(step,i) in project.flow" :key="i" class="flex gap-3 mb-4">
                 <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white flex-shrink-0">
@@ -904,7 +908,7 @@ const ProjectDetailView = {
               </div>
             </div>
             <!-- Details -->
-            <div class="card-glass section-reveal">
+            <div class="card-glass">
               <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">Key Achievements</h2>
               <ul class="space-y-2">
                 <li v-for="(d,i) in project.details" :key="i" class="flex items-start gap-2 text-md">
@@ -916,20 +920,20 @@ const ProjectDetailView = {
           </div>
           <!-- Sidebar -->
           <div class="space-y-4">
-            <div class="card-glass section-reveal">
+            <div class="card-glass">
               <span class="text-md font-bold uppercase tracking-wider" style="color:var(--primary)">Tech Stack</span>
               <div class="flex flex-wrap gap-2 mt-3">
                 <span v-for="t in project.tech" :key="t" class="skill-pill">{{ t }}</span>
               </div>
             </div>
-            <div class="card-glass section-reveal" style="background:var(--sidebar-bg);color:var(--sidebar-text)">
+            <div class="card-glass" style="background:var(--sidebar-bg);color:var(--sidebar-text)">
               <h4 class="font-bold text-lg mb-3" style="color:var(--sidebar-heading)">Need Something Similar?</h4>
               <p class="text-md mb-4">I build specialized industrial digital solutions, ERP integrations, and automation tools.</p>
               <router-link to="/contact" class="inline-block w-full py-2.5 text-center text-lg font-semibold rounded-xl gradient-bg text-white hover:opacity-90 transition">
                 Hire Me for This Project
               </router-link>
             </div>
-            <router-link to="/projects" class="inline-flex items-center gap-2 text-lg font-medium hover:underline section-reveal" style="color:var(--primary)">
+            <router-link to="/projects" class="inline-flex items-center gap-2 text-lg font-medium hover:underline" style="color:var(--primary)">
               <i class="material-icons" style="font-size:16px">arrow_back</i> Back to Projects
             </router-link>
           </div>
@@ -1001,13 +1005,11 @@ const App = {
       document.documentElement.classList.add('dark');
     }
     window.addEventListener('scroll', this.handleScroll);
-    this.observeRevealElements();
     this.observeSkillBars();
   },
   watch: {
     '$route'() {
       this.$nextTick(() => {
-        this.observeRevealElements();
         this.observeSkillBars();
       });
     }
@@ -1026,23 +1028,6 @@ const App = {
     },
     getInitials(name) {
       return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-    },
-    observeRevealElements() {
-      if (!this._revealObserver) {
-        this._revealObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
-              this._revealObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-      }
-      setTimeout(() => {
-        document.querySelectorAll('.section-reveal:not(.revealed)').forEach(el => {
-          this._revealObserver.observe(el);
-        });
-      }, 300);
     },
     observeSkillBars() {
       document.querySelectorAll('.skill-bar-track').forEach(el => {
@@ -1088,7 +1073,7 @@ const App = {
       <transition name="offcanvas">
         <aside v-if="mobileMenuOpen" class="fixed top-0 right-0 h-full w-72 z-50 overflow-y-auto" style="background:var(--sidebar-bg)">
           <div class="p-6 text-center">
-            <div class="mx-auto mb-4  rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
+            <div class="mx-auto mb-4  rounded-2xl overflow-hidden" style="border:3px solid rgba(8,145,178,0.3)">
               <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
             <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
@@ -1106,10 +1091,8 @@ const App = {
           <div class="px-4 py-3 space-y-0.5">
             <router-link v-for="item in menuItems" :key="item.path"
               @click="closeMobile" :to="item.path"
-              class="flex items-center gap-3 px-3 py-2.5 rounded-lg  font-medium transition"
-              :style="$route.path === item.path ?
-                { background: 'rgba(14,165,233,0.12)', color: 'var(--primary-light)' } :
-                { color: 'var(--sidebar-text)' }">
+              class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg  font-medium transition"
+              :class="{ 'nav-link-active': $route.path === item.path }">
               <i class="material-icons w-4 text-center" style="font-size:18px">{{ item.icon }}</i>
               <span>{{ item.label }}</span>
             </router-link>
@@ -1118,12 +1101,13 @@ const App = {
           <div class="px-6 py-4 space-y-3">
             <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
               class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
-              style="box-shadow:0 4px 12px rgba(14,165,233,0.25)">
+              style="box-shadow:0 4px 12px rgba(8,145,178,0.25)">
               <i class="material-icons">download</i> Download CV
             </a>
             <div class="flex items-center justify-between">
               <span class=" flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
-              <button @click="toggleDark" class="theme-toggle" :style="{ background: 'transparent', borderColor: 'var(--sidebar-divider)' }">
+            <span class="text-lg flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
+            <button @click="toggleDark" class="theme-toggle" :style="{ background: 'transparent', borderColor: 'var(--sidebar-divider)' }">
                 <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
               </button>
             </div>
@@ -1133,49 +1117,48 @@ const App = {
 
       <!-- Sidebar -->
       <aside class="sidebar">
-        <div class="p-6 text-center">
-            <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
-              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
-            </div>
-          <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
-          <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
-          <p class="text-lg mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
+        <div class="sidebar-scroll">
+          <div class="p-6 text-center">
+              <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(8,145,178,0.3)">
+                <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
+              </div>
+            <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
+            <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
+            <p class="text-lg mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
+          </div>
+
+          <div class="px-6 space-y-3 mb-4">
+            <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div>{{ DATA.personal.phone1 }}</div><div>{{ DATA.personal.phone2 }}</div></div></div>
+            <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
+            <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">location_on</i><span>{{ DATA.personal.location }}</span></div>
+            
+          </div>
+
+          <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
+
+          <!-- Sidebar Nav -->
+          <div class="px-4 py-3 space-y-0.5">
+            <router-link v-for="item in menuItems" :key="item.path"
+              :to="item.path"
+              class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg  font-medium transition"
+              :class="{ 'nav-link-active': $route.path === item.path }"
+              @click="closeMobile">
+              <i class="material-icons w-4 text-center" style="font-size:18px">{{ item.icon }}</i>
+              <span>{{ item.label }}</span>
+            </router-link>
+          </div>
+
+          <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
         </div>
 
-        <div class="px-6 space-y-3 mb-4">
-          <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div>{{ DATA.personal.phone1 }}</div><div>{{ DATA.personal.phone2 }}</div></div></div>
-          <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
-          <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">location_on</i><span>{{ DATA.personal.location }}</span></div>
-          
-        </div>
-
-        <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
-
-        <!-- Sidebar Nav -->
-        <div class="px-4 py-3 space-y-0.5">
-          <router-link v-for="item in menuItems" :key="item.path"
-            :to="item.path"
-            class="flex items-center gap-3 px-3 py-2.5 rounded-lg  font-medium transition"
-            :style="$route.path === item.path ?
-              { background: 'rgba(14,165,233,0.12)', color: 'var(--primary-light)' } :
-              { color: 'var(--sidebar-text)' }"
-            @click="closeMobile">
-            <i class="material-icons w-4 text-center" style="font-size:18px">{{ item.icon }}</i>
-            <span>{{ item.label }}</span>
-          </router-link>
-        </div>
-
-        <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
-
-        <!-- Download + Theme -->
-        <div class="px-6 py-4 space-y-3">
+        <!-- Download + Theme (fixed at bottom) -->
+        <div class="px-6 py-4 space-y-3" style="border-top:1px solid var(--sidebar-divider)">
           <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
             class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg hover:opacity-90 transition-all duration-300"
-            style="box-shadow:0 4px 12px rgba(14,165,233,0.25)">
+            style="box-shadow:0 4px 12px rgba(8,145,178,0.25)">
             <i class="material-icons">download</i> Download CV
           </a>
           <div class="flex items-center justify-between">
-            <span class="text-lg flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
             <button @click="toggleDark" class="theme-toggle" :style="{ background: 'transparent', borderColor: 'var(--sidebar-divider)' }">
               <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
             </button>
@@ -1205,7 +1188,7 @@ const App = {
       </button>
 
       <!-- Scroll to top -->
-      <button @click="scrollToTop" class="scroll-top gradient-bg" :class="{ visible: showScrollTop }" :style="{boxShadow: '0 4px 15px rgba(14,165,233,0.4)'}">
+      <button @click="scrollToTop" class="scroll-top gradient-bg" :class="{ visible: showScrollTop }" :style="{boxShadow: '0 4px 15px rgba(8,145,178,0.4)'}">
         <i class="material-icons" style="transition:transform 0.3s ease">arrow_upward</i>
       </button>
     </div>
