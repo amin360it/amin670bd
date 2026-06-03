@@ -37,19 +37,22 @@ const DATA = Vue.reactive({
     { value: '100+', label: 'Users Managed' }
   ],
   skills: [
-    { title: 'IT & System Admin', icon: 'dns', items: ['Windows/Linux Install', 'Hard/Soft Diagnostics', 'Remote IT Support', 'System Maintenance', 'User Training', 'Driver Setup', 'Network Config'] },
-    { title: 'ERP & Data Operations', icon: 'storage', items: ['GPRO ERP Support', 'RFID Tag Gen', 'Barcode Systems', 'Inventory Mgmt', 'Payroll / Billing', 'POS Systems', 'Data Entry'] },
-    { title: 'Dev & Web Stack', icon: 'code', items: ['PHP / SQL', 'C#.NET', 'WordPress / Elementor', 'WooCommerce', 'LMS / SEO Plugins', 'HTML/CSS/JS', 'Bootstrap 4/5', 'jQuery', 'C/C++'] },
-    { title: 'Networking & Security', icon: 'lan', items: ['IP Config', 'LAN/Router Setup', 'Printer/File Sharing', 'Firewall', 'Antivirus'] },
-    { title: 'Design & Creative', icon: 'draw', items: ['Photoshop', 'Illustrator', 'Canva', 'Filmora (Video)', 'Infographics', 'Posters/Labels'] },
-    { title: 'Office & Admin', icon: 'mail', items: ['Excel Automation', 'Google Workspace', 'Report Generation', 'PDF Editing', 'Email Automation', 'Social Media Mgmt'] }
+    { title: 'Office & Reporting', icon: 'description', items: ['MS Office (Word, Excel, PowerPoint, Outlook)', 'Google Workspace', 'Excel Automation', 'Report Generation', 'PDF Editing'] },
+    { title: 'Design, Graphics & Video', icon: 'palette', items: ['Photoshop', 'Illustrator', 'Canva', 'Filmora (Video)', 'Infographics', 'Posters / Labels', 'Invoices', 'Logos', 'AI Image Manipulation & Editing', 'AI Audio & Multimedia'] },
+    { title: 'ERP & Business Systems', icon: 'storage', items: ['GPRO ERP (All Modules)', 'Inventory Management', 'Payroll / Billing', 'Data Entry & Verification', 'POS Systems', 'File Handling', 'ERP Install & Support', 'Garments Systems', 'RFID Tag Generation'] },
+    { title: 'E-Commerce Management', icon: 'shopping_cart', items: ['Product Listing', 'Order / Shipping Handling', 'Customer Support', 'WooCommerce', 'WordPress', 'Bundle Tracking', 'Amazon Seller Central', 'eBay'] },
+    { title: 'Programming & Software', icon: 'code', items: ['C / C++', 'C# & WinForms', '.NET SDK 9/10', 'ADO.NET', 'Crystal Reports', '.NET Framework', 'MS Access', 'Laravel', 'Blade', 'Eloquent ORM', 'Artisan CLI', 'REST APIs', 'MVC', 'Vue', 'Vue Router', 'Options / Composition API', 'Pinia', 'Vite', 'HTML', 'CSS', 'JavaScript', 'Tailwind', 'Responsive Design', 'Custom Config', 'Bootstrap 4/5', 'jQuery', 'PHP & MySQL', 'phpMyAdmin', 'PDO', 'MySQL Workbench', 'SQL Server', 'Excel VBA Macros', 'Prompt Engineering', 'GitHub Copilot', 'ChatGPT', 'Opencode', 'OpenRouter', 'Qwen AI', 'Gemini', 'n8n'] },
+    { title: 'Web Development & SEO', icon: 'travel_explore', items: ['WordPress (Theme Customization, Elementor Page Builder, WooCommerce, LMS, Plugin Development, Payment Systems, ACF, Custom Post Types, REST API, Child Themes)', 'SEO Plugins'] },
+    { title: 'IT Support & System Admin', icon: 'dns', items: ['Windows / Linux OS Install', 'Hard / Soft Diagnostics', 'Remote IT Support', 'System Maintenance', 'User Training', 'Driver Setup', 'PC Assembly & Upgrade', 'Network Configuration', 'Barcode Printer Config', 'Automated Label Printing', 'Weight Scale Integration', 'NXP MCU RFID Terminals', 'MOXA Serial Cards'] },
+    { title: 'Email & Communication', icon: 'forward_to_inbox', items: ['Corporate Email Setup', 'Bulk Mailing Tools', 'Email Automation', 'Face-to-Face Communication', 'Social Media Management'] },
+    { title: 'Networking & Security', icon: 'lan', items: ['IP Config & Subnetting', 'LAN / Router Setup', 'File / Printer Sharing', 'Firewall', 'Antivirus', 'IP Camera Installation', 'Network Cabling', 'RS-485 Cabling'] }
   ],
   experience: [
     {
       title: 'Sr. Officer (In-Charge, Barcode)', company: 'Dhaka Thai ALCOMAXX PLC', location: 'Ashuliya, Savar, Dhaka', period: 'Sep 2025 - Present', highlights: [
         'Lead barcode operations, product labeling, bundling, and production coordination across packing lines',
         'Developed and maintained C# desktop applications for weight scale integration with LightHouse ERP',
-        'Oversaw troubleshooting of utility software, printer systems, and IT infrastructure for production floor',
+        'Troubleshot utility software, barcode printers, and IT systems across packing lines',
         'Improved workflow efficiency and reduced downtime through barcode system optimization',
         'Designed and implemented automated label printing systems increasing daily output from 2,500 to 8,000+ labels',
         'Coordinated with production and quality teams to ensure accurate product tracking and traceability'
@@ -58,10 +61,13 @@ const DATA = Vue.reactive({
     {
       title: 'Officer - IT (G-Pro)', company: 'Keya Cosmetic Ltd.', location: 'Gazipur, Dhaka', period: 'May 2022 - Jul 2025', highlights: [
         'Administered GPRO ERP modules including cutting, store, production, payroll, billing, and inventory management',
-        'Configured, maintained, and troubleshot 50+ PCs, printers, and network infrastructure across the facility',
-        'Managed RFID and barcode ERP systems for RMG factory operations ensuring real-time inventory accuracy',
+        'Configured IP settings and network cabling for 30+ production floor workstations',
+        'Set up and maintained printer connectivity across the facility',
+        'Installed and configured IP cameras for production floor surveillance',
+        'Managed 30+ production lines each with 10+ NXP MCU-based RFID terminals as IoT checkpoints',
+        'Configured and maintained MOXA multiport serial cards over RS-485 telephone-type cabling to collect data from RFID terminals into GPRO ERP',
         'Provided IT training and support to 30+ end-users on ERP modules and software tools',
-        'Monitored and maintained server health, backup systems, and network security protocols',
+        'Assisted with routine server backups and basic system maintenance',
         'Automated routine data entry and reporting tasks using Excel macros and ERP export tools'
       ]
     },
@@ -122,14 +128,35 @@ const DATA = Vue.reactive({
   projectDetails: {},
   projectCategories: [],
   projectsLoaded: false,
-  achievements: [
-    'Developed a desktop app for YAOHUA digital scale, reducing packing production time by 60% and tripling bundle QR label output from 2.5K to 8K+ daily.',
-    'Developed 15+ responsive websites and e-commerce platforms using WordPress + Elementor.',
-    'Administered and trained 30+ users on ERP modules including HR, Payroll, Store, Inventory.',
-    'Delivered IT training to 80+ students on MS Office and system troubleshooting during session.',
-    'Managed 200+ SEO-optimized product listings for Amazon, eBay, and WooCommerce.',
-    'Res-Q - Champion, BPI College Projects Fair 2017',
-    'BPI Virtual Institute - Champion, ICT Fair 2017, Bogura District & Rajshahi Division Level'
+  achievementCategories: [
+    {
+      title: 'Technical Impact',
+      icon: 'rocket_launch',
+      color: 'var(--primary)',
+      items: [
+        'Developed a desktop app for YAOHUA digital scale, reducing packing production time by 60% and tripling bundle QR label output from 2.5K to 8K+ daily.',
+        'Developed 15+ responsive websites and e-commerce platforms using WordPress + Elementor.',
+        'Managed 200+ SEO-optimized product listings for Amazon, eBay, and WooCommerce.'
+      ]
+    },
+    {
+      title: 'Training & Leadership',
+      icon: 'school',
+      color: 'var(--accent-emerald)',
+      items: [
+        'Administered and trained 30+ users on ERP modules including HR, Payroll, Store, Inventory.',
+        'Delivered IT training to 80+ students on MS Office and system troubleshooting during session.'
+      ]
+    },
+    {
+      title: 'Awards & Recognition',
+      icon: 'emoji_events',
+      color: 'var(--accent-amber)',
+      items: [
+        'Res-Q — Champion, BPI College Projects Fair 2017',
+        'BPI Virtual Institute — Champion, ICT Fair 2017, Bogura District & Rajshahi Division Level'
+      ]
+    }
   ],
   references: [
     { name: 'Md. Mamunur Rashid', title: 'Manager (IT, G-Pro)', company: 'Keya Knit Composite Ltd.', phone: '01906-472201' },
@@ -229,7 +256,7 @@ const HomeView = {
     };
   },
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
     this.startTypewriter();
   },
   beforeUnmount() {
@@ -275,7 +302,7 @@ const AboutView = {
             <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
               <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
-            <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
+            <h3 class="text-xl font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
             <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
             <p class="text-lg mt-1" style="color:var(--text-muted)">{{ DATA.personal.title }}</p>
             <div class="flex justify-center gap-2 mt-4">
@@ -383,7 +410,7 @@ const AboutView = {
   `,
   data() { return { DATA }; },
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
   }
 };
 
@@ -408,7 +435,7 @@ const SkillsView = {
   `,
   data() { return { DATA }; },
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
   }
 };
 
@@ -437,7 +464,7 @@ const ExperienceView = {
   `,
   data() { return { DATA }; },
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
   }
 };
 
@@ -451,16 +478,18 @@ const EducationView = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
         <div class="card-glass section-reveal">
           <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">account_balance</i> Academic Background</h3>
-          <div v-for="(edu,i) in DATA.education" :key="i" class="mb-4 pb-4" :style="i < DATA.education.length-1 ? 'border-bottom:1px solid var(--border)' : ''">
-            <h4 class="font-bold text-lg" style="color:var(--text-heading)">{{ edu.degree }}</h4>
-            <p class="text-md" style="color:var(--text-muted)">{{ edu.school }} ({{ edu.year }})</p>
-            <span class="inline-block mt-1 text-md font-semibold px-2 py-0.5 rounded" style="background:rgba(14,165,233,0.1);color:var(--primary)">{{ edu.grade }}</span>
+          <div v-for="(edu,i) in DATA.education" :key="i" class="mb-4 pb-4 flex items-start gap-3" :style="i < DATA.education.length-1 ? 'border-bottom:1px solid var(--border)' : ''">
+            <span class="text-lg mt-0.5" style="color:var(--primary)">•</span>
+            <div>
+              <h4 class="font-bold text-lg" style="color:var(--text-heading)">{{ edu.degree }}</h4>
+              <p class="text-md" style="color:var(--text-muted)">{{ edu.school }} | {{ edu.grade }} | {{ edu.year }}</p>
+            </div>
           </div>
         </div>
         <div class="card-glass section-reveal">
-          <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Professional Training</h3>
+          <h3 class="text-base font-bold mb-5 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Trainings & Courses</h3>
           <div v-for="(t,i) in DATA.training" :key="i" class="flex gap-3 mb-4">
-            <div class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-white text-md font-bold flex-shrink-0 mt-0.5">{{ i+1 }}</div>
+            <span class="text-lg mt-0.5" style="color:var(--primary)">•</span>
             <div>
               <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ t.title }}</h4>
               <p class="text-md" style="color:var(--text-muted)">{{ t.institution }} | {{ t.year }} | {{ t.duration }}</p>
@@ -472,7 +501,7 @@ const EducationView = {
   `,
   data() { return { DATA }; },
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
   }
 };
 
@@ -612,7 +641,7 @@ const ProjectsView = {
     </div>
   `,
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
   }
 };
 
@@ -626,21 +655,20 @@ const AchievementsView = {
     <div class="section">
       <span class="section-tag">Recognitions</span>
       <h2 class="section-title">Professional Achievements</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div v-for="(a,i) in DATA.achievements" :key="i" class="achievement-card flex gap-3 section-reveal" :style="{ transitionDelay: (i * 0.08) + 's' }">
-          <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-bold text-lg flex-shrink-0">{{ i+1 }}</div>
-          <div>
-            <p class="text-lg leading-relaxed" style="color:var(--text)">{{ a }}</p>
-            <span v-if="a.includes('Champion')" class="inline-block mt-2 text-md font-bold px-2 py-0.5 rounded" style="background:rgba(245,158,11,0.15);color:#f59e0b">
-              <i class="material-icons" style="font-size:14px">emoji_events</i> Award
-            </span>
+      <div v-for="(cat,ci) in DATA.achievementCategories" :key="ci" class="mb-8 last:mb-0">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2" :style="{ color: cat.color }">
+          <i class="material-icons">{{ cat.icon }}</i> {{ cat.title }}
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div v-for="(a,ai) in cat.items" :key="ai" class="achievement-card section-reveal" :style="{ borderLeftColor: cat.color, transitionDelay: ((ci * cat.items.length + ai) * 0.06) + 's' }">
+            <p class="leading-relaxed" style="color:var(--text)">{{ a }}</p>
           </div>
         </div>
       </div>
     </div>
   `,
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
   }
 };
 
@@ -670,7 +698,7 @@ const ReferencesView = {
     </div>
   `,
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
   }
 };
 
@@ -780,7 +808,7 @@ const ContactView = {
     </div>
   `,
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
   }
 };
 
@@ -914,7 +942,7 @@ const ProjectDetailView = {
     </div>
   `,
   mounted() {
-    $(this.$el).hide().fadeIn(600);
+    // fade handled by Vue transition
   }
 };
 
@@ -957,6 +985,33 @@ const App = {
   computed: {
     menuItems() { return this.DATA.menuItems; }
   },
+  mounted() {
+    if (typeof PROJECTS_DATA !== 'undefined') {
+      DATA.featuredProject = PROJECTS_DATA.featuredProject;
+      DATA.projectCategories = PROJECTS_DATA.projectCategories;
+      DATA.projectDetails = PROJECTS_DATA.projectDetails;
+      DATA.projectsLoaded = true;
+    } else {
+      DATA.projectsLoaded = true;
+    }
+    const saved = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'true' || (saved === null && prefersDark)) {
+      this.darkMode = true;
+      document.documentElement.classList.add('dark');
+    }
+    window.addEventListener('scroll', this.handleScroll);
+    this.observeRevealElements();
+    this.observeSkillBars();
+  },
+  watch: {
+    '$route'() {
+      this.$nextTick(() => {
+        this.observeRevealElements();
+        this.observeSkillBars();
+      });
+    }
+  },
   methods: {
     toggleDark() {
       this.darkMode = !this.darkMode;
@@ -971,54 +1026,43 @@ const App = {
     },
     getInitials(name) {
       return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-    }
-  },
-  mounted() {
-    // Load project data from global PROJECTS_DATA (loaded via script tag)
-    if (typeof PROJECTS_DATA !== 'undefined') {
-      DATA.featuredProject = PROJECTS_DATA.featuredProject;
-      DATA.projectCategories = PROJECTS_DATA.projectCategories;
-      DATA.projectDetails = PROJECTS_DATA.projectDetails;
-      DATA.projectsLoaded = true;
-    } else {
-      DATA.projectsLoaded = true;
-    }
-
-    // Restore dark mode preference (saved > system)
-    const saved = localStorage.getItem('darkMode');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (saved === 'true' || (saved === null && prefersDark)) {
-      this.darkMode = true;
-      document.documentElement.classList.add('dark');
-    }
-    window.addEventListener('scroll', this.handleScroll);
-
-    // Scroll reveal observer
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    setTimeout(() => {
-      document.querySelectorAll('.section-reveal').forEach(el => revealObserver.observe(el));
-    }, 300);
-
-    // Animate skill bars on contact page language bars
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          $(entry.target).find('.skill-bar-fill').each(function () {
-            const w = this.style.width;
-            $(this).css('width', '0');
-            setTimeout(() => $(this).css('width', w), 100);
+    },
+    observeRevealElements() {
+      if (!this._revealObserver) {
+        this._revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              this._revealObserver.unobserve(entry.target);
+            }
           });
-        }
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      }
+      setTimeout(() => {
+        document.querySelectorAll('.section-reveal:not(.revealed)').forEach(el => {
+          this._revealObserver.observe(el);
+        });
+      }, 300);
+    },
+    observeSkillBars() {
+      document.querySelectorAll('.skill-bar-track').forEach(el => {
+        if (el._skillBarObserved) return;
+        el._skillBarObserved = true;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              $(entry.target).find('.skill-bar-fill').each(function () {
+                const w = this.style.width;
+                $(this).css('width', '0');
+                setTimeout(() => $(this).css('width', w), 100);
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(el);
       });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('.skill-bar-track').forEach(el => observer.observe(el));
+    }
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -1047,7 +1091,7 @@ const App = {
             <div class="mx-auto mb-4  rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
               <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
-            <h2 class="text-base font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
+            <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
             <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
              <p class="text-md mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
           </div>
@@ -1093,7 +1137,7 @@ const App = {
             <div class="mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(14,165,233,0.3)">
               <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
-          <h2 class="text-lg font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
+          <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
           <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
           <p class="text-lg mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
         </div>
@@ -1141,11 +1185,7 @@ const App = {
 
       <!-- Main Content -->
       <main class="main-content">
-        <router-view :key="$route.fullPath" v-slot="{ Component }">
-          <transition name="fade" mode="out-in">
-            <component :is="Component" />
-          </transition>
-        </router-view>
+        <router-view />
         <div class="footer">
           <p>&copy; 2026 Md. Asaduzzaman (Aminur). All rights reserved.</p>
         </div>
