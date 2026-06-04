@@ -22,9 +22,9 @@ const DATA = Vue.reactive({
     available: 'Immediately'
   },
   languages: [
-    { name: '🇧🇩 Bangla', level: 'Native', pct: 100 },
-    { name: '🇬🇧 English', level: 'Fluent', pct: 85 },
-    { name: '🇮🇳 Hindi', level: 'Intermediate', pct: 60 }
+    { name: 'Bangla', level: 'Native', pct: 100 },
+    { name: 'English', level: 'Fluent', pct: 85 },
+    { name: 'Hindi', level: 'Intermediate', pct: 60 }
   ],
   objective: 'I offer a unique blend of creative, technical, and support-based services that span across IT support, ERP operations, digital systems, and administrative workflows. My goal is to contribute to a company\'s IT infrastructure with hands-on experience in system maintenance, user support, and process improvement.',
   summary: 'Versatile IT & Digital Operations Specialist with 7.5+ years of total experience (including 3.5+ years formal), supporting businesses through system administration, ERP operations, and technical support. Skilled in troubleshooting, hardware/software setup, ERP data entry, and user support. Adept at managing in-house workflows, enhancing digital visibility, and ensuring smooth technical and administrative operations.',
@@ -118,14 +118,45 @@ const DATA = Vue.reactive({
     }
   ],
   education: [
-    { degree: 'Diploma in Computer Engineering', school: 'Bogura Polytechnic Institute', year: '2018', grade: 'CGPA: 2.92 / 4.00' },
-    { degree: 'S.S.C. (Vocational, ICT)', school: 'Naogaon Technical School & College', year: '2013', grade: 'GPA: 4.88 / 5.00' }
+    {
+      degree: 'Diploma in Computer Engineering',
+      school: 'Bogura Polytechnic Institute',
+      year: '2018',
+      grade: 'CGPA: 2.92 / 4.00',
+      gradeValue: 2.92,
+      gradeMax: 4.00,
+      location: 'Bogura',
+      icon: 'computer',
+      skills: ['C Programming', 'Python', 'Java', 'Web Development', 'Database Management', 'Computer Networking'],
+      achievements: [
+        { text: 'Res-Q & Remote Control — IoT-based rescue car for multi-sector demo missions | Champion at BPI Innovation & Projects Fair 2017', award: true },
+        { text: 'B.P.I. Virtual Institute — Awarded at Zilla ICT Project Fair 2017', award: true },
+        { text: 'Easy C IDE — Lightweight C compiler IDE with auto-save feature', award: false },
+        { text: 'B.P.I. Innovation Lab — Hardware, software & network setup at BPI', award: false }
+      ]
+    },
+    {
+      degree: 'S.S.C. (Vocational, ICT)',
+      school: 'Naogaon Technical School & College',
+      year: '2013',
+      grade: 'GPA: 4.88 / 5.00',
+      gradeValue: 4.88,
+      gradeMax: 5.00,
+      location: 'Naogaon',
+      icon: 'school',
+      skills: ['Computer Application', 'ICT', 'Programming Basics', 'Hardware Fundamentals'],
+      achievements: [
+        { text: 'ICT Lab Installation — PC setup & network config for Naogaon Technical School', award: false },
+        { text: 'Practical training in MS Office, Computer Applications & Hardware', award: false },
+        { text: 'GPA 4.88 / 5.00 — Outstanding academic performance', award: true }
+      ]
+    }
   ],
   training: [
-    { title: 'Web Design & Development (WordPress, PHP & MySQL)', institution: 'Bangladesh IT Institute, Dhaka', year: '2017', duration: '3 months' },
-    { title: 'Software Development (Win-Forms, C#.NET & SQL Server)', institution: 'Smart Softwares & Training Center, Bogura', year: '2016', duration: '6 months' },
-    { title: 'Graphics Design (Photoshop & Illustrator)', institution: 'Rahim IT Solutions, Bogura', year: '2015', duration: '3 months' },
-    { title: 'CompTIA A+ (Hardware, Software, IT-ICT & MS Office)', institution: 'Opurbo Computers & Training Center, Naogaon', year: '2013', duration: '6 months' }
+    { title: 'Web Design & Development', topics: ['WordPress', 'PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery'], institution: 'Bangladesh IT Institute, Dhaka', year: '2017', duration: '3 months', icon: 'web' },
+    { title: 'Software Development', topics: ['Win-Forms', 'C#.NET', 'SQL Server'], institution: 'Smart Softwares & Training Center, Bogura', year: '2016', duration: '6 months', icon: 'code' },
+    { title: 'Graphics Design', topics: ['Photoshop', 'Illustrator'], institution: 'Rahim IT Solutions, Bogura', year: '2015', duration: '3 months', icon: 'palette' },
+    { title: 'CompTIA A+', topics: ['Hardware', 'Software', 'IT-ICT', 'MS Office'], institution: 'Opurbo Computers & Training Center, Naogaon', year: '2013', duration: '6 months', icon: 'settings' }
   ],
   featuredProject: {},
   projectDetails: {},
@@ -216,7 +247,7 @@ const HomeView = {
         <span>A unique fusion of </span>
         <strong><span class="typewriter-cursor">{{ currentRole }}</span></strong>
       </p>
-      <p class="text-base mb-8" style="color:var(--text-muted)">
+      <p class="text-base mb-8" style="color:var(--text)">
         Dedicated to automating workflows, reducing production costs, and modernizing digital infrastructure.
       </p>
 
@@ -240,7 +271,7 @@ const HomeView = {
           </div>
           <div>
             <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ h.title }}</h4>
-            <p class="text-md mt-0.5" style="color:var(--text-muted)">{{ h.text }}</p>
+            <p class="text-md mt-0.5" style="color:var(--text)">{{ h.text }}</p>
           </div>
         </router-link>
       </div>
@@ -250,7 +281,7 @@ const HomeView = {
         <div v-for="(s,i) in DATA.stats" :key="i" class="flex items-center gap-4">
           <div class="text-center">
             <div class="hero-stat-value">{{ s.value }}</div>
-            <div class="text-lg" style="color:var(--text-muted)">{{ s.label }}</div>
+            <div class="text-lg" style="color:var(--text-label)">{{ s.label }}</div>
           </div>
           <div v-if="i < DATA.stats.length-1" style="width:1px;height:40px;background:var(--border)"></div>
         </div>
@@ -321,7 +352,7 @@ const AboutView = {
             <div class="min-w-0 flex-1">
               <h3 class="text-xl font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
               <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
-              <p class="text-base mt-1" style="color:var(--text-muted)">{{ DATA.personal.title }}</p>
+               <p class="text-base mt-1 font-medium" style="color:var(--text)">{{ DATA.personal.title }}</p>
               <hr class="my-4" style="border-color:var(--border)">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-base">
                 <div class="flex items-center gap-3">
@@ -358,9 +389,9 @@ const AboutView = {
           <div class="card-glass">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i> Personal Details</h4>
             <div class="space-y-2">
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Date of Birth</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.dob }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Blood Group</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.blood }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Religion</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.religion }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Date of Birth</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.dob }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Blood Group</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.blood }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Religion</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.religion }}</span></div>
             </div>
           </div>
 
@@ -369,7 +400,7 @@ const AboutView = {
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i> Languages</h4>
             <div class="space-y-3">
               <div v-for="l in DATA.languages" :key="l.name">
-                <div class="flex justify-between mb-1"><span style="font-size:0.9rem">{{ l.name }}</span><span style="color:var(--text-muted);font-size:0.9rem">{{ l.level }}</span></div>
+                <div class="flex justify-between mb-1"><span style="font-size:0.9rem">{{ l.name }}</span><span style="color:var(--text-label);font-size:0.9rem">{{ l.level }}</span></div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" :style="{ width: l.pct + '%' }"></div></div>
               </div>
             </div>
@@ -379,10 +410,10 @@ const AboutView = {
           <div class="card-glass">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">work</i> Employment Details</h4>
             <div class="space-y-2">
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-muted);font-size:0.9rem">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
-              <div class="flex justify-between py-1"><span style="color:var(--text-muted);font-size:0.9rem">Location</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.location }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
+              <div class="flex justify-between py-1"><span style="color:var(--text-label);font-size:0.9rem">Location</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.location }}</span></div>
             </div>
           </div>
 
@@ -404,42 +435,15 @@ const AboutView = {
             <div class="grid grid-cols-3 gap-3">
               <div v-for="s in DATA.stats" :key="s.label" class="text-center py-4 rounded-xl" style="background:rgba(20,184,166,0.06);border:1px solid rgba(20,184,166,0.1)">
                 <div class="text-2xl font-extrabold gradient-text">{{ s.value }}</div>
-                <div class="text-md font-medium mt-1" style="color:var(--text-muted)">{{ s.label }}</div>
+                <div class="text-md font-medium mt-1" style="color:var(--text-label)">{{ s.label }}</div>
               </div>
             </div>
           </div>
 
-          <!-- Training & Certifications -->
-          <div class="card-glass p-6">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">verified</i> Training & Certifications</h3>
-            <div class="space-y-3">
-              <div v-for="t in DATA.training" :key="t.title" class="flex items-start gap-3 p-3 rounded-xl" style="background:rgba(20,184,166,0.04);border:1px solid rgba(20,184,166,0.06)">
-                <i class="material-icons" style="color:var(--primary);font-size:20px">check_circle</i>
-                <div>
-                  <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ t.title }}</h4>
-                  <p class="text-md" style="color:var(--text-muted)">{{ t.institution }} — {{ t.duration }}, {{ t.year }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education -->
-          <div class="space-y-4">
-            <h3 class="text-lg font-bold flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">school</i> Education</h3>
-            <div v-for="e in DATA.education" :key="e.degree" class="card-glass p-5">
-              <div class="flex items-start gap-3">
-                <i class="material-icons" style="color:var(--primary);font-size:20px">book</i>
-                <div>
-                  <h4 class="font-semibold text-lg" style="color:var(--text-heading)">{{ e.degree }}</h4>
-                  <p class="text-md" style="color:var(--text-muted)">{{ e.school }} — {{ e.year }} | {{ e.grade }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
+           </div>
+         </div>
+       </div>
+     </div>
   `,
   data() { return { DATA }; },
   mounted() {
@@ -484,8 +488,8 @@ const ExperienceView = {
           <div class="timeline-dot"></div>
           <span class="timeline-date">{{ exp.period }}</span>
           <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ exp.title }}</h3>
-          <p class="text-base sm:text-lg font-medium mb-2" style="color:var(--primary)">{{ exp.company }} <span style="color:var(--text-muted)">| {{ exp.location }}</span></p>
-          <ul class="space-y-1 text-lg" style="color:var(--text)">
+           <p class="text-base sm:text-lg font-medium mb-2" style="color:var(--primary)">{{ exp.company }} <span style="color:var(--text-label)">| {{ exp.location }}</span></p>
+          <ul class="space-y-1 text-md" style="color:var(--text)">
             <li v-for="(h,j) in exp.highlights" :key="j" class="flex items-start gap-2 text-sm">
               <i class="material-icons" style="font-size:6px;color:var(--primary)">circle</i>
               <span>{{ h }}</span>
@@ -505,10 +509,79 @@ const ExperienceView = {
 const EducationView = {
   name: 'EducationView',
   template: `
-   <div class="section"><span class="section-tag">Knowledge Base</span><h2 class="section-title">Education &amp; Certifications</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><div class="card-glass">
+    <div class="section">
+      <span class="section-tag">Knowledge Base</span>
+      <h2 class="section-title">Education &amp; Certifications</h2>
 
-    <div class="space-y-4"><h3 class="text-lg font-bold flex items-center gap-3" style="color: var(--text-heading);"><i class="material-icons" style="color: var(--primary);">school</i> Education</h3><div class="card-glass p-5"><div class="flex items-start gap-3"><i class="material-icons" style="color: var(--primary); font-size: 20px;">book</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">Diploma in Computer Engineering</h4><p class="text-md" style="color: var(--text-muted);">Bogura Polytechnic Institute — 2018 | CGPA: 2.92 / 4.00</p></div></div></div><div class="card-glass p-5"><div class="flex items-start gap-3"><i class="material-icons" style="color: var(--primary); font-size: 20px;">book</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">S.S.C. (Vocational, ICT)</h4><p class="text-md" style="color: var(--text-muted);">Naogaon Technical School &amp; College — 2013 | GPA: 4.88 / 5.00</p></div></div></div></div>
-</div><div class="card-glass p-6"><h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: var(--text-heading);"><i class="material-icons" style="color: var(--primary);">verified</i> Training &amp; Certifications</h3><div class="space-y-3"><div class="flex items-start gap-3 p-3 rounded-xl" style="background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.06);"><i class="material-icons" style="color: var(--primary); font-size: 20px;">check_circle</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">Web Design &amp; Development (WordPress, PHP &amp; MySQL)</h4><p class="text-md" style="color: var(--text-muted);">Bangladesh IT Institute, Dhaka — 3 months, 2017</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl" style="background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.06);"><i class="material-icons" style="color: var(--primary); font-size: 20px;">check_circle</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">Software Development (Win-Forms, C#.NET &amp; SQL Server)</h4><p class="text-md" style="color: var(--text-muted);">Smart Softwares &amp; Training Center, Bogura — 6 months, 2016</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl" style="background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.06);"><i class="material-icons" style="color: var(--primary); font-size: 20px;">check_circle</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">Graphics Design (Photoshop &amp; Illustrator)</h4><p class="text-md" style="color: var(--text-muted);">Rahim IT Solutions, Bogura — 3 months, 2015</p></div></div><div class="flex items-start gap-3 p-3 rounded-xl" style="background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.06);"><i class="material-icons" style="color: var(--primary); font-size: 20px;">check_circle</i><div><h4 class="font-semibold text-lg" style="color: var(--text-heading);">CompTIA A+ (Hardware, Software, IT-ICT &amp; MS Office)</h4><p class="text-md" style="color: var(--text-muted);">Opurbo Computers &amp; Training Center, Naogaon — 6 months, 2013</p></div></div></div></div></div></div>
+      <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)">
+        <i class="material-icons" style="color:var(--primary)">school</i> Education
+      </h3>
+      <div class="timeline">
+        <div v-for="(e,i) in DATA.education" :key="i" class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <!-- Degree Header -->
+          <div class="flex items-start justify-between gap-3">
+            <h4 class="font-semibold text-lg flex items-center gap-2" style="color:var(--text-heading)">
+              <i class="material-icons" style="color:var(--primary);font-size:22px">{{ e.icon }}</i> {{ e.degree }}
+            </h4>
+            <span class="timeline-date shrink-0">{{ e.year }}</span>
+          </div>
+          <p class="text-sm mt-0.5" style="color:var(--text)">{{ e.school }}<span style="color:var(--text-label)"> · {{ e.location }}</span></p>
+
+          <!-- Academic Performance -->
+          <div class="mt-4">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5" style="color:var(--text-label)"><i class="material-icons" style="font-size:16px">bar_chart</i> Academic Performance</p>
+            <div class="flex items-center gap-3">
+              <div class="flex-1 max-w-[220px]">
+                <div class="skill-bar-track"><div class="skill-bar-fill" :style="{ width: ((e.gradeValue/e.gradeMax)*100) + '%' }"></div></div>
+              </div>
+              <span class="text-sm font-semibold" style="color:var(--primary)">{{ Math.round((e.gradeValue/e.gradeMax)*100) }}%</span>
+              <span class="text-sm font-medium" style="color:var(--text-label)">{{ e.grade }}</span>
+            </div>
+          </div>
+
+          <!-- Core Skills -->
+          <div class="mt-4">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5" style="color:var(--text-label)"><i class="material-icons" style="font-size:16px">build</i> Core Skills Acquired</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span v-for="skill in e.skills" :key="skill" class="text-xs font-medium px-2 py-0.5 rounded-full" style="background:rgba(8,145,178,0.08);color:var(--primary)">{{ skill }}</span>
+            </div>
+          </div>
+
+          <!-- Key Projects & Achievements -->
+          <div class="mt-4">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5" style="color:var(--text-label)"><i class="material-icons" style="font-size:16px">emoji_events</i> Key Projects & Achievements</p>
+            <ul class="space-y-1.5">
+              <li v-for="(a,j) in e.achievements" :key="j" class="flex items-start gap-2 text-sm" style="color:var(--text)">
+                <span v-if="a.award" style="color:#f59e0b;margin-top:2px;flex-shrink:0">🏆</span>
+                <span v-else style="color:var(--primary);margin-top:4px;flex-shrink:0"><span class="material-icons" style="font-size:6px">circle</span></span>
+                <span>{{ a.text }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-lg font-bold mt-10 mb-4 flex items-center gap-3" style="color:var(--text-heading)">
+        <i class="material-icons" style="color:var(--primary)">verified</i> Training &amp; Certifications
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div v-for="(t,i) in DATA.training" :key="i" class="card-glass p-5">
+          <h4 class="font-semibold text-lg flex items-center gap-2" style="color:var(--text-heading)">
+            <i class="material-icons" style="color:var(--primary);font-size:20px">{{ t.icon }}</i> {{ t.title }}
+          </h4>
+          <div class="flex flex-wrap gap-1.5 mt-2">
+            <span v-for="topic in t.topics" :key="topic" class="text-xs font-medium px-2 py-0.5 rounded-full" style="background:rgba(8,145,178,0.08);color:var(--primary)">{{ topic }}</span>
+          </div>
+          <div class="flex items-center gap-3 mt-3 text-sm" style="color:var(--text-label)">
+            <span class="flex items-center gap-1"><i class="material-icons" style="font-size:14px">business</i> {{ t.institution }}</span>
+            <span class="flex items-center gap-1"><i class="material-icons" style="font-size:14px">schedule</i> {{ t.duration }}</span>
+            <span class="flex items-center gap-1"><i class="material-icons" style="font-size:14px">calendar_today</i> {{ t.year }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
   `,
   data() { return { DATA }; },
   mounted() {
@@ -562,9 +635,9 @@ const ProjectsView = {
             </div>
           </div>
         </div>
-        <p class="text-lg mb-2" v-if="DATA.featuredProject.tech"><span class="font-semibold">Technologies:</span> {{ DATA.featuredProject.tech }}</p>
-        <p class="text-lg mb-4" v-if="DATA.featuredProject.company"><span class="font-semibold">Company:</span> {{ DATA.featuredProject.company }}</p>
-        <ul class="space-y-2 text-lg mb-5" v-if="DATA.featuredProject.details">
+        <p class="text-md mb-2" v-if="DATA.featuredProject.tech"><span class="font-semibold">Technologies:</span> {{ DATA.featuredProject.tech }}</p>
+        <p class="text-md mb-4" v-if="DATA.featuredProject.company"><span class="font-semibold">Company:</span> {{ DATA.featuredProject.company }}</p>
+        <ul class="space-y-2 text-md mb-5" v-if="DATA.featuredProject.details">
           <li v-for="(d,i) in DATA.featuredProject.details" :key="i" class="flex items-start gap-2 text-sm">
             <i class="material-icons" style="color:var(--primary-light);font-size:18px">check_circle</i>
             <span>{{ d }}</span>
@@ -608,7 +681,7 @@ const ProjectsView = {
       <span
         v-if="project.tech"
         class="text-xs ml-2"
-        style="color:var(--text-muted)"
+        style="color:var(--text-label)"
       >
         {{ project.tech }}
       </span>
@@ -704,9 +777,9 @@ const ReferencesView = {
         <div v-for="(ref,i) in DATA.references" :key="i" class="ref-card flex items-start gap-4">
           <div class="ref-avatar">{{ ref.name.charAt(0) }}</div>
           <div>
-            <h4 class="font-bold text-md" style="color:var(--text-heading)">{{ ref.name }}</h4>
+             <h4 class="font-bold text-lg" style="color:var(--text-heading)">{{ ref.name }}</h4>
             <p class=" font-medium" style="color:var(--primary)">{{ ref.title }}</p>
-            <p class="font-medium mb-2" style="color:var(--text-muted)">{{ ref.company }}</p>
+            <p class="font-medium mb-2" style="color:var(--text)">{{ ref.company }}</p>
             <a :href="'tel:' + ref.phone" class="inline-flex items-center gap-1.5 text-md font-medium px-3 py-1 rounded-full transition" style="background:rgba(20,184,166,0.08);color:var(--primary)">
               <i class="material-icons" style="font-size:12px;color:var(--primary)">call</i> {{ ref.phone }}
         </router-link>
@@ -780,10 +853,10 @@ const ContactView = {
           <div class="card-glass">
             <h3 class="text-lg font-bold mb-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">info</i>Availability</h3>
             <div class="space-y-2 text-lg">
-              <div class="flex justify-between"><span style="color:var(--text-muted)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
-              <div class="flex justify-between"><span style="color:var(--text-muted)">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
-              <div class="flex justify-between"><span style="color:var(--text-muted)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
-              <div class="flex justify-between"><span style="color:var(--text-muted)">Relocation</span><span class="font-medium" style="color:var(--text-heading)">Yes</span></div>
+              <div class="flex justify-between"><span style="color:var(--text-label)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
+              <div class="flex justify-between"><span style="color:var(--text-label)">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
+              <div class="flex justify-between"><span style="color:var(--text-label)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
+              <div class="flex justify-between"><span style="color:var(--text-label)">Relocation</span><span class="font-medium" style="color:var(--text-heading)">Yes</span></div>
             </div>
           </div>
         </div>
@@ -794,15 +867,13 @@ const ContactView = {
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">send</i>Send a Message</h3>
             <form @submit.prevent="submitForm" class="space-y-4">
               <div>
-                <label class="text-md font-medium mb-1 block" style="color:var(--text-muted)">Your Name</label>
-                <input type="text" v-model="form.name" required class="contact-input" :class="{ error: formError.name, success: formSuccess.name }" placeholder="Enter your name" @blur="validateField('name')">
-              </div>
-              <div>
-                <label class="text-md font-medium mb-1 block" style="color:var(--text-muted)">Your Email</label>
-                <input type="email" v-model="form.email" required class="contact-input" :class="{ error: formError.email, success: formSuccess.email }" placeholder="Enter your email" @blur="validateField('email')">
-              </div>
-              <div>
-                <label class="text-md font-medium mb-1 block" style="color:var(--text-muted)">Message</label>
+                <label class="text-md font-medium mb-1 block" style="color:var(--text-label)">Your Name</label>
+                <input v-model="form.name" type="text" class="contact-input w-full px-4 py-2.5 rounded-xl" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text)" placeholder="John Doe">
+
+                <label class="text-md font-medium mb-1 block" style="color:var(--text-label)">Your Email</label>
+                <input v-model="form.email" type="email" class="contact-input w-full px-4 py-2.5 rounded-xl" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text)" placeholder="john@example.com">
+
+                <label class="text-md font-medium mb-1 block" style="color:var(--text-label)">Message</label>
                 <textarea v-model="form.message" required class="contact-input" :class="{ error: formError.message, success: formSuccess.message }" placeholder="Write your message..." @blur="validateField('message')"></textarea>
               </div>
               <button type="submit" :disabled="submitted" class="btn-shimmer w-full py-3 px-6 gradient-bg text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2" :style="{opacity: submitted ? 0.7 : 1}">
@@ -851,7 +922,7 @@ const ProjectDetailView = {
   template: `
     <div v-if="project">
       <!-- Breadcrumb Nav (desktop/tablet only) -->
-      <div class="hidden lg:flex items-center gap-2 text-sm font-medium px-6 py-3 sticky top-0 z-20" style="background:var(--bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);color:var(--text-muted)">
+      <div class="hidden lg:flex items-center gap-2 text-sm font-medium px-6 py-3 sticky top-0 z-20" style="background:var(--bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);color:var(--text-label)">
         <router-link to="/" style="color:var(--primary)" class="hover:underline">Home</router-link>
         <i class="material-icons" style="font-size:14px">chevron_right</i>
         <router-link to="/projects" style="color:var(--primary)" class="hover:underline">Projects</router-link>
@@ -872,18 +943,18 @@ const ProjectDetailView = {
       <!-- Gallery -->
       <div v-if="hasImages(project)" style="margin-top:-60px;margin-bottom:2rem;padding:0 60px">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
-          <div class="lg:col-span-2 rounded-2xl overflow-hidden project-card" style="border:1px solid var(--border);box-shadow:var(--shadow-lg);height:400px">
+          <div class="lg:col-span-2 rounded-xl overflow-hidden project-card" style="border:1px solid var(--border);box-shadow:var(--shadow-lg);height:400px">
             <img :src="firstImage(project)" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
           </div>
           <div class="space-y-3">
-            <div v-for="img in project.images.slice(1)" :key="img" class="rounded-2xl overflow-hidden project-card" style="border:1px solid var(--border);height:192px">
+            <div v-for="img in project.images.slice(1)" :key="img" class="rounded-xl overflow-hidden project-card" style="border:1px solid var(--border);height:192px">
               <img :src="img" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
             </div>
           </div>
         </div>
       </div>
       <div v-else style="margin-top:-60px;margin-bottom:2rem;padding:0 60px;height:200px">
-        <div class="rounded-2xl img-placeholder" style="height:100%"></div>
+        <div class="rounded-xl img-placeholder" style="height:100%"></div>
       </div>
 
       <!-- Metrics -->
@@ -891,7 +962,7 @@ const ProjectDetailView = {
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div v-for="m in project.metrics" :key="m.label" class="card-glass text-center py-5">
             <div class="text-3xl font-extrabold gradient-text">{{ m.value }}</div>
-            <div class="text-md font-medium mt-1" style="color:var(--text-muted)">{{ m.label }}</div>
+            <div class="text-md font-medium mt-1" style="color:var(--text-label)">{{ m.label }}</div>
           </div>
         </div>
       </div>
@@ -914,7 +985,7 @@ const ProjectDetailView = {
                 </div>
                 <div>
                   <h4 class="font-bold text-lg" style="color:var(--text-heading)">{{ step.title }}</h4>
-                  <p class="text-lg mt-1" style="color:var(--text)">{{ step.text }}</p>
+                   <p class="text-md mt-1" style="color:var(--text)">{{ step.text }}</p>
                 </div>
               </div>
             </div>
@@ -1104,25 +1175,15 @@ const App = {
       <transition name="offcanvas">
         <aside v-if="mobileMenuOpen" class="fixed top-0 right-0 h-full w-72 z-50 overflow-y-auto" style="background:var(--sidebar-bg)">
           <div class="p-6 text-center">
-            <div class="w-full sm:w-44 md:w-52 lg:w-60 mx-auto mb-4 rounded-2xl overflow-hidden aspect-square" style="border:3px solid rgba(20,184,166,0.3)">
-              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
-            </div>
             <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
             <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
-             <p class="text-md mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
-          </div>
-          <div class="px-6 space-y-2.5 mb-4">
-             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">phone</i><div><div>{{ DATA.personal.phone1 }}</div><div>{{ DATA.personal.phone2 }}</div></div></div>
-             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
-             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">location_on</i><span>{{ DATA.personal.location }}</span></div>
-             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">link</i><a :href="'https://' + DATA.personal.linkedin" target="_blank" style="color:var(--primary-light)">{{ DATA.personal.linkedin }}</a></div>
-             <div class="flex items-center gap-3 "><i class="material-icons" style="color:var(--primary);font-size:16px">language</i><a :href="DATA.personal.website" target="_blank" style="color:var(--primary-light)">amin670bd.github.io</a></div>
+            <p class="text-md mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
           </div>
           <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
-          <div class="px-4 py-3 space-y-0.5">
+          <div class="px-4 py-3 space-y-0.5" style="flex:1">
             <router-link v-for="item in menuItems" :key="item.path"
               @click="closeMobile" :to="item.path"
-              class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg  font-medium transition"
+              class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium transition"
               :class="{ 'nav-link-active': $route.path === item.path }">
               <i class="material-icons w-4 text-center" style="font-size:18px">{{ item.icon }}</i>
               <span>{{ item.label }}</span>
@@ -1135,10 +1196,30 @@ const App = {
               style="box-shadow:0 4px 12px rgba(20,184,166,0.25)">
               <i class="material-icons">download</i> Download CV
             </a>
+            <div class="space-y-1.5 text-sm" style="color:var(--sidebar-text)">
+              <div class="flex items-center gap-2"><i class="material-icons" style="color:var(--primary);font-size:14px">phone</i><span>{{ DATA.personal.phone1 }}</span></div>
+              <div class="flex items-center gap-2"><i class="material-icons" style="color:var(--primary);font-size:14px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
+              <div class="flex items-center gap-2"><i class="material-icons" style="color:var(--primary);font-size:14px">location_on</i><span>{{ DATA.personal.location }}</span></div>
+            </div>
+            <div class="flex items-center justify-center gap-3 pt-1">
+              <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle" title="LinkedIn" style="width:32px;height:32px;font-size:16px">
+                <i class="material-icons">link</i>
+              </a>
+              <a :href="DATA.personal.website" target="_blank" class="theme-toggle" title="Portfolio" style="width:32px;height:32px;font-size:16px">
+                <i class="material-icons">language</i>
+              </a>
+              <a :href="'https://github.com/amin670bd'" target="_blank" class="theme-toggle" title="GitHub" style="width:32px;height:32px;font-size:16px">
+                <i class="material-icons">code</i>
+              </a>
+              <a :href="'mailto:' + DATA.personal.email" class="theme-toggle" title="Email" style="width:32px;height:32px;font-size:16px">
+                <i class="material-icons">email</i>
+              </a>
+            </div>
+            <hr style="border-color:var(--sidebar-divider)">
             <div class="flex items-center justify-between">
-            <span class="text-lg flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
-            <button @click="toggleDark" class="theme-toggle">
-                <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
+              <span class="text-sm flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
+              <button @click="toggleDark" class="theme-toggle" style="width:32px;height:32px">
+                <i class="material-icons" style="font-size:18px;transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
               </button>
             </div>
           </div>
