@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Message Sent | Amin670BD</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>404 — Page Not Found | Amin670BD</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Page not found. Return to Md. Asaduzzaman (Aminur)'s portfolio.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Outfit', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 15px;
       background: linear-gradient(135deg, #022c22, #021a17, #022c22);
       background-size: 200% 200%;
@@ -45,34 +45,17 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .check-wrap {
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      margin: 0 auto 24px;
-      position: relative;
+    .code {
+      font-size: 4.5rem;
+      font-weight: 800;
       background: linear-gradient(135deg, #065f46, #0d9488, #059669);
       background-size: 200% 200%;
       animation: gradient-shift 4s ease infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 30px rgba(20,184,166,0.25);
-    }
-    .check-wrap svg {
-      width: 40px; height: 40px;
-    }
-    .check-wrap svg polyline {
-      fill: none;
-      stroke: #ffffff;
-      stroke-width: 4;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-dasharray: 50;
-      stroke-dashoffset: 50;
-      animation: draw-check 0.6s ease 0.4s forwards;
-    }
-    @keyframes draw-check {
-      to { stroke-dashoffset: 0; }
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+      margin-bottom: 8px;
     }
     .tag {
       display: inline-block;
@@ -84,21 +67,16 @@
       margin-bottom: 12px;
     }
     h1 {
-      font-size: 1.65rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: #e2e8f0;
       margin-bottom: 16px;
-      letter-spacing: -0.01em;
     }
     p {
       color: #94a3b8;
       line-height: 1.7;
       margin-bottom: 36px;
       font-size: 0.95rem;
-    }
-    p strong {
-      color: #f1f5f9;
-      font-weight: 600;
     }
     .btn {
       display: inline-flex;
@@ -139,40 +117,25 @@
     .btn:active {
       transform: translateY(0);
     }
-    .footer-note {
-      margin-top: 28px;
-      font-size: 0.75rem;
-      color: #475569;
-    }
     @media (max-width: 480px) {
       .card { padding: 40px 24px 36px; }
-      h1 { font-size: 1.35rem; }
+      .code { font-size: 3.5rem; }
+      h1 { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="check-wrap">
-      <svg viewBox="0 0 24 24">
-        <polyline points="4,13 9,18 20,6" />
-      </svg>
-    </div>
-    <span class="tag">Success</span>
-    <h1>Message Sent!</h1>
-    <p>
-      Thank you for reaching out. Your message has been routed to
-      <strong>Md. Asaduzzaman (Aminur)</strong>.
-      You can expect a response within 24 hours.
-    </p>
+    <div class="code">404</div>
+    <span class="tag">Page Not Found</span>
+    <h1>Oops! This page wandered off.</h1>
+    <p>The link you followed may be broken, or the page has been moved. Let's get you back on track.</p>
     <a href="/" class="btn">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="15 18 9 12 15 6" />
       </svg>
-      OK
+      Back to Home
     </a>
-    <div class="footer-note">
-      IT &amp; Digital Operations Specialist
-    </div>
   </div>
 </body>
 </html>

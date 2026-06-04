@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amin670bd.github.io/sitemap.xml

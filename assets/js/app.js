@@ -1,219 +1,7 @@
 /* ===================================================
-   CV DATA (Reactive — loaded from JSON for projects)
+   CV DATA (loaded from assets/data/cv.json and projects.json)
    =================================================== */
-const DATA = Vue.reactive({
-  personal: {
-    name: 'Md. Asaduzzaman',
-    nickname: 'Aminur',
-    title: 'IT & Digital Operations Specialist',
-    phone1: '+880 1979 670601',
-    phone2: '+880 1719 670601',
-    email: 'amin670bd@gmail.com',
-    email2: 'amin670job@gmail.com',
-    location: 'Ashuliya, Savar, Dhaka, Bangladesh',
-    linkedin: 'linkedin.com/in/aminur670bd',
-    website: 'https://amin670bd.github.io',
-    photo: 'assets/images/profile.jpg',
-    dob: '22/01/1997',
-    blood: 'O+',
-    religion: 'Islam',
-    currentSalary: '21,800 BDT',
-    expectedSalary: 'Negotiable',
-    available: 'Immediately'
-  },
-  languages: [
-    { name: 'Bangla', level: 'Native', pct: 100 },
-    { name: 'English', level: 'Fluent', pct: 85 },
-    { name: 'Hindi', level: 'Intermediate', pct: 60 }
-  ],
-  objective: 'I offer a unique blend of creative, technical, and support-based services that span across IT support, ERP operations, digital systems, and administrative workflows. My goal is to contribute to a company\'s IT infrastructure with hands-on experience in system maintenance, user support, and process improvement.',
-  summary: 'Versatile IT & Digital Operations Specialist with 7.5+ years of total experience (including 3.5+ years formal), supporting businesses through system administration, ERP operations, and technical support. Skilled in troubleshooting, hardware/software setup, ERP data entry, and user support. Adept at managing in-house workflows, enhancing digital visibility, and ensuring smooth technical and administrative operations.',
-  stats: [
-    { value: '15+', label: 'Sites Built' },
-    { value: '60%', label: 'Efficiency Boost' },
-    { value: '100+', label: 'Users Managed' }
-  ],
-  skills: [
-    { title: 'Office & Productivity', icon: 'description', items: ['MS Office (Word, Excel, PowerPoint, Outlook)', 'Google Workspace', 'Excel Automation & Macros', 'Report Generation', 'PDF Editing'] },
-    { title: 'Design & Graphics', icon: 'palette', items: ['Photoshop', 'Illustrator', 'Canva', 'Infographics', 'Posters / Labels', 'Logos', 'Invoices'] },
-    { title: 'Video & AI Multimedia', icon: 'movie', items: ['Filmora (Video Editing)', 'AI Image Manipulation & Editing', 'AI Audio & Multimedia'] },
-    { title: 'ERP & Business Systems', icon: 'storage', items: ['GPRO ERP (All Modules)', 'Inventory Management', 'Payroll / Billing', 'Data Entry & Verification', 'POS Systems', 'File Handling', 'ERP Install & Support', 'Garments Systems', 'RFID Tag Generation'] },
-    { title: 'E-Commerce & Marketplaces', icon: 'shopping_cart', items: ['Product Listing', 'Order / Shipping Handling', 'Customer Support', 'Bundle Tracking', 'Amazon Seller Central', 'eBay', 'WooCommerce', 'WordPress'] },
-    { title: 'C / C++ & .NET Stack', icon: 'code', items: ['C / C++', 'C# & WinForms', '.NET SDK 9/10', 'ADO.NET', 'Crystal Reports', '.NET Framework', 'MS Access'] },
-    { title: 'PHP & Laravel Stack', icon: 'code', items: ['Laravel', 'Blade Templates', 'Eloquent ORM', 'Artisan CLI', 'REST APIs', 'MVC Architecture', 'PHP & MySQL', 'PDO'] },
-    { title: 'Frontend Stack', icon: 'code', items: ['Vue 3 (Options / Composition API)', 'Vue Router', 'Pinia', 'Vite', 'HTML / CSS / JavaScript', 'Tailwind / Bootstrap 4/5', 'jQuery', 'Responsive Design'] },
-    { title: 'Databases & SQL', icon: 'table_chart', items: ['MySQL / phpMyAdmin', 'MySQL Workbench', 'SQL Server', 'MS Access', 'Excel VBA Macros'] },
-    { title: 'AI & Automation Tools', icon: 'smart_toy', items: ['Prompt Engineering', 'GitHub Copilot', 'ChatGPT', 'Opencode / OpenRouter', 'Qwen AI / Gemini', 'n8n Workflow Automation'] },
-    { title: 'Web Dev & CMS', icon: 'travel_explore', items: ['WordPress', 'Elementor', 'WooCommerce', 'LMS', 'Plugin Dev', 'Payment Systems', 'ACF', 'Custom Post Types', 'REST API', 'Child Themes', 'SEO Plugins'] },
-    { title: 'IT Support & System Admin', icon: 'dns', items: ['Windows / Linux OS Install', 'Hard / Soft Diagnostics', 'Remote IT Support', 'System Maintenance', 'User Training', 'Driver Setup', 'PC Assembly & Upgrade'] },
-    { title: 'System Integration & Hardware', icon: 'settings_ethernet', items: ['Barcode Printer Configuration', 'Automated Label Printing', 'Weight Scale Integration', 'NXP MCU RFID Terminals', 'MOXA Serial Cards', 'Network Configuration'] },
-    { title: 'Email & Communication', icon: 'forward_to_inbox', items: ['Corporate Email Setup', 'Bulk Mailing Tools', 'Email Automation', 'Face-to-Face Communication', 'Social Media Management'] },
-    { title: 'Networking & Security', icon: 'lan', items: ['IP Config & Subnetting', 'LAN / Router Setup', 'File / Printer Sharing', 'Firewall & Antivirus', 'IP Camera Installation', 'Network Cabling', 'RS-485 Cabling'] }
-  ],
-  experience: [
-    {
-      title: 'Sr. Officer (In-Charge, Barcode)', company: 'Dhaka Thai ALCOMAXX PLC', location: 'Ashuliya, Savar, Dhaka', period: 'Sep 2025 - Present', highlights: [
-        'Lead barcode operations, product labeling, bundling, and production coordination across packing lines',
-        'Developed and maintained C# desktop applications for weight scale integration with LightHouse ERP',
-        'Troubleshot utility software, barcode printers, and IT systems across packing lines',
-        'Improved workflow efficiency and reduced downtime through barcode system optimization',
-        'Designed and implemented automated label printing systems increasing daily output from 2,500 to 8,000+ labels',
-        'Coordinated with production and quality teams to ensure accurate product tracking and traceability'
-      ]
-    },
-    {
-      title: 'Officer - IT (G-Pro)', company: 'Keya Cosmetic Ltd.', location: 'Gazipur, Dhaka', period: 'May 2022 - Jul 2025', highlights: [
-        'Administered GPRO ERP modules including cutting, store, production, payroll, billing, and inventory management',
-        'Configured IP settings and network cabling for 30+ production floor workstations',
-        'Set up and maintained printer connectivity across the facility',
-        'Installed and configured IP cameras for production floor surveillance',
-        'Managed 30+ production lines each with 10+ NXP MCU-based RFID terminals as IoT checkpoints',
-        'Configured and maintained MOXA multiport serial cards over RS-485 telephone-type cabling to collect data from RFID terminals into GPRO ERP',
-        'Provided IT training and support to 30+ end-users on ERP modules and software tools',
-        'Assisted with routine server backups and basic system maintenance',
-        'Automated routine data entry and reporting tasks using Excel macros and ERP export tools'
-      ]
-    },
-    {
-      title: 'IT Assistant', company: 'Rahamat Sweaters Ltd.', location: 'Gazipur, Dhaka', period: 'Jan 2022 - May 2022', highlights: [
-        'Designed barcode and label systems for production tracking and warehouse management',
-        'Performed ERP data entry, verification, and synchronization across multiple departments',
-        'Provided hardware and software support for production floor workstations',
-        'Assisted in inventory reconciliation and stock movement documentation'
-      ]
-    },
-    {
-      title: 'Web Developer', company: 'Faith Media Ltd.', location: 'Mohakhali, Dhaka', period: 'Jan 2021 - Jul 2021', highlights: [
-        'Developed and maintained WordPress/WooCommerce websites with custom themes and plugins',
-        'Created SEO-optimized content, product listings, and competitive pricing strategies for e-commerce clients',
-        'Designed infographics, promotional banners, and website visuals using Photoshop and Illustrator',
-        'Implemented LMS and membership plugins for client educational platforms',
-        'Optimized site performance through caching, image compression, and database optimization'
-      ]
-    },
-    {
-      title: 'Remote IT Assistant to CEO', company: 'TIC Accessories Inc.', location: 'New York, USA', period: 'Jan 2020 - Dec 2020', highlights: [
-        'Managed Amazon Seller Central and eBay Seller Hub — listings, pricing, inventory sync, and order processing for 200+ products',
-        'Automated Excel reports and email marketing campaigns for sales and inventory tracking',
-        'Provided remote IT support via AnyDesk and TeamViewer to New York office staff',
-        'Created professional product photography and edited images for marketplace listings',
-        'Monitored competitor pricing and adjusted listings to maintain competitive edge'
-      ]
-    },
-    {
-      title: 'ICT Teacher & IT Trainer', company: 'EEE & IT Training Center', location: 'Naogaon', period: 'Jul 2019 - Dec 2019', highlights: [
-        'Trained SSC and HSC students in MS Office, programming fundamentals, and hardware troubleshooting',
-        'Developed practical IT curriculum modules with hands-on exercises for real-world skill building',
-        'Guided students through computer assembly, OS installation, and basic networking labs',
-        'Conducted assessments and provided one-on-one mentoring to improve student outcomes'
-      ]
-    },
-    {
-      title: 'IT Assistant', company: 'ZSN Computers', location: 'Naogaon', period: 'Jul 2018 - Dec 2018', highlights: [
-        'Assembled custom PCs and installed operating systems, drivers, and essential software',
-        'Provided hardware diagnostics, repair services, and software troubleshooting for walk-in clients',
-        'Maintained workshop inventory of components and managed customer service requests',
-        'Performed system upgrades including RAM, storage, and graphics card installations'
-      ]
-    }
-  ],
-  education: [
-    {
-      degree: 'Diploma in Computer Engineering',
-      school: 'Bogura Polytechnic Institute',
-      year: '2018',
-      grade: 'CGPA: 2.92 / 4.00',
-      gradeValue: 2.92,
-      gradeMax: 4.00,
-      location: 'Bogura',
-      icon: 'computer',
-      skills: ['C Programming', 'Python', 'Java', 'Web Development', 'Database Management', 'Computer Networking'],
-      achievements: [
-        { text: 'Res-Q & Remote Control — IoT-based rescue car for multi-sector demo missions | Champion at BPI Innovation & Projects Fair 2017', award: true },
-        { text: 'B.P.I. Virtual Institute — Awarded at Zilla ICT Project Fair 2017', award: true },
-        { text: 'Easy C IDE — Lightweight C compiler IDE with auto-save feature', award: false },
-        { text: 'B.P.I. Innovation Lab — Hardware, software & network setup at BPI', award: false }
-      ]
-    },
-    {
-      degree: 'S.S.C. (Vocational, ICT)',
-      school: 'Naogaon Technical School & College',
-      year: '2013',
-      grade: 'GPA: 4.88 / 5.00',
-      gradeValue: 4.88,
-      gradeMax: 5.00,
-      location: 'Naogaon',
-      icon: 'school',
-      skills: ['Computer Application', 'ICT', 'Programming Basics', 'Hardware Fundamentals'],
-      achievements: [
-        { text: 'ICT Lab Installation — PC setup & network config for Naogaon Technical School', award: false },
-        { text: 'Practical training in MS Office, Computer Applications & Hardware', award: false },
-        { text: 'GPA 4.88 / 5.00 — Outstanding academic performance', award: true }
-      ]
-    }
-  ],
-  training: [
-    { title: 'Web Design & Development', topics: ['WordPress', 'PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery'], institution: 'Bangladesh IT Institute, Dhaka', year: '2017', duration: '3 months', icon: 'web' },
-    { title: 'Software Development', topics: ['Win-Forms', 'C#.NET', 'SQL Server'], institution: 'Smart Softwares & Training Center, Bogura', year: '2016', duration: '6 months', icon: 'code' },
-    { title: 'Graphics Design', topics: ['Photoshop', 'Illustrator'], institution: 'Rahim IT Solutions, Bogura', year: '2015', duration: '3 months', icon: 'palette' },
-    { title: 'CompTIA A+', topics: ['Hardware', 'Software', 'IT-ICT', 'MS Office'], institution: 'Opurbo Computers & Training Center, Naogaon', year: '2013', duration: '6 months', icon: 'settings' }
-  ],
-  featuredProject: {},
-  projectDetails: {},
-  projectCategories: [],
-  projectsLoaded: false,
-  achievementCategories: [
-    {
-      title: 'Technical Impact',
-      icon: 'rocket_launch',
-      color: 'var(--primary)',
-      items: [
-        'Developed a desktop app for YAOHUA digital scale, reducing packing production time by 60% and tripling bundle QR label output from 2.5K to 8K+ daily.',
-        'Developed 15+ responsive websites and e-commerce platforms using WordPress + Elementor.',
-        'Managed 200+ SEO-optimized product listings for Amazon, eBay, and WooCommerce.'
-      ]
-    },
-    {
-      title: 'Training & Leadership',
-      icon: 'school',
-      color: 'var(--accent-emerald)',
-      items: [
-        'Administered and trained 30+ users on ERP modules including HR, Payroll, Store, Inventory.',
-        'Delivered IT training to 80+ students on MS Office and system troubleshooting during session.'
-      ]
-    },
-    {
-      title: 'Awards & Recognition',
-      icon: 'emoji_events',
-      color: 'var(--accent-amber)',
-      items: [
-        'Res-Q — Champion, BPI College Projects Fair 2017',
-        'BPI Virtual Institute — Champion, ICT Fair 2017, Bogura District & Rajshahi Division Level'
-      ]
-    }
-  ],
-  references: [
-    { name: 'Md. Mamunur Rashid', title: 'Manager (IT, G-Pro)', company: 'Keya Knit Composite Ltd.', phone: '01906-472201' },
-    { name: 'Md. Al Amin', title: 'Sr. Officer (IT, G-Pro)', company: 'Keya Knit Composite Ltd.', phone: '01521-447631' },
-    { name: 'Md. Abdur Rahim', title: 'Head of Sales & Marketing', company: 'Alpha.Net.Bd', phone: '01712-685203' },
-    { name: 'Md. Sagar Islam', title: 'Production Coordinator', company: 'Casual Garments Ltd.', phone: '01727-831168' },
-    { name: 'Md. Mamunur Rashid', title: 'Manager (IT, G-Pro)', company: 'Keya Knit Composite Ltd.', phone: '01906-472201' },
-    { name: 'Md. Al Amin', title: 'Sr. Officer (IT, G-Pro)', company: 'Keya Knit Composite Ltd.', phone: '01521-447631' },
-    { name: 'Md. Abdur Rahim', title: 'Head of Sales & Marketing', company: 'Alpha.Net.Bd', phone: '01712-685203' },
-    { name: 'Md. Sagar Islam', title: 'Production Coordinator', company: 'Casual Garments Ltd.', phone: '01727-831168' }
-  ],
-  menuItems: [
-    { path: '/', label: 'Home', icon: 'home' },
-    { path: '/about', label: 'About', icon: 'person' },
-    { path: '/skills', label: 'Skills', icon: 'settings' },
-    { path: '/experience', label: 'Experience', icon: 'work' },
-    { path: '/education', label: 'Education', icon: 'school' },
-    { path: '/projects', label: 'Projects', icon: 'folder_open' },
-    { path: '/achievements', label: 'Achievements', icon: 'emoji_events' },
-    { path: '/references', label: 'References', icon: 'people' },
-    { path: '/contact', label: 'Contact', icon: 'email' }
-  ]
-});
+const DATA = Vue.reactive({});
 
 /* ===================================================
    UTILITY HELPERS
@@ -229,7 +17,7 @@ const HomeView = {
   name: 'HomeView',
   template: `
     <div class="hero-section">
-      <span class="section-tag">{{ expYears }}+ Years Experience</span>
+      <span class="section-tag">Since 2018 in IT</span>
 
       <!-- Title + Image row -->
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-4">
@@ -238,7 +26,7 @@ const HomeView = {
         </div>
         <div class="lg:shrink-0 w-full lg:w-48 xl:w-56">
           <img :src="DATA.personal.photo" :alt="DATA.personal.name"
-            class="w-full h-auto rounded-2xl object-cover"
+            class="w-full h-auto rounded-2xl object-cover" loading="lazy"
             style="box-shadow:0 8px 32px rgba(20,184,166,0.15);border:2px solid var(--border)">
         </div>
       </div>
@@ -252,8 +40,11 @@ const HomeView = {
       </p>
 
       <div class="flex flex-wrap gap-3 mb-10">
-        <router-link to="/contact" class="hero-btn btn-shimmer inline-flex items-center gap-2 px-6 py-3 gradient-bg text-white font-semibold rounded-xl shadow-lg transition-all duration-300" style="box-shadow:0 4px 15px rgba(20,184,166,0.3)">
-          <i class="material-icons text-lg">send</i> Contact Me
+        <button @click="$root.toggleContactModal" class="hero-btn btn-shimmer inline-flex items-center gap-2 px-6 py-3 gradient-bg text-white font-semibold rounded-xl shadow-lg transition-all duration-300" style="box-shadow:0 4px 15px rgba(20,184,166,0.3);cursor:pointer">
+          <i class="material-icons text-lg">contact_phone</i> Contact
+        </button>
+        <router-link to="/contact" class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
+          <i class="material-icons text-lg">send</i> Message
         </router-link>
         <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
           <i class="material-icons text-lg">download</i> Download CV
@@ -291,7 +82,6 @@ const HomeView = {
   data() {
     return {
       DATA,
-      expYears: '7.5',
       typeInterval: null,
       roles: ['IT Support Specialist', 'ERP Systems Specialist', 'Web Developer', 'Digital Operations Expert', 'Systems Integrator'],
       currentRole: 'IT Support Specialist',
@@ -347,7 +137,7 @@ const AboutView = {
         <div class="card-glass p-6 mb-6">
           <div class="flex flex-col sm:flex-row items-start gap-5">
             <div class="w-full sm:w-44 md:w-52 lg:w-60 shrink-0 rounded-2xl overflow-hidden aspect-square" style="border:3px solid rgba(20,184,166,0.3)">
-              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover">
+              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="min-w-0 flex-1">
               <h3 class="text-xl font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
@@ -386,34 +176,34 @@ const AboutView = {
           <div class="lg:col-span-2 space-y-5">
 
             <!-- Personal Details -->
-          <div class="card-glass">
+          <div class="card-glass p-6">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">badge</i> Personal Details</h4>
             <div class="space-y-2">
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Date of Birth</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.dob }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Blood Group</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.blood }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Religion</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.religion }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Date of Birth</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.dob }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Blood Group</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.blood }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Religion</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.religion }}</span></div>
             </div>
           </div>
 
           <!-- Languages -->
-          <div class="card-glass">
+          <div class="card-glass p-6">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">translate</i> Languages</h4>
             <div class="space-y-3">
               <div v-for="l in DATA.languages" :key="l.name">
-                <div class="flex justify-between mb-1"><span style="font-size:0.9rem">{{ l.name }}</span><span style="color:var(--text-label);font-size:0.9rem">{{ l.level }}</span></div>
+                <div class="flex justify-between mb-1"><span>{{ l.name }}</span><span class="text-sm" style="color:var(--text-label)">{{ l.level }}</span></div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" :style="{ width: l.pct + '%' }"></div></div>
               </div>
             </div>
           </div>
 
           <!-- Employment Details -->
-          <div class="card-glass">
+          <div class="card-glass p-6">
             <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">work</i> Employment Details</h4>
             <div class="space-y-2">
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span style="color:var(--text-label);font-size:0.9rem">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
-              <div class="flex justify-between py-1"><span style="color:var(--text-label);font-size:0.9rem">Location</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.location }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
+              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
+              <div class="flex justify-between py-1"><span class="text-sm" style="color:var(--text-label)">Location</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.location }}</span></div>
             </div>
           </div>
 
@@ -425,13 +215,13 @@ const AboutView = {
           <!-- Objective -->
           <div class="card-glass p-6">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">psychology</i> Career Objective</h3>
-            <p class="leading-relaxed" style="color:var(--text)">{{ DATA.objective }}</p>
+            <p class="text-base leading-relaxed" style="color:var(--text)">{{ DATA.objective }}</p>
           </div>
 
           <!-- Professional Summary + Stats -->
           <div class="card-glass p-6">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary)">assignment</i> Professional Summary</h3>
-            <p class="leading-relaxed mb-5" style="color:var(--text)">{{ DATA.summary }}</p>
+            <p class="text-base leading-relaxed mb-5" style="color:var(--text)">{{ DATA.summary }}</p>
             <div class="grid grid-cols-3 gap-3">
               <div v-for="s in DATA.stats" :key="s.label" class="text-center py-4 rounded-xl" style="background:rgba(20,184,166,0.06);border:1px solid rgba(20,184,166,0.1)">
                 <div class="text-2xl font-extrabold gradient-text">{{ s.value }}</div>
@@ -459,8 +249,8 @@ const SkillsView = {
       <span class="section-tag">Tech Stack Matrix</span>
       <h2 class="section-title">Technical & Creative Inventory</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div v-for="(skill,i) in DATA.skills" :key="i" class="card-glass">
-          <h3 class="text-base font-bold mb-4 flex items-center gap-2" style="color:var(--text-heading)">
+        <div v-for="(skill,i) in DATA.skills" :key="i" class="card-glass p-5">
+          <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:var(--text-heading)">
             <i class="material-icons text-lg" style="color:var(--primary)">{{ skill.icon }}</i> {{ skill.title }}
           </h3>
           <div class="flex flex-wrap">
@@ -490,8 +280,8 @@ const ExperienceView = {
           <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ exp.title }}</h3>
            <p class="text-base sm:text-lg font-medium mb-2" style="color:var(--primary)">{{ exp.company }} <span style="color:var(--text-label)">| {{ exp.location }}</span></p>
           <ul class="space-y-1 text-md" style="color:var(--text)">
-            <li v-for="(h,j) in exp.highlights" :key="j" class="flex items-start gap-2 text-sm">
-              <i class="material-icons" style="font-size:6px;color:var(--primary)">circle</i>
+            <li v-for="(h,j) in exp.highlights" :key="j" class="flex items-start gap-2 text-base">
+              <i class="material-icons" style="font-size:10px;color:var(--primary);margin-top:7px;line-height:1">circle</i>
               <span>{{ h }}</span>
             </li>
           </ul>
@@ -521,17 +311,17 @@ const EducationView = {
           <div class="timeline-dot"></div>
 
           <!-- Degree Header -->
-          <div class="flex items-start justify-between gap-3">
+          <div class="flex items-start gap-4">
             <h4 class="font-semibold text-lg flex items-center gap-2" style="color:var(--text-heading)">
               <i class="material-icons" style="color:var(--primary);font-size:22px">{{ e.icon }}</i> {{ e.degree }}
             </h4>
             <span class="timeline-date shrink-0">{{ e.year }}</span>
           </div>
-          <p class="text-sm mt-0.5" style="color:var(--text)">{{ e.school }}<span style="color:var(--text-label)"> · {{ e.location }}</span></p>
+          <p class="text-base mt-0.5" style="color:var(--text)">{{ e.school }}<span style="color:var(--text-label)"> · {{ e.location }}</span></p>
 
           <!-- Academic Performance -->
           <div class="mt-4">
-            <p class="text-xs font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5" style="color:var(--text-label)"><i class="material-icons" style="font-size:16px">bar_chart</i> Academic Performance</p>
+            <p class="text-base font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5" style="color:var(--text-label)"><i class="material-icons" style="font-size:16px">bar_chart</i> Academic Performance</p>
             <div class="flex items-center gap-3">
               <div class="flex-1 max-w-[220px]">
                 <div class="skill-bar-track"><div class="skill-bar-fill" :style="{ width: ((e.gradeValue/e.gradeMax)*100) + '%' }"></div></div>
@@ -543,19 +333,19 @@ const EducationView = {
 
           <!-- Core Skills -->
           <div class="mt-4">
-            <p class="text-xs font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5" style="color:var(--text-label)"><i class="material-icons" style="font-size:16px">build</i> Core Skills Acquired</p>
+            <p class="text-base font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5" style="color:var(--text-label)"><i class="material-icons" style="font-size:16px">build</i> Core Skills Acquired</p>
             <div class="flex flex-wrap gap-1.5">
-              <span v-for="skill in e.skills" :key="skill" class="text-xs font-medium px-2 py-0.5 rounded-full" style="background:rgba(8,145,178,0.08);color:var(--primary)">{{ skill }}</span>
+              <span v-for="skill in e.skills" :key="skill" class="skill-pill">{{ skill }}</span>
             </div>
           </div>
 
           <!-- Key Projects & Achievements -->
           <div class="mt-4">
-            <p class="text-xs font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5" style="color:var(--text-label)"><i class="material-icons" style="font-size:16px">emoji_events</i> Key Projects & Achievements</p>
+            <p class="text-base font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5" style="color:var(--text-label)"><i class="material-icons" style="font-size:16px">emoji_events</i> Key Projects & Achievements</p>
             <ul class="space-y-1.5">
-              <li v-for="(a,j) in e.achievements" :key="j" class="flex items-start gap-2 text-sm" style="color:var(--text)">
+              <li v-for="(a,j) in e.achievements" :key="j" class="flex items-start gap-2 text-base" style="color:var(--text)">
                 <span v-if="a.award" style="color:#f59e0b;margin-top:2px;flex-shrink:0">🏆</span>
-                <span v-else style="color:var(--primary);margin-top:4px;flex-shrink:0"><span class="material-icons" style="font-size:6px">circle</span></span>
+                <span v-else style="color:var(--primary);margin-top:7px;flex-shrink:0;line-height:1"><span class="material-icons" style="font-size:10px">circle</span></span>
                 <span>{{ a.text }}</span>
               </li>
             </ul>
@@ -572,7 +362,7 @@ const EducationView = {
             <i class="material-icons" style="color:var(--primary);font-size:20px">{{ t.icon }}</i> {{ t.title }}
           </h4>
           <div class="flex flex-wrap gap-1.5 mt-2">
-            <span v-for="topic in t.topics" :key="topic" class="text-xs font-medium px-2 py-0.5 rounded-full" style="background:rgba(8,145,178,0.08);color:var(--primary)">{{ topic }}</span>
+            <span v-for="topic in t.topics" :key="topic" class="skill-pill">{{ topic }}</span>
           </div>
           <div class="flex items-center gap-3 mt-3 text-sm" style="color:var(--text-label)">
             <span class="flex items-center gap-1"><i class="material-icons" style="font-size:14px">business</i> {{ t.institution }}</span>
@@ -627,19 +417,19 @@ const ProjectsView = {
         <h3 class="text-xl lg:text-2xl font-extrabold mb-4" style="color:var(--sidebar-heading)">{{ DATA.featuredProject.title }}</h3>
         <div v-if="DATA.featuredProject.images && DATA.featuredProject.images.length" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
           <div class="md:col-span-2 rounded-xl overflow-hidden" style="background:var(--sidebar-divider)">
-            <img :src="DATA.featuredProject.images[0]" alt="Project screenshot" class="w-full h-auto object-cover" loading="lazy">
+            <img :src="DATA.featuredProject.images[0]" :alt="DATA.featuredProject.title + ' screenshot'" class="w-full h-auto object-cover" loading="lazy">
           </div>
           <div class="space-y-3">
             <div v-for="(img,i) in DATA.featuredProject.images.slice(1)" :key="i" class="rounded-xl overflow-hidden" style="background:var(--sidebar-divider)">
-              <img :src="img" alt="Project screenshot" class="w-full h-auto object-cover" loading="lazy">
+              <img :src="img" :alt="DATA.featuredProject.title + ' thumbnail'" class="w-full h-auto object-cover" loading="lazy">
             </div>
           </div>
         </div>
         <p class="text-md mb-2" v-if="DATA.featuredProject.tech"><span class="font-semibold">Technologies:</span> {{ DATA.featuredProject.tech }}</p>
         <p class="text-md mb-4" v-if="DATA.featuredProject.company"><span class="font-semibold">Company:</span> {{ DATA.featuredProject.company }}</p>
         <ul class="space-y-2 text-md mb-5" v-if="DATA.featuredProject.details">
-          <li v-for="(d,i) in DATA.featuredProject.details" :key="i" class="flex items-start gap-2 text-sm">
-            <i class="material-icons" style="color:var(--primary-light);font-size:18px">check_circle</i>
+          <li v-for="(d,i) in DATA.featuredProject.details" :key="i" class="flex items-start gap-2">
+             <i class="material-icons" style="color:var(--primary-light);font-size:18px;margin-top:3px">check_circle</i>
             <span>{{ d }}</span>
           </li>
         </ul>
@@ -703,7 +493,7 @@ const ProjectsView = {
     </span>
 
     <p
-      class="text-sm mt-2 mb-4 leading-relaxed"
+      class="text-base mt-2 mb-4 leading-relaxed"
       style="color:var(--text)"
     >
       {{ project.description }}
@@ -752,7 +542,13 @@ const AchievementsView = {
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div v-for="(a,ai) in cat.items" :key="ai" class="achievement-card" :style="{ borderLeftColor: cat.color }">
-            <p class="leading-relaxed" style="color:var(--text)">{{ a }}</p>
+            <div class="flex items-start gap-3">
+              <i class="material-icons" :style="{ color: cat.color, fontSize: '22px', marginTop: '3px' }">check_circle</i>
+              <div>
+                <h4 class="font-semibold text-base" style="color:var(--text-heading)">{{ a.title }}</h4>
+                <p class="text-base leading-relaxed mt-1" style="color:var(--text)">{{ a.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -778,8 +574,8 @@ const ReferencesView = {
           <div class="ref-avatar">{{ ref.name.charAt(0) }}</div>
           <div>
              <h4 class="font-bold text-lg" style="color:var(--text-heading)">{{ ref.name }}</h4>
-            <p class=" font-medium" style="color:var(--primary)">{{ ref.title }}</p>
-            <p class="font-medium mb-2" style="color:var(--text)">{{ ref.company }}</p>
+            <p class="text-base font-medium" style="color:var(--primary)">{{ ref.title }}</p>
+            <p class="text-base font-medium mb-2" style="color:var(--text)">{{ ref.company }}</p>
             <a :href="'tel:' + ref.phone" class="inline-flex items-center gap-1.5 text-md font-medium px-3 py-1 rounded-full transition" style="background:rgba(20,184,166,0.08);color:var(--primary)">
               <i class="material-icons" style="font-size:12px;color:var(--primary)">call</i> {{ ref.phone }}
         </router-link>
@@ -801,6 +597,9 @@ const ContactView = {
       DATA,
       form: { name: '', email: '', message: '' },
       submitted: false,
+      showSuccess: false,
+      showError: false,
+      errorMessage: '',
       formError: { name: false, email: false, message: false },
       formSuccess: { name: false, email: false, message: false }
     };
@@ -815,21 +614,70 @@ const ContactView = {
         this.formSuccess[field] = false;
       }
     },
+    validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) return 'Please enter a valid email address.';
+      const [local, domain] = email.split('@');
+      if (local.length > 64) return 'Email username is too long.';
+      if (domain.length > 255) return 'Email domain is too long.';
+      const fakePatterns = ['test@', 'asdf@', '123@', 'abc@', 'qwerty@', 'example@', 'user@', 'admin@'];
+      if (fakePatterns.some(p => email.toLowerCase().startsWith(p))) return 'Please use a real email address.';
+      const tld = domain.split('.').pop().toLowerCase();
+      const fakeTlds = ['localhost', 'test', 'example', 'invalid', 'fake', 'local'];
+      if (fakeTlds.includes(tld)) return 'Please use a real email address.';
+      const DISPOSABLE_DOMAINS = ['mailinator.com','guerrillamail.com','tempmail.com','throwaway.com','yopmail.com','10minutemail.com','trashmail.com','sharklasers.com','maildrop.cc','getairmail.com','temp-mail.org','fakeinbox.com','dispostable.com','mailcatch.com','spambox.us','mailexpire.com','mintemail.com','spamgourmet.com','spamfree24.org','wh4f.org'];
+      if (DISPOSABLE_DOMAINS.includes(domain.toLowerCase())) return 'Temporary email addresses are not allowed. Please use a permanent email.';
+      const TYPO_DOMAINS = {'gamil.com':'gmail.com','gmial.com':'gmail.com','gmal.com':'gmail.com','yaho.com':'yahoo.com','yahooo.com':'yahoo.com','hotmal.com':'hotmail.com','hotnail.com':'hotmail.com','hotmil.com':'hotmail.com','outlok.com':'outlook.com','outllok.com':'outlook.com','protonmil.com':'protonmail.com','protonmal.com':'protonmail.com'};
+      if (TYPO_DOMAINS[domain.toLowerCase()]) return `Did you mean ${TYPO_DOMAINS[domain.toLowerCase()]}? (You typed: ${domain})`;
+      return null;
+    },
     submitForm() {
       ['name', 'email', 'message'].forEach(f => this.validateField(f));
       if (this.form.name && this.form.email && this.form.message) {
+        const emailErr = this.validateEmail(this.form.email);
+        if (emailErr) {
+          this.formError.email = true;
+          this.showError = true;
+          this.errorMessage = emailErr;
+          return;
+        }
         this.submitted = true;
-        // Web3Forms submission
         const formData = new FormData();
         formData.append('access_key', '10c1a904-df2c-4b15-8e7c-6407e5ae6943');
         formData.append('name', this.form.name);
         formData.append('email', this.form.email);
         formData.append('message', this.form.message);
-        formData.append('redirect', 'thanks.html');
         fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
           .then(res => res.json())
-          .then(data => { if (data.success) window.location.href = 'thanks.html'; })
-          .catch(() => { this.submitted = false; });
+          .then(data => {
+            if (data.success) {
+              this.showSuccess = true;
+            } else {
+              this.showError = true;
+              this.errorMessage = data.message || 'Failed to send message. Please try again later.';
+              this.submitted = false;
+            }
+          })
+          .catch(() => {
+            this.showError = true;
+            this.errorMessage = 'Network error: Could not reach the mail server. Please check your connection and try again.';
+            this.submitted = false;
+          });
+      }
+    },
+    closeModal() {
+      const wasError = this.showError;
+      this.showSuccess = false;
+      this.showError = false;
+      this.errorMessage = '';
+      this.submitted = false;
+      if (wasError) {
+        Object.keys(this.formError).forEach(k => this.formError[k] = false);
+        Object.keys(this.formSuccess).forEach(k => this.formSuccess[k] = false);
+      } else {
+        this.form = { name: '', email: '', message: '' };
+        Object.keys(this.formError).forEach(k => this.formError[k] = false);
+        Object.keys(this.formSuccess).forEach(k => this.formSuccess[k] = false);
       }
     }
   },
@@ -840,7 +688,7 @@ const ContactView = {
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <!-- Info -->
         <div class="lg:col-span-2 space-y-5">
-          <div class="card-glass contact-info">
+          <div class="card-glass p-6 contact-info">
             <div class="space-y-3 text-lg">
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone1 }}</div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone2 }}</div></div></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">email</i><div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.email }}</div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.email2 }}</div></div></div>
@@ -850,7 +698,7 @@ const ContactView = {
             </div>
           </div>
 
-          <div class="card-glass">
+          <div class="card-glass p-6">
             <h3 class="text-lg font-bold mb-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">info</i>Availability</h3>
             <div class="space-y-2 text-lg">
               <div class="flex justify-between"><span style="color:var(--text-label)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
@@ -863,7 +711,7 @@ const ContactView = {
 
         <!-- Form -->
         <div class="lg:col-span-3">
-          <div class="card-glass">
+          <div class="card-glass p-6">
             <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">send</i>Send a Message</h3>
             <form @submit.prevent="submitForm" class="space-y-4">
               <div>
@@ -884,9 +732,43 @@ const ContactView = {
         </div>
       </div>
     </div>
+
+    <!-- Success Modal -->
+    <div v-if="showSuccess" class="success-overlay" @click.self="closeModal">
+      <div class="success-card">
+        <div class="success-check">
+          <svg viewBox="0 0 24 24">
+            <polyline points="4,13 9,18 20,6" />
+          </svg>
+        </div>
+        <span class="success-tag">Success</span>
+        <h3 class="success-title">Message Sent!</h3>
+        <p class="success-text">
+          Thank you for reaching out. Your message has been routed to
+          <strong>Md. Asaduzzaman (Aminur)</strong>.
+          You can expect a response within 24 hours.
+        </p>
+        <button @click="closeModal" class="success-btn">OK</button>
+      </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div v-if="showError" class="success-overlay" @click.self="closeModal">
+      <div class="success-card error-card">
+        <div class="success-check error-check">
+          <svg viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18" stroke-width="4" stroke-linecap="round" />
+            <line x1="6" y1="6" x2="18" y2="18" stroke-width="4" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span class="success-tag error-tag">Failed</span>
+        <h3 class="success-title error-title">Message Not Sent</h3>
+        <p class="success-text error-text">{{ errorMessage }}</p>
+        <button @click="closeModal" class="success-btn error-btn">OK</button>
+      </div>
+    </div>
   `,
   mounted() {
-    // fade handled by Vue transition
   }
 };
 
@@ -944,11 +826,11 @@ const ProjectDetailView = {
       <div v-if="hasImages(project)" style="margin-top:-60px;margin-bottom:2rem;padding:0 60px">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
           <div class="lg:col-span-2 rounded-xl overflow-hidden project-card" style="border:1px solid var(--border);box-shadow:var(--shadow-lg);height:400px">
-            <img :src="firstImage(project)" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
+            <img :src="firstImage(project)" :alt="project.title + ' screenshot'" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
           </div>
           <div class="space-y-3">
             <div v-for="img in project.images.slice(1)" :key="img" class="rounded-xl overflow-hidden project-card" style="border:1px solid var(--border);height:192px">
-              <img :src="img" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
+              <img :src="img" :alt="project.title + ' thumbnail'" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
             </div>
           </div>
         </div>
@@ -960,7 +842,7 @@ const ProjectDetailView = {
       <!-- Metrics -->
       <div style="padding:0 60px;margin-bottom:2rem">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div v-for="m in project.metrics" :key="m.label" class="card-glass text-center py-5">
+          <div v-for="m in project.metrics" :key="m.label" class="card-glass text-center py-5 px-5">
             <div class="text-3xl font-extrabold gradient-text">{{ m.value }}</div>
             <div class="text-md font-medium mt-1" style="color:var(--text-label)">{{ m.label }}</div>
           </div>
@@ -972,12 +854,12 @@ const ProjectDetailView = {
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div class="lg:col-span-2 space-y-6">
             <!-- Abstract -->
-            <div class="card-glass">
+            <div class="card-glass p-6">
               <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">System Abstract & Objective</h2>
               <p style="color:var(--text)">{{ project.abstract }}</p>
             </div>
             <!-- Flow -->
-            <div class="card-glass">
+            <div class="card-glass p-6">
               <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">Precision Engineering & Program Flow</h2>
               <div v-for="(step,i) in project.flow" :key="i" class="flex gap-3 mb-4">
                 <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white flex-shrink-0">
@@ -990,11 +872,11 @@ const ProjectDetailView = {
               </div>
             </div>
             <!-- Details -->
-            <div class="card-glass">
+            <div class="card-glass p-6">
               <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">Key Achievements</h2>
               <ul class="space-y-2">
                 <li v-for="(d,i) in project.details" :key="i" class="flex items-start gap-2 text-md">
-                  <i class="material-icons" style="color:var(--primary);font-size:18px">check_circle</i>
+                  <i class="material-icons" style="color:var(--primary);font-size:18px;margin-top:3px">check_circle</i>
                   <span>{{ d }}</span>
                 </li>
               </ul>
@@ -1002,13 +884,13 @@ const ProjectDetailView = {
           </div>
           <!-- Sidebar -->
           <div class="space-y-4">
-            <div class="card-glass">
+            <div class="card-glass p-6">
               <span class="text-md font-bold uppercase tracking-wider" style="color:var(--primary)">Tech Stack</span>
               <div class="flex flex-wrap gap-2 mt-3">
                 <span v-for="t in project.tech" :key="t" class="skill-pill">{{ t }}</span>
               </div>
             </div>
-            <div class="card-glass" style="background:var(--sidebar-bg);color:var(--sidebar-text)">
+            <div class="card-glass p-6" style="background:var(--sidebar-bg);color:var(--sidebar-text)">
               <h4 class="font-bold text-lg mb-3" style="color:var(--sidebar-heading)">Need Something Similar?</h4>
               <p class="text-md mb-4">I build specialized industrial digital solutions, ERP integrations, and automation tools.</p>
               <router-link to="/contact" class="inline-block w-full py-2.5 text-center text-lg font-semibold rounded-xl gradient-bg text-white transition">
@@ -1074,6 +956,7 @@ const App = {
       DATA,
       darkMode: false,
       mobileMenuOpen: false,
+      showContactModal: false,
       showScrollTop: false
     };
   },
@@ -1081,14 +964,6 @@ const App = {
     menuItems() { return this.DATA.menuItems; }
   },
   mounted() {
-    if (typeof PROJECTS_DATA !== 'undefined') {
-      DATA.featuredProject = PROJECTS_DATA.featuredProject;
-      DATA.projectCategories = PROJECTS_DATA.projectCategories;
-      DATA.projectDetails = PROJECTS_DATA.projectDetails;
-      DATA.projectsLoaded = true;
-    } else {
-      DATA.projectsLoaded = true;
-    }
     const saved = localStorage.getItem('darkMode');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (saved === 'true' || (saved === null && prefersDark)) {
@@ -1113,6 +988,7 @@ const App = {
     },
     toggleMobile() { this.mobileMenuOpen = !this.mobileMenuOpen; },
     closeMobile() { this.mobileMenuOpen = false; },
+    toggleContactModal() { this.mobileMenuOpen = false; this.showContactModal = !this.showContactModal; },
     scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); },
     handleScroll() {
       this.showScrollTop = window.scrollY > 100;
@@ -1127,10 +1003,10 @@ const App = {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              $(entry.target).find('.skill-bar-fill').each(function () {
-                const w = this.style.width;
-                $(this).css('width', '0');
-                setTimeout(() => $(this).css('width', w), 100);
+              entry.target.querySelectorAll('.skill-bar-fill').forEach(function (el) {
+                const w = el.style.width;
+                el.style.width = '0';
+                setTimeout(function () { el.style.width = w; }, 100);
               });
               observer.unobserve(entry.target);
             }
@@ -1156,6 +1032,9 @@ const App = {
               <i class="material-icons" style="font-size:16px">download</i>
               <span class="download-cv-short">CV</span><span class="download-cv-full">Download CV</span>
             </a>
+            <button @click="toggleContactModal" class="flex items-center gap-1 px-3 py-1.5 text-sm font-semibold rounded-lg transition-all duration-300" style="border:1px solid var(--primary);color:var(--primary)">
+              <i class="material-icons" style="font-size:16px">contact_phone</i> Contacts
+            </button>
             <button @click="toggleDark" class="theme-toggle" style="width:32px;height:32px">
               <i class="material-icons" style="font-size:18px">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
             </button>
@@ -1218,12 +1097,121 @@ const App = {
             <hr style="border-color:var(--sidebar-divider)">
             <div class="flex items-center justify-between">
               <span class="text-sm flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
-              <button @click="toggleDark" class="theme-toggle" style="width:32px;height:32px">
-                <i class="material-icons" style="font-size:18px;transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
-              </button>
+              <div class="flex items-center gap-2">
+                <button @click="toggleContactModal" class="flex items-center gap-1 px-3 py-1.5 text-sm font-semibold rounded-lg transition-all duration-300" style="border:1px solid var(--primary);color:var(--primary)">
+                  <i class="material-icons" style="font-size:16px">contact_phone</i> Contacts
+                </button>
+                <button @click="toggleDark" class="theme-toggle" style="width:32px;height:32px">
+                  <i class="material-icons" style="font-size:18px;transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
+                </button>
+              </div>
             </div>
           </div>
         </aside>
+      </transition>
+
+      <!-- Contact Modal -->
+      <transition name="scale-fade">
+        <div v-if="showContactModal" @click.self="showContactModal = false" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" style="background:rgba(0,0,0,0.65);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
+          <div class="w-full max-w-4xl flex flex-col overflow-hidden rounded-xl" style="max-height:85dvh;height:85dvh;background:var(--bg-card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border)">
+            <div class="flex items-center justify-between px-4 py-3 shrink-0" style="border-bottom:1px solid var(--border)">
+              <h2 class="text-base font-bold flex items-center gap-1.5" style="color:var(--text-heading)">
+                <i class="material-icons" style="font-size:18px;color:var(--primary)">contact_phone</i> Contact
+              </h2>
+              <button @click="showContactModal = false" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all hover:bg-black/5" style="color:var(--text-label)">
+                <i class="material-icons" style="font-size:18px">close</i>
+              </button>
+            </div>
+            <div class="flex-1 min-h-0 overflow-y-auto" style="-webkit-overflow-scrolling:touch">
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 p-4">
+              <div class="space-y-3">
+                <p class="text-[11px] font-semibold tracking-wider" style="color:var(--text-label)">WHATSAPP</p>
+                <a class="card-glass--glass flex flex-col items-center gap-3 p-4 rounded-xl" style="text-decoration:none" @click.stop>
+                  <img src="assets/images/whatsapp_qr.png" alt="QR" class="w-28 h-28 rounded-xl" style="border:2px solid var(--border);background:white">
+                </a>
+                <a :href="'https://wa.me/' + DATA.personal.phone1.replace(/[^0-9]/g,'')" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12c0 2.097.602 4.055 1.638 5.708L2 22l4.374-1.604C8.02 21.378 9.965 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.833 0-3.557-.58-4.973-1.573l-.357-.237-2.597.954.96-2.549-.255-.38A7.956 7.956 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.19-5.94c-.23-.115-1.36-.67-1.57-.746-.21-.077-.363-.115-.516.115-.153.23-.593.746-.727.899-.134.153-.268.172-.498.057-.23-.115-.972-.358-1.85-1.143-.684-.613-1.146-1.37-1.28-1.602-.134-.23-.014-.355.101-.47.103-.103.23-.268.345-.402.115-.134.153-.23.23-.383.077-.153.038-.287-.019-.402-.057-.115-.516-1.244-.707-1.704-.186-.45-.374-.372-.516-.372-.134 0-.287-.019-.44-.019-.153 0-.402.057-.612.287-.21.23-.802.784-.802 1.913s.82 2.22.935 2.373c.115.153 1.614 2.465 3.91 3.456.546.236.972.377 1.305.482.548.173 1.048.149 1.442.09.44-.066 1.36-.555 1.552-1.092.192-.537.192-.997.134-1.093-.057-.096-.21-.153-.44-.268z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-sm" style="color:#25D366">{{ DATA.personal.phone1 }}</h4>
+                    <p class="text-xs mt-0.5" style="color:var(--text)">WhatsApp</p>
+                  </div>
+                </a>
+                <a :href="'https://wa.me/' + DATA.personal.phone2.replace(/[^0-9]/g,'')" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12c0 2.097.602 4.055 1.638 5.708L2 22l4.374-1.604C8.02 21.378 9.965 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.833 0-3.557-.58-4.973-1.573l-.357-.237-2.597.954.96-2.549-.255-.38A7.956 7.956 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.19-5.94c-.23-.115-1.36-.67-1.57-.746-.21-.077-.363-.115-.516.115-.153.23-.593.746-.727.899-.134.153-.268.172-.498.057-.23-.115-.972-.358-1.85-1.143-.684-.613-1.146-1.37-1.28-1.602-.134-.23-.014-.355.101-.47.103-.103.23-.268.345-.402.115-.134.153-.23.23-.383.077-.153.038-.287-.019-.402-.057-.115-.516-1.244-.707-1.704-.186-.45-.374-.372-.516-.372-.134 0-.287-.019-.44-.019-.153 0-.402.057-.612.287-.21.23-.802.784-.802 1.913s.82 2.22.935 2.373c.115.153 1.614 2.465 3.91 3.456.546.236.972.377 1.305.482.548.173 1.048.149 1.442.09.44-.066 1.36-.555 1.552-1.092.192-.537.192-.997.134-1.093-.057-.096-.21-.153-.44-.268z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-sm" style="color:#25D366">{{ DATA.personal.phone2 }}</h4>
+                    <p class="text-xs mt-0.5" style="color:var(--text)">WhatsApp</p>
+                  </div>
+                </a>
+              </div>
+              <div class="space-y-3">
+                <p class="text-[11px] font-semibold tracking-wider" style="color:var(--text-label)">EMAIL</p>
+                <a :href="'mailto:' + DATA.personal.email" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                    <i class="material-icons text-white" style="font-size:16px">email</i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.email }}</h4>
+                    <p class="text-xs mt-0.5" style="color:var(--text)">Email Primary</p>
+                  </div>
+                </a>
+                <a :href="'mailto:' + DATA.personal.email2" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                    <i class="material-icons text-white" style="font-size:16px">email</i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.email2 }}</h4>
+                    <p class="text-xs mt-0.5" style="color:var(--text)">Email Secondary</p>
+                  </div>
+                </a>
+                <p class="text-[11px] font-semibold tracking-wider" style="color:var(--text-label)">LINKS</p>
+                <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                    <i class="material-icons text-white" style="font-size:16px">link</i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.linkedin }}</h4>
+                    <p class="text-xs mt-0.5" style="color:var(--text)">LinkedIn</p>
+                  </div>
+                </a>
+                <a :href="DATA.personal.website" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                    <i class="material-icons text-white" style="font-size:16px">language</i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.website }}</h4>
+                    <p class="text-xs mt-0.5" style="color:var(--text)">Website</p>
+                  </div>
+                </a>
+              </div>
+              <div class="space-y-3">
+                <p class="text-[11px] font-semibold tracking-wider" style="color:var(--text-label)">LOCATION</p>
+                <div class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="display:flex">
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                    <i class="material-icons text-white" style="font-size:16px">location_on</i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.location }}</h4>
+                    <p class="text-xs mt-0.5" style="color:var(--text)">Current Location</p>
+                  </div>
+                </div>
+                <a :href="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(DATA.personal.location)" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                    <i class="material-icons text-white" style="font-size:16px">map</i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-sm" style="color:var(--primary)">View on Google Maps</h4>
+                    <p class="text-xs mt-0.5" style="color:var(--text)">Open in Google Maps</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </transition>
 
       <!-- Sidebar -->
@@ -1238,20 +1226,11 @@ const App = {
             <p class="text-lg mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
           </div>
 
-          <div class="px-6 space-y-3 mb-4">
-            <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div>{{ DATA.personal.phone1 }}</div><div>{{ DATA.personal.phone2 }}</div></div></div>
-            <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
-            <div class="flex items-center gap-3   font-medium"><i class="material-icons" style="color:var(--primary);font-size:18px">location_on</i><span>{{ DATA.personal.location }}</span></div>
-            
-          </div>
-
-          <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
-
           <!-- Sidebar Nav -->
-          <div class="px-4 py-3 space-y-0.5">
+          <div class="px-4 space-y-0.5">
             <router-link v-for="item in menuItems" :key="item.path"
               :to="item.path"
-              class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg  font-medium transition"
+              class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium transition"
               :class="{ 'nav-link-active': $route.path === item.path }"
               @click="closeMobile">
               <i class="material-icons w-4 text-center" style="font-size:18px">{{ item.icon }}</i>
@@ -1259,7 +1238,6 @@ const App = {
             </router-link>
           </div>
 
-          <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
         </div>
 
         <!-- Download + Theme (fixed at bottom) -->
@@ -1271,9 +1249,14 @@ const App = {
           </a>
           <div class="flex items-center justify-between">
             <span class="text-lg flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
-            <button @click="toggleDark" class="theme-toggle">
-              <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
-            </button>
+            <div class="flex items-center gap-2">
+              <button @click="toggleContactModal" class="flex items-center gap-1 px-3 py-1.5 text-sm font-semibold rounded-lg transition-all duration-300" style="border:1px solid var(--primary);color:var(--primary)">
+                <i class="material-icons" style="font-size:16px">contact_phone</i> Contacts
+              </button>
+              <button @click="toggleDark" class="theme-toggle">
+                <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
+              </button>
+            </div>
           </div>
         </div>
       </aside>
@@ -1295,8 +1278,5 @@ const App = {
 };
 
 /* ===================================================
-   MOUNT
+   MOUNT — handled in index.html bootstrap
    =================================================== */
-const app = Vue.createApp(App);
-app.use(router);
-app.mount('#app');
