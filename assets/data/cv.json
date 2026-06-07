@@ -601,9 +601,9 @@
       "icon": "emoji_events"
     },
     {
-      "path": "/references",
-      "label": "References",
-      "icon": "people"
+      "path": "/services",
+      "label": "Services",
+      "icon": "handyman"
     },
     {
       "path": "/contact",

@@ -46,7 +46,7 @@ const HomeView = {
         <router-link to="/contact" class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
           <i class="material-icons text-lg">send</i> Message
         </router-link>
-        <a href="./Aminur670_CV_2026.pdf" download class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
+        <a href="./assets/Aminur670_CV_2026.pdf" download class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
           <i class="material-icons text-lg">download</i> Download CV
         </a>
         <router-link to="/projects" class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
@@ -529,13 +529,22 @@ const ProjectsView = {
         <i class="material-icons text-xs">{{ project.categoryIcon }}</i>
         {{ project.categoryName }}
       </span>
-      <span
-        v-if="project.tech"
-        class="text-xs ml-2"
-        style="color:var(--text-label)"
-      >
-        {{ project.tech }}
-      </span>
+      <div class="flex items-center gap-2 min-w-0">
+        <span
+          v-if="project.date"
+          class="text-xs font-medium px-2 py-0.5 rounded shrink-0"
+          style="background:rgba(20,184,166,0.12);color:var(--primary-light)"
+        >
+          {{ project.date.substring(0,4) }}
+        </span>
+        <span
+          v-if="project.tech"
+          class="text-xs truncate"
+          style="color:var(--text-label)"
+        >
+          {{ project.tech }}
+        </span>
+      </div>
     </div>
 
     <router-link
@@ -620,27 +629,88 @@ const AchievementsView = {
   }
 };
 
-// --- REFERENCES VIEW ---
-const ReferencesView = {
-  name: 'ReferencesView',
+// --- SERVICES VIEW ---
+const ServicesView = {
+  name: 'ServicesView',
   data() {
     return { DATA };
   },
+  computed: {
+    services() {
+      return [
+        {
+          icon: 'dns',
+          title: 'IT Support & System Administration',
+          description: 'End-to-end IT support including OS installation, hardware/software diagnostics, remote support, system maintenance, and user training for 100+ end-users.',
+          highlights: ['Windows/Linux OS Install & Configuration', 'Hardware Diagnostics & Repair', 'Remote IT Support (AnyDesk, TeamViewer)', 'System Maintenance & Optimization', 'User Training & Onboarding']
+        },
+        {
+          icon: 'storage',
+          title: 'ERP Operations & Management',
+          description: 'Full-cycle ERP administration across GPRO modules including cutting, store, production, payroll, billing, inventory, and RFID-driven IoT checkpoint systems.',
+          highlights: ['GPRO ERP (All Modules)', 'Inventory Management & Control', 'Payroll / Billing Automation', 'Data Entry & Verification', 'ERP Install, Support & Training']
+        },
+        {
+          icon: 'web',
+          title: 'Web Development & CMS',
+          description: 'Custom WordPress, WooCommerce, Vue, and Laravel development with responsive design, SEO optimization, and payment system integration.',
+          highlights: ['WordPress + Elementor / WooCommerce', 'Vue 3 SPA Development', 'Laravel + Blade + Eloquent', 'Custom Theme & Plugin Development', 'SEO & Performance Optimization']
+        },
+        {
+          icon: 'code',
+          title: 'Software Development & Automation',
+          description: 'Desktop application development using C# .NET with serial port integration, ERP automation, Crystal Reports, and custom automation tools.',
+          highlights: ['C# .NET WinForms Applications', 'Serial Port / Hardware Integration', 'Crystal Reports & Data Export', 'Excel VBA Macros & Automation', 'Weight Scale & Barcode Systems']
+        },
+        {
+          icon: 'shopping_cart',
+          title: 'E-Commerce & Marketplace Solutions',
+          description: 'End-to-end e-commerce management across Amazon Seller Central, eBay, and WooCommerce with product listing, order processing, and inventory synchronization.',
+          highlights: ['Amazon Seller Central Management', 'eBay Seller Hub & Listings', 'WooCommerce Store Setup', '200+ Product Listing Optimization', 'Order Processing & Inventory Sync']
+        },
+        {
+          icon: 'settings_ethernet',
+          title: 'System Integration & IoT',
+          description: 'Industrial system integration connecting barcode printers, weight scales, RFID terminals, and MOXA serial cards with ERP systems over RS-485 networks.',
+          highlights: ['Barcode Printer Configuration', 'Automated Label Printing Systems', 'YAOHUA Weight Scale Integration', 'NXP MCU RFID Terminal Setup', 'MOXA Serial Card & RS-485 Cabling']
+        },
+        {
+          icon: 'palette',
+          title: 'Design & Multimedia',
+          description: 'Professional graphic design for print and digital media including infographics, product photography, logos, posters, labels, and video editing.',
+          highlights: ['Photoshop & Illustrator Design', 'Canva & Infographic Creation', 'Product Photography & Editing', 'Posters / Labels / Invoices', 'Video Editing (Filmora)']
+        },
+        {
+          icon: 'lan',
+          title: 'Networking & Security',
+          description: 'Network infrastructure setup including LAN configuration, IP subnetting, firewall, IP camera installation, and structured cabling (RS-485).',
+          highlights: ['IP Config & Subnetting', 'LAN / Router / Switch Setup', 'File & Printer Sharing', 'Firewall & Antivirus Deployment', 'IP Camera & Network Cabling']
+        }
+      ];
+    }
+  },
   template: `
     <div class="section">
-      <span class="section-tag">Endorsements</span>
-      <h2 class="section-title">References</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-        <div v-for="(ref,i) in DATA.references" :key="i" class="ref-card flex items-start gap-4">
-          <div class="ref-avatar">{{ ref.name.charAt(0) }}</div>
-          <div>
-             <h4 class="font-bold text-lg" style="color:var(--text-heading)">{{ ref.name }}</h4>
-            <p class="text-base font-medium" style="color:var(--primary)">{{ ref.title }}</p>
-            <p class="text-base font-medium mb-2" style="color:var(--text)">{{ ref.company }}</p>
-            <a :href="'tel:' + ref.phone" class="inline-flex items-center gap-1.5 text-md font-medium px-3 py-1 rounded-full transition" style="background:rgba(20,184,166,0.08);color:var(--primary)">
-              <i class="material-icons" style="font-size:12px;color:var(--primary)">call</i> {{ ref.phone }}
-        </router-link>
+      <span class="section-tag">What I Offer</span>
+      <h2 class="section-title">Professional Services</h2>
+      <p class="text-base mb-8 leading-relaxed" style="color:var(--text);max-width:720px">
+        I offer a unique blend of creative, technical, and support-based services spanning IT support, ERP operations, web development, software engineering, e-commerce, system integration, design, and networking.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div v-for="(s,i) in services" :key="i" class="card-glass p-6 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 rounded-xl gradient-bg flex items-center justify-center shrink-0">
+              <i class="material-icons text-white" style="font-size:22px">{{ s.icon }}</i>
+            </div>
+            <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ s.title }}</h3>
           </div>
+          <p class="text-base mb-4 leading-relaxed" style="color:var(--text)">{{ s.description }}</p>
+          <ul class="space-y-2 mt-auto">
+            <li v-for="(h,j) in s.highlights" :key="j" class="flex items-start gap-2 text-sm">
+              <i class="material-icons" style="font-size:14px;color:var(--primary-light);margin-top:2px">check_circle</i>
+              <span style="color:var(--text-label)">{{ h }}</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -901,7 +971,7 @@ const ProjectDetailView = {
         <span class="truncate max-w-xs" style="color:var(--text-heading)">{{ project.title }}</span>
       </div>
       <!-- Hero Glass Card -->
-      <div class="px-4 sm:px-8 lg:px-16 mb-6">
+      <div class="px-4 sm:px-8 lg:px-16 mb-6 project-detail-hero">
         <div class="rounded-xl" style="background:var(--bg-card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--border);padding:clamp(20px,4vw,36px);margin-top:clamp(16px,3vw,32px)">
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
             <div class="flex-1 min-w-0">
@@ -909,9 +979,15 @@ const ProjectDetailView = {
               <h1 class="font-extrabold gradient-text" style="font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.2">{{ project.title }}</h1>
               <p class="text-sm sm:text-base mt-1" style="color:var(--text-label)">{{ project.subtitle }}</p>
             </div>
-            <div class="flex-shrink-0 sm:text-right" v-if="project.company">
-              <small style="opacity:0.5;display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px">Company</small>
-              <strong style="color:var(--text-heading);font-size:clamp(0.95rem,2vw,1.15rem)">{{ project.company }}</strong>
+            <div class="flex-shrink-0 sm:text-right flex flex-col items-end gap-3" v-if="project.company || project.date">
+              <div v-if="project.date" class="sm:text-right">
+                <small style="opacity:0.5;display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px">Year</small>
+                <strong style="color:var(--text-heading);font-size:clamp(0.95rem,2vw,1.15rem)">{{ project.date.substring(0,4) }}</strong>
+              </div>
+              <div v-if="project.company" class="sm:text-right">
+                <small style="opacity:0.5;display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px">Company</small>
+                <strong style="color:var(--text-heading);font-size:clamp(0.95rem,2vw,1.15rem)">{{ project.company }}</strong>
+              </div>
             </div>
           </div>
           <div v-if="projectMeta" class="mt-5 pt-4" style="border-top:1px solid var(--border)">
@@ -1036,7 +1112,7 @@ const routes = [
   { path: '/projects', component: ProjectsView, meta: { title: 'Projects' } },
   { path: '/project/:id', component: ProjectDetailView, meta: { title: 'Project' } },
   { path: '/achievements', component: AchievementsView, meta: { title: 'Achievements' } },
-  { path: '/references', component: ReferencesView, meta: { title: 'References' } },
+  { path: '/services', component: ServicesView, meta: { title: 'Services' } },
   { path: '/contact', component: ContactView, meta: { title: 'Contact' } },
   { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
@@ -1193,7 +1269,7 @@ const App = {
         <div class="flex items-center justify-between px-4 h-full">
           <router-link to="/" @click="closeMobile" class="text-xl font-extrabold tracking-tight gradient-text">Amin670BD</router-link>
           <div class="flex items-center gap-1.5 shrink-0">
-            <a href="./Aminur670_CV_2026.pdf" download
+            <a href="./assets/Aminur670_CV_2026.pdf" download
               class="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-300 shrink-0"
               style="border:1px solid var(--primary);color:var(--primary)">
               <i class="material-icons" style="font-size:14px">download</i>
@@ -1219,19 +1295,21 @@ const App = {
 
       <!-- Offcanvas Sidebar (Mobile) -->
       <transition name="offcanvas">
-        <aside v-if="mobileMenuOpen" class="fixed top-0 right-0 h-full w-72 z-50 overflow-y-auto offcanvas-mobile">
-          <div class="flex items-start justify-between p-6">
-            <div class="text-center flex-1">
-              <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
-              <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
-              <p class="text-md mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
+        <aside v-if="mobileMenuOpen" class="fixed top-0 right-0 h-full w-72 z-50 offcanvas-mobile" style="display:flex;flex-direction:column">
+          <div class="flex-shrink-0">
+            <div class="flex items-start justify-between p-6">
+              <div class="text-center flex-1">
+                <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
+                <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
+                <p class="text-md mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
+              </div>
+              <button @click="closeMobile" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary);background:transparent">
+                <i class="material-icons" style="font-size:18px">close</i>
+              </button>
             </div>
-            <button @click="closeMobile" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary);background:transparent">
-              <i class="material-icons" style="font-size:18px">close</i>
-            </button>
+            <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
           </div>
-          <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
-          <div class="px-6 py-3 space-y-0.5" style="flex:1">
+          <div class="px-6 py-3 space-y-0.5 flex-1 overflow-y-auto">
             <router-link v-for="item in menuItems" :key="item.path"
               @click="closeMobile" :to="item.path"
               class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium transition"
@@ -1240,26 +1318,28 @@ const App = {
               <span>{{ item.label }}</span>
             </router-link>
           </div>
-          <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
-          <div class="px-6 py-4 space-y-3">
-            <a href="./Aminur670_CV_2026.pdf" download
-              class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg transition-all duration-300"
-              style="box-shadow:0 4px 12px rgba(20,184,166,0.25)">
-              <i class="material-icons">download</i> Download CV
-            </a>
-            <div class="flex items-center justify-center gap-3 pt-1">
-              <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle" title="LinkedIn" style="width:32px;height:32px">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          <div class="flex-shrink-0">
+            <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
+            <div class="px-6 py-4 space-y-3">
+              <a href="./assets/Aminur670_CV_2026.pdf" download
+                class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg transition-all duration-300"
+                style="box-shadow:0 4px 12px rgba(20,184,166,0.25)">
+                <i class="material-icons">download</i> Download CV
               </a>
-              <a :href="DATA.personal.website" target="_blank" class="theme-toggle" title="Portfolio" style="width:32px;height:32px">
-                <i class="material-icons" style="font-size:16px">language</i>
-              </a>
-              <a :href="'https://github.com/amin670bd'" target="_blank" class="theme-toggle" title="GitHub" style="width:32px;height:32px">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              </a>
-              <a :href="'mailto:' + DATA.personal.email" class="theme-toggle" title="Email" style="width:32px;height:32px">
-                <i class="material-icons" style="font-size:16px">email</i>
-              </a>
+              <div class="flex items-center justify-center gap-3 pt-1">
+                <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle" title="LinkedIn" style="width:32px;height:32px">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                </a>
+                <a :href="DATA.personal.website" target="_blank" class="theme-toggle" title="Portfolio" style="width:32px;height:32px">
+                  <i class="material-icons" style="font-size:16px">language</i>
+                </a>
+                <a :href="'https://github.com/amin670bd'" target="_blank" class="theme-toggle" title="GitHub" style="width:32px;height:32px">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </a>
+                <a :href="'mailto:' + DATA.personal.email" class="theme-toggle" title="Email" style="width:32px;height:32px">
+                  <i class="material-icons" style="font-size:16px">email</i>
+                </a>
+              </div>
             </div>
           </div>
         </aside>
@@ -1406,7 +1486,7 @@ const App = {
 
         <!-- Download + Theme (fixed at bottom) -->
         <div class="px-6 py-4 space-y-3" style="border-top:1px solid var(--sidebar-divider)">
-          <a href="./Aminur670_CV_2026.pdf" download
+          <a href="./assets/Aminur670_CV_2026.pdf" download
             class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg transition-all duration-300"
             style="box-shadow:0 4px 12px rgba(20,184,166,0.25)">
             <i class="material-icons">download</i> Download CV
