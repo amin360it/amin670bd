@@ -46,7 +46,7 @@ const HomeView = {
         <router-link to="/contact" class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
           <i class="material-icons text-lg">send</i> Message
         </router-link>
-        <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
+        <a href="./Aminur670_CV_2026.pdf" download class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
           <i class="material-icons text-lg">download</i> Download CV
         </a>
         <router-link to="/projects" class="hero-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300" style="border:1px solid var(--border);color:var(--text-heading);background:var(--bg-card)">
@@ -158,7 +158,7 @@ const AboutView = {
                   <span style="color:var(--text)">{{ DATA.personal.location }}</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <i class="material-icons" style="color:var(--primary);font-size:20px">link</i>
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color:var(--primary)"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                   <a :href="'https://' + DATA.personal.linkedin" target="_blank" style="color:var(--primary)">{{ DATA.personal.linkedin }}</a>
                 </div>
                 <div class="flex items-center gap-3">
@@ -197,15 +197,13 @@ const AboutView = {
           </div>
 
           <!-- Employment Details -->
-          <div class="card-glass p-6">
-            <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">work</i> Employment Details</h4>
-            <div class="space-y-2">
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
-              <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
-              <div class="flex justify-between py-1"><span class="text-sm" style="color:var(--text-label)">Location</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.location }}</span></div>
-            </div>
+        <div class="card-glass p-6">
+          <h4 class="text-lg font-bold mb-3 flex items-center gap-2" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">work</i> Employment Details</h4>
+          <div class="space-y-2">
+            <div class="flex justify-between py-1" style="border-bottom:1px solid var(--border)"><span class="text-sm" style="color:var(--text-label)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
+            <div class="flex justify-between py-1"><span class="text-sm" style="color:var(--text-label)">Location</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.location }}</span></div>
           </div>
+        </div>
 
         </div>
 
@@ -385,7 +383,12 @@ const ProjectsView = {
   data() {
     return {
       DATA,
-      activeFilter: 'all'
+      activeFilter: 'all',
+      selectedYear: 'all',
+      featSlide: 0,
+      featImages: null,
+      featProjectMeta: null,
+      featSlideTimer: null
     };
   },
   computed: {
@@ -398,14 +401,44 @@ const ProjectsView = {
       });
       return items;
     },
+    availableYears() {
+      const years = new Set();
+      this.allProjects.forEach(p => { if (p.date) years.add(p.date.substring(0,4)); });
+      return [...years].sort().reverse();
+    },
     filteredProjects() {
-      if (this.activeFilter === 'all') return this.allProjects;
-      return this.allProjects.filter(p => p.categoryKey === this.activeFilter);
+      let items = this.activeFilter === 'all' ? this.allProjects : this.allProjects.filter(p => p.categoryKey === this.activeFilter);
+      if (this.selectedYear !== 'all') items = items.filter(p => p.date && p.date.startsWith(this.selectedYear));
+      return items;
+    },
+    featSlideImages() {
+      if (this.featImages) return this.featImages;
+      const fallback = this.DATA.featuredProject.images || [];
+      return fallback.map(f => typeof f === 'string' ? { src: f, title: '', desc: '' } : f);
     }
   },
   methods: {
-    setFilter(key) { this.activeFilter = key; }
+    setFilter(key) { this.activeFilter = key; },
+    setYear(year) { this.selectedYear = year; },
+    prevFeat() { this.featSlide = this.featSlide > 0 ? this.featSlide - 1 : this.featSlideImages.length - 1; this.stopFeatSlide(); this.startFeatSlide(); },
+    nextFeat() { this.featSlide = this.featSlide < this.featSlideImages.length - 1 ? this.featSlide + 1 : 0; this.stopFeatSlide(); this.startFeatSlide(); },
+    goFeat(i) { this.featSlide = i; this.stopFeatSlide(); this.startFeatSlide(); },
+    startFeatSlide() { if (this.featSlideTimer) clearInterval(this.featSlideTimer); this.featSlideTimer = setInterval(this.nextFeat, 3000); },
+    stopFeatSlide() { if (this.featSlideTimer) { clearInterval(this.featSlideTimer); this.featSlideTimer = null; } }
   },
+  mounted() {
+    const id = this.DATA.featuredProject.id;
+    if (!id) return;
+    fetch('assets/images/projects/' + id + '/project-image.json')
+      .then(r => r.ok ? r.json() : { images: [] })
+      .then(data => {
+        if (data.images && data.images.length) this.featImages = data.images.map(f => typeof f === 'string' ? { src: 'assets/images/projects/' + id + '/' + f, title: '', desc: '' } : { ...f, src: 'assets/images/projects/' + id + '/' + f.src });
+        if (data.title) this.featProjectMeta = { title: data.title, company: data.company, tech: data.tech, description: data.description };
+        this.startFeatSlide();
+      })
+      .catch(() => { this.startFeatSlide(); });
+  },
+  beforeUnmount() { this.stopFeatSlide(); },
   template: `
     <div class="section">
       <span class="section-tag">Case Studies</span>
@@ -415,15 +448,34 @@ const ProjectsView = {
       <div v-if="DATA.featuredProject.title" class="card-glass-alt p-6 lg:p-8 mb-10">
         <span class="inline-block text-md font-bold px-3 py-1 rounded-full mb-4 gradient-bg text-white">🏆 Top Achievement</span>
         <h3 class="text-xl lg:text-2xl font-extrabold mb-4" style="color:var(--sidebar-heading)">{{ DATA.featuredProject.title }}</h3>
-        <div v-if="DATA.featuredProject.images && DATA.featuredProject.images.length" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
-          <div class="md:col-span-2 rounded-xl overflow-hidden" style="background:var(--sidebar-divider)">
-            <img :src="DATA.featuredProject.images[0]" :alt="DATA.featuredProject.title + ' screenshot'" class="w-full h-auto object-cover" loading="lazy">
+        <div v-if="featSlideImages.length" class="relative rounded-xl overflow-hidden" style="border:1px solid var(--sidebar-divider);aspect-ratio:16/9;background:var(--bg-card)" @mouseenter="stopFeatSlide" @mouseleave="startFeatSlide">
+          <img :src="typeof featSlideImages[featSlide] === 'string' ? featSlideImages[featSlide] : featSlideImages[featSlide].src" :alt="DATA.featuredProject.title + ' screenshot'" class="w-full h-full" style="object-fit:contain" loading="lazy">
+        </div>
+        <!-- Text above mini gallery -->
+        <div class="mt-2 mb-3" style="background:var(--bg-card);padding:8px 14px;border-radius:8px;border:1px solid var(--border)">
+          <h4 class="text-lg font-bold" style="color:var(--text-heading)">{{ typeof featSlideImages[featSlide] !== 'string' && featSlideImages[featSlide].title ? featSlideImages[featSlide].title : featProjectMeta?.title || DATA.featuredProject.title }}</h4>
+          <p class="text-base mt-1" style="color:var(--text-label)">{{ typeof featSlideImages[featSlide] !== 'string' && featSlideImages[featSlide].desc ? featSlideImages[featSlide].desc : featProjectMeta?.description || DATA.featuredProject.description }}</p>
+        </div>
+        <!-- Mini Gallery + Controls -->
+        <div v-if="featSlideImages.length > 1" class="flex items-center gap-2 mt-2 mb-6">
+          <button @click="prevFeat" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
+            <i class="material-icons" style="font-size:18px">chevron_left</i>
+          </button>
+          <div class="flex items-center gap-2 overflow-x-auto pb-1 flex-1" style="scrollbar-width:thin">
+            <button v-for="(img,i) in featSlideImages" :key="i" @click="goFeat(i)" class="flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300" :style="{border:i===featSlide?'2px solid var(--primary)':'2px solid transparent',opacity:i===featSlide?1:0.5,cursor:'pointer',padding:0,background:'var(--bg-card)'}">
+              <img :src="typeof img === 'string' ? img : img.src" :alt="'thumb ' + i" style="width:80px;height:60px;object-fit:cover;display:block" loading="lazy">
+            </button>
           </div>
-          <div class="space-y-3">
-            <div v-for="(img,i) in DATA.featuredProject.images.slice(1)" :key="i" class="rounded-xl overflow-hidden" style="background:var(--sidebar-divider)">
-              <img :src="img" :alt="DATA.featuredProject.title + ' thumbnail'" class="w-full h-auto object-cover" loading="lazy">
-            </div>
-          </div>
+          <button @click="nextFeat" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
+            <i class="material-icons" style="font-size:18px">chevron_right</i>
+          </button>
+        </div>
+        <!-- Project info loaded from project-image.json -->
+        <div v-if="featProjectMeta" class="card-glass p-4 rounded-xl mb-4">
+          <h4 class="text-sm font-extrabold gradient-text mb-1">{{ featProjectMeta.title }}</h4>
+          <p class="text-xs" style="color:var(--text-label)" v-if="featProjectMeta.company">{{ featProjectMeta.company }}</p>
+          <p class="text-xs" style="color:var(--primary)" v-if="featProjectMeta.tech">{{ featProjectMeta.tech }}</p>
+          <p class="text-xs mt-1" style="color:var(--text)" v-if="featProjectMeta.description">{{ featProjectMeta.description }}</p>
         </div>
         <p class="text-md mb-2" v-if="DATA.featuredProject.tech"><span class="font-semibold">Technologies:</span> {{ DATA.featuredProject.tech }}</p>
         <p class="text-md mb-4" v-if="DATA.featuredProject.company"><span class="font-semibold">Company:</span> {{ DATA.featuredProject.company }}</p>
@@ -441,15 +493,24 @@ const ProjectsView = {
       <!-- All Projects Grid -->
       <span class="section-tag">All Works</span>
       <h2 class="section-title">Projects & Client Works</h2>
-      <div class="sticky top-0 z-10 flex flex-wrap gap-2 mb-6 pt-4 pb-3 -mx-6 px-6" style="background:var(--bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)" v-if="allProjects.length">
-        <button v-for="cat in [{key:'all',label:'All'}].concat(DATA.projectCategories.map(c=>({key:c.key,label:c.name})))" :key="cat.key"
-          @click="setFilter(cat.key)"
-          class="project-filter-btn" :class="{ active: activeFilter === cat.key }">
-          {{ cat.label }}
-        </button>
+      <div class="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-3 mb-6 pt-4 pb-3 -mx-6 px-6" style="background:var(--bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)" v-if="allProjects.length">
+        <div class="flex flex-wrap gap-2 items-center">
+          <button v-for="cat in [{key:'all',label:'All'}].concat(DATA.projectCategories.map(c=>({key:c.key,label:c.name})))" :key="cat.key"
+            @click="setFilter(cat.key)"
+            class="project-filter-btn" :class="{ active: activeFilter === cat.key }">
+            {{ cat.label }}
+          </button>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <span class="text-sm font-medium" style="color:var(--text-label)">Year:</span>
+          <select v-model="selectedYear" @change="setYear(selectedYear)" class="text-sm font-medium px-2 py-1 rounded-lg" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer;outline:none">
+            <option value="all">All</option>
+            <option v-for="y in availableYears" :key="y" :value="y">{{ y }}</option>
+          </select>
+        </div>
       </div>
     <transition-group
-  :key="activeFilter"
+  :key="activeFilter + '-' + selectedYear"
   name="project"
   tag="div"
   class="grid grid-cols-1 sm:grid-cols-2 gap-6"
@@ -693,7 +754,7 @@ const ContactView = {
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">phone</i><div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone1 }}</div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.phone2 }}</div></div></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">email</i><div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.email }}</div><div class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.email2 }}</div></div></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">location_on</i><span>{{ DATA.personal.location }}</span></div>
-              <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">link</i><a :href="'https://' + DATA.personal.linkedin" target="_blank" class="hover:underline">{{ DATA.personal.linkedin }}</a></div>
+              <div class="flex items-center gap-3"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="color:var(--primary)"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg><a :href="'https://' + DATA.personal.linkedin" target="_blank" class="hover:underline">{{ DATA.personal.linkedin }}</a></div>
               <div class="flex items-center gap-3"><i class="material-icons" style="color:var(--primary);font-size:18px">language</i><a :href="DATA.personal.website" target="_blank" class="hover:underline">{{ DATA.personal.website }}</a></div>
             </div>
           </div>
@@ -701,8 +762,6 @@ const ContactView = {
           <div class="card-glass p-6">
             <h3 class="text-lg font-bold mb-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">info</i>Availability</h3>
             <div class="space-y-2 text-lg">
-              <div class="flex justify-between"><span style="color:var(--text-label)">Current Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.currentSalary }}</span></div>
-              <div class="flex justify-between"><span style="color:var(--text-label)">Expected Salary</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.expectedSalary }}</span></div>
               <div class="flex justify-between"><span style="color:var(--text-label)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
               <div class="flex justify-between"><span style="color:var(--text-label)">Relocation</span><span class="font-medium" style="color:var(--text-heading)">Yes</span></div>
             </div>
@@ -778,12 +837,37 @@ const ContactView = {
 const ProjectDetailView = {
   name: 'ProjectDetailView',
   data() {
-    return { DATA };
+    return { DATA, currentSlide: 0, projectImages: null, projectMeta: null, slideTimer: null };
   },
   computed: {
     project() {
       const id = this.$route.params.id;
       return this.DATA.projectDetails[id] || null;
+    },
+    slideImages() {
+      if (this.projectImages) return this.projectImages;
+      const fallback = this.project?.images || [];
+      return fallback.map(f => typeof f === 'string' ? { src: f, title: '', desc: '' } : f);
+    }
+  },
+  watch: {
+    '$route.params.id': {
+      immediate: true,
+      handler(id) {
+        this.stopAutoSlide();
+        if (!id) return;
+        this.currentSlide = 0;
+        this.projectImages = null;
+        this.projectMeta = null;
+        fetch('assets/images/projects/' + id + '/project-image.json')
+          .then(r => r.ok ? r.json() : { images: [] })
+          .then(data => {
+            if (data.images && data.images.length) this.projectImages = data.images.map(f => typeof f === 'string' ? { src: 'assets/images/projects/' + id + '/' + f, title: '', desc: '' } : { ...f, src: 'assets/images/projects/' + id + '/' + f.src });
+            if (data.title) this.projectMeta = { title: data.title, company: data.company, tech: data.tech, description: data.description };
+            this.startAutoSlide();
+          })
+          .catch(() => { this.startAutoSlide(); });
+      }
     }
   },
   methods: {
@@ -794,53 +878,82 @@ const ProjectDetailView = {
       ph.className = 'img-placeholder';
       parent.appendChild(ph);
     },
-    hasImages(project) {
-      return project.images && project.images.length > 0;
+    prevSlide() {
+      this.currentSlide = this.currentSlide > 0 ? this.currentSlide - 1 : this.slideImages.length - 1;
+      this.stopAutoSlide(); this.startAutoSlide();
     },
-    firstImage(project) {
-      return this.hasImages(project) ? project.images[0] : '';
-    }
+    nextSlide() {
+      this.currentSlide = this.currentSlide < this.slideImages.length - 1 ? this.currentSlide + 1 : 0;
+      this.stopAutoSlide(); this.startAutoSlide();
+    },
+    goToSlide(i) { this.currentSlide = i; this.stopAutoSlide(); this.startAutoSlide(); },
+    startAutoSlide() { if (this.slideTimer) clearInterval(this.slideTimer); if (this.slideImages.length > 1) this.slideTimer = setInterval(this.nextSlide, 3000); },
+    stopAutoSlide() { if (this.slideTimer) { clearInterval(this.slideTimer); this.slideTimer = null; } }
   },
   template: `
     <div v-if="project">
       <!-- Breadcrumb Nav (desktop/tablet only) -->
-      <div class="hidden lg:flex items-center gap-2 text-sm font-medium px-6 py-3 sticky top-0 z-20" style="background:var(--bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);color:var(--text-label)">
+      <div class="hidden lg:flex items-center gap-2 text-sm font-medium px-6 py-3 sticky top-0 z-20" style="background:var(--bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);color:var(--text-label)">
         <router-link to="/" style="color:var(--primary)" class="hover:underline">Home</router-link>
         <i class="material-icons" style="font-size:14px">chevron_right</i>
         <router-link to="/projects" style="color:var(--primary)" class="hover:underline">Projects</router-link>
         <i class="material-icons" style="font-size:14px">chevron_right</i>
         <span class="truncate max-w-xs" style="color:var(--text-heading)">{{ project.title }}</span>
       </div>
-      <!-- Hero -->
-      <div class="section" style="background:var(--sidebar-bg);color:var(--sidebar-text);border-radius:0 0 40px 40px;padding-bottom:60px">
-        <span class="section-tag" style="background:rgba(20,184,166,0.15);padding:4px 14px;border-radius:20px">TOP ACHIEVEMENT</span>
-        <h1 class="section-title" style="color:var(--sidebar-heading);font-size:2.2rem;margin-top:12px">{{ project.title }}</h1>
-        <p style="color:var(--sidebar-text);font-size:1.1rem;opacity:0.8">{{ project.subtitle }}</p>
-        <div class="flex flex-wrap gap-5 mt-6" style="color:var(--sidebar-text)">
-          <div><small style="opacity:0.6">Company</small><br><strong style="color:var(--sidebar-heading)">{{ project.company }}</strong></div>
-          <div><small style="opacity:0.6">Developer</small><br><strong style="color:var(--sidebar-heading)">{{ project.developer }}</strong></div>
+      <!-- Hero Glass Card -->
+      <div class="px-4 sm:px-8 lg:px-16 mb-6">
+        <div class="rounded-xl" style="background:var(--bg-card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--border);padding:clamp(20px,4vw,36px);margin-top:clamp(16px,3vw,32px)">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              <span v-if="project.id === DATA.featuredProject.id || project.featured" class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3" style="background:rgba(20,184,166,0.15);color:var(--primary-light)">TOP ACHIEVEMENT</span>
+              <h1 class="font-extrabold gradient-text" style="font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.2">{{ project.title }}</h1>
+              <p class="text-sm sm:text-base mt-1" style="color:var(--text-label)">{{ project.subtitle }}</p>
+            </div>
+            <div class="flex-shrink-0 sm:text-right" v-if="project.company">
+              <small style="opacity:0.5;display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px">Company</small>
+              <strong style="color:var(--text-heading);font-size:clamp(0.95rem,2vw,1.15rem)">{{ project.company }}</strong>
+            </div>
+          </div>
+          <div v-if="projectMeta" class="mt-5 pt-4" style="border-top:1px solid var(--border)">
+            <div class="flex flex-wrap items-center gap-2 mb-3" v-if="projectMeta.tech">
+              <span v-for="t in projectMeta.tech.split(',').map(s=>s.trim())" :key="t" class="text-xs font-medium px-3 py-1 rounded-full" style="background:rgba(20,184,166,0.12);color:var(--primary-light)">{{ t }}</span>
+            </div>
+            <p style="color:var(--text);font-size:clamp(0.85rem,1.5vw,0.95rem);line-height:1.7" v-if="projectMeta.description">{{ projectMeta.description }}</p>
+          </div>
         </div>
       </div>
 
-      <!-- Gallery -->
-      <div v-if="hasImages(project)" style="margin-top:-60px;margin-bottom:2rem;padding:0 60px">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
-          <div class="lg:col-span-2 rounded-xl overflow-hidden project-card" style="border:1px solid var(--border);box-shadow:var(--shadow-lg);height:400px">
-            <img :src="firstImage(project)" :alt="project.title + ' screenshot'" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
+      <!-- Featured Image / Slider -->
+      <div v-if="slideImages.length" class="px-4 sm:px-8 lg:px-16 mb-6">
+        <div class="relative rounded-xl overflow-hidden" style="border:1px solid var(--border);box-shadow:var(--shadow-lg);aspect-ratio:16/9;background:var(--bg-card)" @mouseenter="stopAutoSlide" @mouseleave="startAutoSlide">
+          <img :src="typeof slideImages[currentSlide] === 'string' ? slideImages[currentSlide] : slideImages[currentSlide].src" :alt="project.title + ' screenshot'" @error="placeholderImg" class="w-full h-full" style="object-fit:contain" loading="lazy">
+        </div>
+        <!-- Text above mini gallery -->
+        <div class="mt-2 mb-3" style="background:var(--bg-card);padding:8px 14px;border-radius:8px;border:1px solid var(--border)">
+          <h4 class="text-lg font-bold" style="color:var(--text-heading)">{{ typeof slideImages[currentSlide] !== 'string' && slideImages[currentSlide].title ? slideImages[currentSlide].title : projectMeta?.title || project.title }}</h4>
+          <p class="text-base mt-1" style="color:var(--text-label)">{{ typeof slideImages[currentSlide] !== 'string' && slideImages[currentSlide].desc ? slideImages[currentSlide].desc : projectMeta?.description || project.abstract }}</p>
+        </div>
+        <!-- Mini Gallery + Controls -->
+        <div v-if="slideImages.length > 1" class="flex items-center gap-2 mt-2">
+          <button @click="prevSlide" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
+            <i class="material-icons" style="font-size:18px">chevron_left</i>
+          </button>
+          <div class="flex items-center gap-2 overflow-x-auto pb-1 flex-1" style="scrollbar-width:thin">
+            <button v-for="(img,i) in slideImages" :key="i" @click="goToSlide(i)" class="flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300" :style="{border:i===currentSlide?'2px solid var(--primary)':'2px solid transparent',opacity:i===currentSlide?1:0.5,cursor:'pointer',padding:0,background:'var(--bg-card)'}">
+              <img :src="typeof img === 'string' ? img : img.src" :alt="'thumb ' + i" style="width:80px;height:60px;object-fit:cover;display:block" loading="lazy">
+            </button>
           </div>
-          <div class="space-y-3">
-            <div v-for="img in project.images.slice(1)" :key="img" class="rounded-xl overflow-hidden project-card" style="border:1px solid var(--border);height:192px">
-              <img :src="img" :alt="project.title + ' thumbnail'" @error="placeholderImg" class="w-full h-full" style="object-fit:cover" loading="lazy">
-            </div>
-          </div>
+          <button @click="nextSlide" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
+            <i class="material-icons" style="font-size:18px">chevron_right</i>
+          </button>
         </div>
       </div>
-      <div v-else style="margin-top:-60px;margin-bottom:2rem;padding:0 60px;height:200px">
+      <div v-else class="px-4 sm:px-8 lg:px-16 mb-6" style="height:200px">
         <div class="rounded-xl img-placeholder" style="height:100%"></div>
       </div>
 
       <!-- Metrics -->
-      <div style="padding:0 60px;margin-bottom:2rem">
+      <div class="px-4 sm:px-8 lg:px-16 mb-8">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div v-for="m in project.metrics" :key="m.label" class="card-glass text-center py-5 px-5">
             <div class="text-3xl font-extrabold gradient-text">{{ m.value }}</div>
@@ -850,15 +963,13 @@ const ProjectDetailView = {
       </div>
 
       <!-- Content -->
-      <div style="padding:0 60px 40px">
+      <div class="px-4 sm:px-8 lg:px-16 pb-10">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div class="lg:col-span-2 space-y-6">
-            <!-- Abstract -->
             <div class="card-glass p-6">
               <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">System Abstract & Objective</h2>
               <p style="color:var(--text)">{{ project.abstract }}</p>
             </div>
-            <!-- Flow -->
             <div class="card-glass p-6">
               <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">Precision Engineering & Program Flow</h2>
               <div v-for="(step,i) in project.flow" :key="i" class="flex gap-3 mb-4">
@@ -871,7 +982,6 @@ const ProjectDetailView = {
                 </div>
               </div>
             </div>
-            <!-- Details -->
             <div class="card-glass p-6">
               <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="border-left:4px solid var(--primary);padding-left:12px">Key Achievements</h2>
               <ul class="space-y-2">
@@ -882,7 +992,6 @@ const ProjectDetailView = {
               </ul>
             </div>
           </div>
-          <!-- Sidebar -->
           <div class="space-y-4">
             <div class="card-glass p-6">
               <span class="text-md font-bold uppercase tracking-wider" style="color:var(--primary)">Tech Stack</span>
@@ -911,7 +1020,8 @@ const ProjectDetailView = {
   `,
   mounted() {
     // fade handled by Vue transition
-  }
+  },
+  beforeUnmount() { this.stopAutoSlide(); }
 };
 
 /* ===================================================
@@ -957,7 +1067,8 @@ const App = {
       darkMode: false,
       mobileMenuOpen: false,
       showContactModal: false,
-      showScrollTop: false
+      showScrollTop: false,
+      particleAnimId: null
     };
   },
   computed: {
@@ -972,6 +1083,7 @@ const App = {
     }
     window.addEventListener('scroll', this.handleScroll);
     this.observeSkillBars();
+    this.$nextTick(() => this.initParticles());
   },
   watch: {
     '$route'() {
@@ -1014,32 +1126,87 @@ const App = {
         }, { threshold: 0.3 });
         observer.observe(el);
       });
+    },
+    initParticles() {
+      const canvas = this.$refs.particleCanvas;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let w, h, particles = [];
+      const resize = () => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      };
+      window.addEventListener('resize', resize);
+      resize();
+      const count = Math.min(120, Math.floor(w * h / 10000));
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * w, y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.6,
+          vy: (Math.random() - 0.5) * 0.6,
+          r: Math.random() * 2 + 1,
+          a: Math.random() * 0.5 + 0.15
+        });
+      }
+      const draw = () => {
+        this.particleAnimId = requestAnimationFrame(draw);
+        ctx.clearRect(0, 0, w, h);
+        const isDark = document.documentElement.classList.contains('dark');
+        const color = isDark ? '20,184,166' : '20,184,166';
+        particles.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = w; if (p.x > w) p.x = 0;
+          if (p.y < 0) p.y = h; if (p.y > h) p.y = 0;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${color},${p.a})`;
+          ctx.fill();
+        });
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(${color},${0.12 * (1 - dist / 120)})`;
+              ctx.lineWidth = 0.6;
+              ctx.stroke();
+            }
+          }
+        }
+      };
+      draw();
     }
   },
   beforeUnmount() {
+    if (this.particleAnimId) cancelAnimationFrame(this.particleAnimId);
     window.removeEventListener('scroll', this.handleScroll);
   },
   template: `
     <div>
+      <canvas ref="particleCanvas" class="particle-canvas"></canvas>
       <!-- Mobile Nav -->
       <nav class="mobile-nav">
-        <div class="flex items-center justify-between px-4 py-3">
-          <router-link to="/" @click="closeMobile" class="text-lg font-extrabold tracking-tight gradient-text">Amin670BD</router-link>
-          <div class="flex items-center gap-2">
-            <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
-              class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-lg transition-all duration-300"
+        <div class="flex items-center justify-between px-4 h-full">
+          <router-link to="/" @click="closeMobile" class="text-xl font-extrabold tracking-tight gradient-text">Amin670BD</router-link>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <a href="./Aminur670_CV_2026.pdf" download
+              class="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-300 shrink-0"
               style="border:1px solid var(--primary);color:var(--primary)">
-              <i class="material-icons" style="font-size:16px">download</i>
+              <i class="material-icons" style="font-size:14px">download</i>
               <span class="download-cv-short">CV</span><span class="download-cv-full">Download CV</span>
             </a>
-            <button @click="toggleContactModal" class="flex items-center gap-1 px-3 py-1.5 text-sm font-semibold rounded-lg transition-all duration-300" style="border:1px solid var(--primary);color:var(--primary)">
-              <i class="material-icons" style="font-size:16px">contact_phone</i> Contacts
+            <button @click="toggleContactModal" class="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary)">
+              <i class="material-icons" style="font-size:14px">contact_phone</i> Contacts
             </button>
-            <button @click="toggleDark" class="theme-toggle" style="width:32px;height:32px">
-              <i class="material-icons" style="font-size:18px">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
+            <button @click="toggleDark" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary);background:transparent">
+              <i class="material-icons" style="font-size:16px">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
             </button>
-            <button @click="toggleMobile" class="text-xl p-2" style="color:var(--text)">
-              <i class="material-icons">{{ mobileMenuOpen ? 'close' : 'menu' }}</i>
+            <button @click="toggleMobile" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary);background:transparent">
+              <i class="material-icons" style="font-size:16px">{{ mobileMenuOpen ? 'close' : 'menu' }}</i>
             </button>
           </div>
         </div>
@@ -1047,19 +1214,24 @@ const App = {
 
       <!-- Offcanvas Backdrop -->
       <transition name="fade">
-        <div v-if="mobileMenuOpen" @click="closeMobile" class="fixed inset-0 z-40" style="background:rgba(0,0,0,0.5)"></div>
+        <div v-if="mobileMenuOpen" @click="closeMobile" class="fixed inset-0 z-40" style="background:rgba(0,0,0,0.4);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)"></div>
       </transition>
 
       <!-- Offcanvas Sidebar (Mobile) -->
       <transition name="offcanvas">
-        <aside v-if="mobileMenuOpen" class="fixed top-0 right-0 h-full w-72 z-50 overflow-y-auto" style="background:var(--sidebar-bg)">
-          <div class="p-6 text-center">
-            <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
-            <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
-            <p class="text-md mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
+        <aside v-if="mobileMenuOpen" class="fixed top-0 right-0 h-full w-72 z-50 overflow-y-auto offcanvas-mobile">
+          <div class="flex items-start justify-between p-6">
+            <div class="text-center flex-1">
+              <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
+              <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
+              <p class="text-md mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
+            </div>
+            <button @click="closeMobile" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary);background:transparent">
+              <i class="material-icons" style="font-size:18px">close</i>
+            </button>
           </div>
           <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
-          <div class="px-4 py-3 space-y-0.5" style="flex:1">
+          <div class="px-6 py-3 space-y-0.5" style="flex:1">
             <router-link v-for="item in menuItems" :key="item.path"
               @click="closeMobile" :to="item.path"
               class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium transition"
@@ -1070,41 +1242,24 @@ const App = {
           </div>
           <hr style="border-color:var(--sidebar-divider);margin:0 1.5rem">
           <div class="px-6 py-4 space-y-3">
-            <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
+            <a href="./Aminur670_CV_2026.pdf" download
               class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg transition-all duration-300"
               style="box-shadow:0 4px 12px rgba(20,184,166,0.25)">
               <i class="material-icons">download</i> Download CV
             </a>
-            <div class="space-y-1.5 text-sm" style="color:var(--sidebar-text)">
-              <div class="flex items-center gap-2"><i class="material-icons" style="color:var(--primary);font-size:14px">phone</i><span>{{ DATA.personal.phone1 }}</span></div>
-              <div class="flex items-center gap-2"><i class="material-icons" style="color:var(--primary);font-size:14px">email</i><span class="truncate">{{ DATA.personal.email }}</span></div>
-              <div class="flex items-center gap-2"><i class="material-icons" style="color:var(--primary);font-size:14px">location_on</i><span>{{ DATA.personal.location }}</span></div>
-            </div>
             <div class="flex items-center justify-center gap-3 pt-1">
-              <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle" title="LinkedIn" style="width:32px;height:32px;font-size:16px">
-                <i class="material-icons">link</i>
+              <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle" title="LinkedIn" style="width:32px;height:32px">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
               </a>
-              <a :href="DATA.personal.website" target="_blank" class="theme-toggle" title="Portfolio" style="width:32px;height:32px;font-size:16px">
-                <i class="material-icons">language</i>
+              <a :href="DATA.personal.website" target="_blank" class="theme-toggle" title="Portfolio" style="width:32px;height:32px">
+                <i class="material-icons" style="font-size:16px">language</i>
               </a>
-              <a :href="'https://github.com/amin670bd'" target="_blank" class="theme-toggle" title="GitHub" style="width:32px;height:32px;font-size:16px">
-                <i class="material-icons">code</i>
+              <a :href="'https://github.com/amin670bd'" target="_blank" class="theme-toggle" title="GitHub" style="width:32px;height:32px">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
               </a>
-              <a :href="'mailto:' + DATA.personal.email" class="theme-toggle" title="Email" style="width:32px;height:32px;font-size:16px">
-                <i class="material-icons">email</i>
+              <a :href="'mailto:' + DATA.personal.email" class="theme-toggle" title="Email" style="width:32px;height:32px">
+                <i class="material-icons" style="font-size:16px">email</i>
               </a>
-            </div>
-            <hr style="border-color:var(--sidebar-divider)">
-            <div class="flex items-center justify-between">
-              <span class="text-sm flex items-center gap-1.5" style="color:var(--sidebar-text)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent-emerald);box-shadow:0 0 6px rgba(16,185,129,0.4)"></span> Available</span>
-              <div class="flex items-center gap-2">
-                <button @click="toggleContactModal" class="flex items-center gap-1 px-3 py-1.5 text-sm font-semibold rounded-lg transition-all duration-300" style="border:1px solid var(--primary);color:var(--primary)">
-                  <i class="material-icons" style="font-size:16px">contact_phone</i> Contacts
-                </button>
-                <button @click="toggleDark" class="theme-toggle" style="width:32px;height:32px">
-                  <i class="material-icons" style="font-size:18px;transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
-                </button>
-              </div>
             </div>
           </div>
         </aside>
@@ -1113,7 +1268,7 @@ const App = {
       <!-- Contact Modal -->
       <transition name="scale-fade">
         <div v-if="showContactModal" @click.self="showContactModal = false" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" style="background:rgba(0,0,0,0.65);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
-          <div class="w-full max-w-4xl flex flex-col overflow-hidden rounded-xl" style="max-height:85dvh;height:85dvh;background:var(--bg-card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border)">
+          <div class="w-full md:max-w-4xl flex flex-col overflow-hidden rounded-xl" style="max-height:85dvh;height:85dvh;background:var(--bg-card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--border)">
             <div class="flex items-center justify-between px-4 py-3 shrink-0" style="border-bottom:1px solid var(--border)">
               <h2 class="text-base font-bold flex items-center gap-1.5" style="color:var(--text-heading)">
                 <i class="material-icons" style="font-size:18px;color:var(--primary)">contact_phone</i> Contact
@@ -1127,7 +1282,7 @@ const App = {
               <div class="space-y-3">
                 <p class="text-[11px] font-semibold tracking-wider" style="color:var(--text-label)">WHATSAPP</p>
                 <a class="card-glass--glass flex flex-col items-center gap-3 p-4 rounded-xl" style="text-decoration:none" @click.stop>
-                  <img src="assets/images/whatsapp_qr.png" alt="QR" class="w-28 h-28 rounded-xl" style="border:2px solid var(--border);background:white">
+                  <img src="assets/images/whatsapp_qr.png" alt="QR" class="w-14 h-14 rounded-xl" style="border:2px solid var(--border);background:white">
                 </a>
                 <a :href="'https://wa.me/' + DATA.personal.phone1.replace(/[^0-9]/g,'')" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
                   <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
@@ -1171,7 +1326,7 @@ const App = {
                 <p class="text-[11px] font-semibold tracking-wider" style="color:var(--text-label)">LINKS</p>
                 <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
                   <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
-                    <i class="material-icons text-white" style="font-size:16px">link</i>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                   </div>
                   <div>
                     <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.linkedin }}</h4>
@@ -1185,6 +1340,15 @@ const App = {
                   <div>
                     <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.website }}</h4>
                     <p class="text-xs mt-0.5" style="color:var(--text)">Website</p>
+                  </div>
+                </a>
+                <a :href="'https://github.com/amin670bd'" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">github.com/amin670bd</h4>
+                    <p class="text-xs mt-0.5" style="color:var(--text)">GitHub</p>
                   </div>
                 </a>
               </div>
@@ -1242,7 +1406,7 @@ const App = {
 
         <!-- Download + Theme (fixed at bottom) -->
         <div class="px-6 py-4 space-y-3" style="border-top:1px solid var(--sidebar-divider)">
-          <a href="./Assaduzzaman_Aminur_CV_2026.pdf" download
+          <a href="./Aminur670_CV_2026.pdf" download
             class="btn-shimmer flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white font-semibold rounded-xl gradient-bg transition-all duration-300"
             style="box-shadow:0 4px 12px rgba(20,184,166,0.25)">
             <i class="material-icons">download</i> Download CV

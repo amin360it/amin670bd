@@ -22,11 +22,11 @@
   --primary-dark: #0369a1;
   --primary-light: #67e8f9;
   --teal: #059669;
-  --gradient-deep: #1e40af;
-  --gradient-teal: #0d9488;
-  --gradient-green: #059669;
+  --gradient-deep: #2563eb;
+  --gradient-teal: #14b8a6;
+  --gradient-green: #10b981;
   --bg: linear-gradient(135deg, #f0fdf4, #f0fdfa, #ecfdf5);
-  --bg-card: rgba(255,255,255,0.85);
+  --bg-card: rgba(255,255,255,0.75);
   --text: #1e293b;
   --text-heading: #020617;
   --text-muted: #475569;
@@ -36,7 +36,7 @@
   --sidebar-text: #475569;
   --sidebar-heading: #020617;
   --sidebar-divider: rgba(148,163,184,0.3);
-  --nav-bg: rgba(255,255,255,0.9);
+  --nav-bg: rgba(255,255,255,0.75);
   --shadow: 0 1px 3px rgba(0,0,0,0.06);
   --shadow-sm: 0 2px 6px rgba(0,0,0,0.04);
   --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
@@ -45,17 +45,17 @@
   --radius-sm: 10px;
   --accent-amber: #f59e0b;
   --accent-emerald: #10b981;
-  --glass-bg: rgba(255,255,255,0.7);
+  --glass-bg: rgba(255,255,255,0.75);
   --glass-border: rgba(255,255,255,0.25);
   --glass-shadow: 0 8px 32px rgba(0,0,0,0.06);
-  --glass-blur: 12px;
+  --glass-blur: 20px;
   --toggle-bg: rgba(0,0,0,0.04);
   --toggle-border: rgba(0,0,0,0.08);
 }
 
 .dark {
   --bg: linear-gradient(135deg, #022c22, #021a17, #022c22);
-  --bg-card: rgba(5,46,33,0.55);
+  --bg-card: rgba(5,46,33,0.75);
   --text: #cbd5e1;
   --text-heading: #e2e8f0;
   --text-muted: #94a3b8;
@@ -72,15 +72,15 @@
   --sidebar-text: #e2e8f0;
   --sidebar-heading: #ffffff;
   --sidebar-divider: rgba(45,212,191,0.2);
-  --nav-bg: rgba(5,46,33,0.9);
+  --nav-bg: rgba(5,46,33,0.75);
   --shadow: 0 1px 3px rgba(0,0,0,0.3);
   --shadow-sm: 0 2px 6px rgba(0,0,0,0.2);
   --shadow-lg: 0 10px 25px rgba(0,0,0,0.4);
   --shadow-glow: 0 0 30px rgba(20,184,166,0.25);
-  --glass-bg: rgba(5,46,33,0.5);
+  --glass-bg: rgba(5,46,33,0.75);
   --glass-border: rgba(255,255,255,0.06);
   --glass-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  --glass-blur: 12px;
+  --glass-blur: 20px;
   --toggle-bg: rgba(255,255,255,0.06);
   --toggle-border: rgba(255,255,255,0.10);
 }
@@ -175,12 +175,18 @@ body::-webkit-scrollbar-thumb:hover { background: var(--primary); }
   top: 0;
   left: 0;
   width: 100%;
+  height: 60px;
   background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   z-index: 50;
   transition: background 0.3s;
+}
+.offcanvas-mobile {
+  background: var(--sidebar-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 .download-cv-short { display: inline; }
 .download-cv-full { display: none; }
@@ -251,8 +257,8 @@ body::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 /* ===== CARDS ===== */
 .card-glass {
   background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem;
@@ -264,8 +270,8 @@ body::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 }
 .card-glass-alt {
   background: var(--sidebar-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   color: var(--sidebar-text);
   border: 1px solid var(--sidebar-divider);
   border-radius: var(--radius);
@@ -361,6 +367,8 @@ body::-webkit-scrollbar-thumb:hover { background: var(--primary); }
   margin-bottom: 2rem;
   padding: 1rem 1rem 1rem 1.5rem;
   background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   border-left: 3px solid var(--primary);
@@ -442,9 +450,9 @@ var(--gradient-green));
 
 /* ===== ACHIEVEMENT ===== */
 .achievement-card {
-  background: linear-gradient(135deg, rgba(20,184,166,0.08), rgba(16,185,129,0.03));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   border-left: 3px solid var(--primary);
   border-radius: var(--radius);
@@ -575,6 +583,8 @@ textarea.contact-input { resize: vertical; min-height: 100px; }
 /* ===== REFERENCE CARD ===== */
 .ref-card {
   background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
@@ -689,6 +699,7 @@ textarea.contact-input { resize: vertical; min-height: 100px; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient-shift 4s ease infinite;
+  filter: drop-shadow(0 0 6px rgba(20,184,166,0.3));
 }
 .gradient-bg {
   background: linear-gradient(135deg, var(--gradient-deep), var(--gradient-teal), var(--gradient-green));
@@ -791,8 +802,8 @@ textarea.contact-input { resize: vertical; min-height: 100px; }
 /* ===== VIEW DETAILS BTN ===== */
 .project-card-item {
   background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   transition: all 0.3s ease;
@@ -808,9 +819,9 @@ textarea.contact-input { resize: vertical; min-height: 100px; }
 .project-title-link { color: var(--text-heading); }
 .project-title-link:hover { color: var(--primary) !important; }
 
-.hero-subtitle { font-size: 1.125rem; }
-@media (max-width: 767px) { .hero-subtitle { font-size: 1rem; } }
-@media (max-width: 359px) { .hero-subtitle { font-size: 0.9rem; } }
+.hero-subtitle { font-size: 1.5rem; }
+@media (max-width: 767px) { .hero-subtitle { font-size: 1.25rem; } }
+@media (max-width: 359px) { .hero-subtitle { font-size: 1.1rem; } }
 
 /* Responsive project detail */
 @media (max-width: 767px) {
@@ -967,7 +978,16 @@ textarea.contact-input { resize: vertical; min-height: 100px; }
 
 /* ===== REFERENCE CARD TWEAKS ===== */
 
-/* ===== OFFCANVAS ===== */
+/* ===== PARTICLE CANVAS ===== */
+.particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
 .offcanvas-enter-active { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
 .offcanvas-leave-active { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
 .offcanvas-enter-from { transform: translateX(100%); }
@@ -1147,8 +1167,8 @@ textarea.contact-input { resize: vertical; min-height: 100px; }
   padding: 52px 36px 44px;
   text-align: center;
   background: var(--sidebar-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(45,212,191,0.15);
   box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 40px rgba(20,184,166,0.2);
   animation: modalIn 0.35s ease forwards;
