@@ -633,207 +633,9 @@ const AchievementsView = {
 const ServicesView = {
   name: 'ServicesView',
   data() {
-    return { DATA };
-  },
-  computed: {
-    // ─── Web & App Development ───
-    devServices() {
-      return [
-        {
-          icon: 'web',
-          title: 'Web Development & CMS',
-          description: 'Custom WordPress, WooCommerce, Vue, and Laravel development with responsive design, SEO optimization, and payment system integration.',
-          highlights: ['WordPress, Elementor, WooCommerce', 'Vue 3 SPA Development', 'Laravel REST API & Backend', 'Custom Theme & Plugin Development', 'Payment Gateway Integration, LMS, ACF', 'SEO Optimization & Performance Tuning']
-        },
-        {
-          icon: 'important_devices',
-          title: 'Hybrid Mobile App (PWA, Web, Android)',
-          description: 'Cross-platform mobile solutions combining PWA and Capacitor — installable web apps and hybrid Android APKs from a single Vue/React codebase.',
-          highlights: ['Progressive Web App (PWA) Development', 'Hybrid Android APK via Capacitor', 'Vue 3 / React + Capacitor Integration', 'Offline Mode, Push Notifications & Service Workers', 'Play Store Deployment & App Updates', 'Camera, GPS & Native Plugin Access'],
-        },
-        {
-          icon: 'code',
-          title: 'Custom Software & Tools Development',
-          description: 'Bespoke desktop applications, internal business tools, utility software, and process automation scripts tailored to your workflow.',
-          highlights: ['Bespoke Desktop Applications', 'Internal Business & Productivity Tools', 'Utility Software & CLI Tools', 'Process Automation Scripts', 'C# .NET WinForms & ADO.NET', 'System Integration & Custom Reporting']
-        }
-      ];
-    },
-    // ─── E-Commerce & Marketing ───
-    ecomServices() {
-      return [
-        {
-          icon: 'shopping_cart',
-          title: 'E-Commerce & Online Store Solutions',
-          description: 'Full WooCommerce store development on WordPress — from theme customization and product catalog setup to photography, infographics, order management, and promotional email campaigns.',
-          highlights: ['WooCommerce Store Development on WordPress', 'Theme Customization & Product Catalog Setup', 'Product Photography, Editing & Infographics', 'Order, Shipping & Inventory Management', 'Promotional Email Campaigns & Newsletters', 'Store Maintenance & Performance Optimization']
-        },
-        {
-          icon: 'campaign',
-          title: 'Email Marketing & Campaigns',
-          description: 'End-to-end email campaign management — from strategy and copywriting to automation, analytics, and subscriber list management.',
-          highlights: ['Campaign Setup & Automation', 'Newsletter & Lead Nurture Sequences', 'Bulk Mailing Tools (Mailchimp, SendGrid)', 'Email Copywriting & Analytics', 'Subscriber List Management & Segmentation', 'A/B Testing & Performance Reporting']
-        },
-        {
-          icon: 'webhook',
-          title: 'Email & Web Template Design',
-          description: 'Custom-coded HTML email templates and responsive web page templates designed for branding, engagement, and cross-client compatibility.',
-          highlights: ['HTML Email Template Design & Coding', 'Responsive Email Layouts (Dark Mode Ready)', 'Landing Page & Web Template Design', 'Mailchimp / SendGrid Template Integration', 'Brand-consistent Visual Email Design', 'Cross-client Email Rendering Testing']
-        }
-      ];
-    },
-    // ─── Design & Multimedia ───
-    creativeServices() {
-      return [
-        {
-          icon: 'palette',
-          title: 'Graphic Design & Branding',
-          description: 'Professional print and digital design — business identity, promotional materials, product visuals, and social media creatives.',
-          highlights: ['Business Cards, Flyers & Banners', 'Social Media Posts & Cover Art', 'Product Photography & Editing', 'Infographics, Labels & Invoices', 'Logo & Brand Identity Design', 'Brochures, Menus & Print-ready Artwork']
-        },
-        {
-          icon: 'videocam',
-          title: 'Video Editing',
-          description: 'Creative video editing and post-production for social media reels, promotional clips, event recaps, and multimedia presentations.',
-          highlights: ['Short-form Reels & Social Media Clips', 'Promotional & Corporate Video Editing', 'Trimming, Transitions & Color Grading', 'Text Overlays, Captions & Titles', 'Background Music & Audio Sync', 'CapCut & Mobile-first Video Optimization']
-        },
-        {
-          icon: 'movie_creation',
-          title: 'Multimedia Production',
-          description: 'Creative multimedia content across multiple formats — digital art, comics, cartoons, image compositing, audio editing, and music production for media and marketing.',
-          highlights: ['Comic Strip & Cartoon Creation', 'Digital Art & Image Compositing', 'Photo Retouching & Manipulation', 'Audio Editing & Voiceover Recording', 'Music Production & Background Scoring', 'Animation & Motion Graphics']
-        }
-      ];
-    },
-    // ─── AI Services ───
-    aiServices() {
-      return [
-        {
-          icon: 'psychology',
-          title: 'AI Content & Copywriting',
-          description: 'Professional AI-assisted content creation — blog posts, articles, product descriptions, ad copy, and multilingual content tailored to your brand voice.',
-          highlights: ['Blog Posts, Articles & Web Copy', 'Ad Copy & Social Media Content', 'Product Descriptions & SEO Content', 'Multilingual Translation & Localization', 'Brand Voice Development & Consistency', 'Content Strategy & Topic Research']
-        },
-        {
-          icon: 'auto_awesome',
-          title: 'AI Image & Multimedia Generation',
-          description: 'Custom AI-generated visuals — product mockups, marketing imagery, concept art, and audio assets created with cutting-edge generative AI tools.',
-          highlights: ['AI Image Generation (Midjourney / DALL·E)', 'AI Audio & Voiceover Production', 'Product Mockups & Concept Art', 'AI-assisted Photo Manipulation', 'AI Upscaling & Restoration', 'Batch Image Processing & Optimization']
-        },
-        {
-          icon: 'smart_toy',
-          title: 'AI Workflow & Automation Setup',
-          description: 'End-to-end AI workflow automation using n8n, LLM APIs, and prompt engineering — streamline repetitive tasks and integrate intelligence into your business processes.',
-          highlights: ['n8n Workflow Automation & Integration', 'ChatGPT / Gemini / Qwen AI Integration', 'Prompt Engineering & LLM Configuration', 'Business Process Automation', 'AI Chatbot & Assistant Setup', 'Data Extraction & Document Processing']
-        }
-      ];
-    },
-    // ─── IT & Business Support ───
-    supportServices() {
-      return [
-        {
-          icon: 'dns',
-          title: 'IT Support & System Administration',
-          description: 'End-to-end IT support for businesses — PC assembly, OS installation, hardware/software diagnostics, remote support, and user training.',
-          highlights: ['PC Assembly, Upgrade & Repair', 'Windows / Linux OS Installation & Configuration', 'Hardware & Software Diagnostics', 'Remote IT Support (AnyDesk, TeamViewer)', 'Driver Setup & System Maintenance', 'User Training & Onboarding']
-        },
-        {
-          icon: 'settings_applications',
-          title: 'ERP & Business Systems Administration',
-          description: 'Full-cycle ERP management including module configuration, data entry, payroll, inventory, POS, and user support across various business systems.',
-          highlights: ['ERP Module Configuration & Management', 'Inventory, Payroll & Billing Operations', 'POS Systems & Data Entry', 'File Handling & Document Management', 'ERP Install, Migration & Support', 'Garments Systems & RFID Tag Generation']
-        },
-        {
-          icon: 'lan',
-          title: 'Network Infrastructure & Security',
-          description: 'Basic network services — IP configuration, LAN/router setup, printer sharing, firewall, and general network troubleshooting for small offices and production floors.',
-          highlights: ['Laptop / PC IP Configuration & Troubleshooting', 'LAN / Router Setup & Network Configuration', 'File & Printer Sharing Setup', 'Firewall & Antivirus Deployment', 'Network Device Diagnostics & Maintenance', 'PC / Printer Network Troubleshooting']
-        }
-      ];
-    },
-    // ─── Industrial & On-Site Services ───
-    industrialServices() {
-      return [
-        {
-          icon: 'storage',
-          title: 'Desktop Automation & Hardware Integration',
-          description: 'Custom C# .NET desktop applications integrated with industrial hardware — weight scales, barcode printers, serial ports, and ERP systems for production environments.',
-          highlights: ['C# .NET WinForms & ADO.NET Applications', 'YAOHUA Digital Weight Scale Integration', 'Automated Label & Barcode Printing Systems', 'Serial Port & Hardware Communication', 'Crystal Reports & Data Export Solutions', 'Excel VBA Macros & Process Automation']
-        },
-        {
-          icon: 'settings_ethernet',
-          title: 'Industrial RFID, Barcode & IoT Systems',
-          description: 'Production floor data collection infrastructure — RFID terminals, MOXA serial communication over RJ-6 (RS-485), barcode automation, and IoT checkpoint systems.',
-          highlights: ['RFID NXP MCU Terminal Setup & Management', 'MOXA Multiport Serial Card Configuration', 'RJ-6 (RS-485) Cabling & Infrastructure', 'Barcode Printer Configuration & Label Automation', 'Production Floor RFID Checkpoints & Data Collection', 'ERP-to-Floor Device Integration (MOXA / RFID)']
-        },
-        {
-          icon: 'dns',
-          title: 'Production Floor IT & Systems Support',
-          description: 'IT support tailored for manufacturing environments — workstation setup, printer/network troubleshooting, ERP user admin, and equipment integration across production lines.',
-          highlights: ['PC / Printer Setup & Troubleshooting on Production Floor', 'LAN, IP Config & Network Diagnostics', 'ERP User Administration & Module Support', 'File & Printer Sharing for Workshop Environments', '30+ Workstation & Device Management', 'RJ-6 / MOXA Device Networking & Support']
-        }
-      ];
-    },
-    // ─── All service groups with styling ───
-    serviceGroups() {
-      return [
-        {
-          icon: 'laptop_mac',
-          title: 'Web & App Development',
-          bg: 'var(--primary)',
-          chipBg: 'rgba(20,184,166,0.12)',
-          chipColor: 'var(--primary-light)',
-          borderLeft: '3px solid var(--primary)',
-          items: this.devServices
-        },
-        {
-          icon: 'trending_up',
-          title: 'E-Commerce & Marketing',
-          bg: 'var(--primary)',
-          chipBg: 'rgba(20,184,166,0.12)',
-          chipColor: 'var(--primary-light)',
-          borderLeft: '3px solid var(--primary)',
-          items: this.ecomServices
-        },
-        {
-          icon: 'auto_awesome',
-          title: 'Design & Multimedia',
-          bg: 'var(--primary)',
-          chipBg: 'rgba(20,184,166,0.12)',
-          chipColor: 'var(--primary-light)',
-          borderLeft: '3px solid var(--primary)',
-          items: this.creativeServices
-        },
-        {
-          icon: 'psychology',
-          title: 'AI Services',
-          bg: 'var(--primary)',
-          chipBg: 'rgba(20,184,166,0.12)',
-          chipColor: 'var(--primary-light)',
-          borderLeft: '3px solid var(--primary)',
-          items: this.aiServices
-        },
-        {
-          icon: 'support',
-          title: 'IT & Business Support',
-          bg: 'var(--primary)',
-          chipBg: 'rgba(20,184,166,0.12)',
-          chipColor: 'var(--primary-light)',
-          borderLeft: '3px solid var(--primary)',
-          items: this.supportServices
-        },
-        {
-          icon: 'precision_manufacturing',
-          title: 'Industrial & On-Site',
-          note: 'Specialized services for manufacturing environments — available for on-site work.',
-          bg: 'var(--accent-amber)',
-          chipBg: 'rgba(245,158,11,0.12)',
-          chipColor: 'var(--accent-amber)',
-          borderLeft: '3px solid var(--accent-amber)',
-          items: this.industrialServices
-        }
-      ];
-    }
+    return {
+      servicesData: null
+    };
   },
   template: `
     <div class="section">
@@ -843,8 +645,12 @@ const ServicesView = {
         I deliver web, software, e-commerce, design, and industrial automation solutions — from remote freelance projects to on-site production floor integrations.
       </p>
 
+      <template v-if="!servicesData">
+        <div class="text-center py-20" style="color:var(--text-label)">Loading services...</div>
+      </template>
+
       <!-- Section renderer -->
-      <template v-for="(group,gi) in serviceGroups" :key="gi">
+      <template v-for="(group,gi) in servicesData?.groups ?? []" :key="gi">
         <div class="flex items-center gap-3 mt-12 mb-6">
           <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" :style="{background: group.bg}">
             <i class="material-icons text-white" style="font-size:20px">{{ group.icon }}</i>
@@ -856,12 +662,8 @@ const ServicesView = {
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
           <div v-for="(s,i) in group.items" :key="i"
-            class="rounded-xl p-5 flex flex-col transition-all duration-300"
-            :style="{
-              background: 'var(--bg-card)',
-              border: '1px solid var(--border)',
-              borderLeft: group.borderLeft || '3px solid var(--primary)'
-            }">
+            class="card-glass p-5 flex flex-col"
+            :style="{borderLeft: group.borderLeft || '3px solid var(--primary)'}">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" :style="{background: group.bg}">
                 <i class="material-icons text-white" style="font-size:20px">{{ s.icon }}</i>
@@ -883,7 +685,10 @@ const ServicesView = {
     </div>
   `,
   mounted() {
-    // fade handled by Vue transition
+    fetch('assets/data/services.json')
+      .then(r => r.json())
+      .then(data => { this.servicesData = data; })
+      .catch(() => { this.servicesData = { groups: [] }; });
   }
 };
 
