@@ -1,0 +1,122 @@
+{
+  "multimediaCategories": [
+    {
+      "name": "Creative Services",
+      "key": "creative",
+      "icon": "auto_awesome",
+      "items": [
+        {
+          "id": "custom-poetry-01",
+          "title": "Custom Poetry Composition",
+          "description": "Personalized poetry for events, presentations, and media projects — crafted with AI assistance in text or voice format.",
+          "date": "2026-05-01"
+        },
+        {
+          "id": "custom-song-01",
+          "title": "Original Song Production",
+          "description": "Custom song with personalized lyrics, AI-assisted music composition, and video output for wedding presentations and brand campaigns.",
+          "date": "2026-04-15"
+        },
+        {
+          "id": "ai-video-01",
+          "title": "AI-Powered Promotional Video",
+          "description": "End-to-end video content with AI-generated visuals, animation, storyboarding, and professional editing for social media and promotions.",
+          "date": "2026-06-01"
+        },
+        {
+          "id": "pencil-portrait-01",
+          "title": "Pencil Portrait from Photo",
+          "description": "Hand-drawn realistic pencil portrait from reference photo on paper with optional framing and digital scan.",
+          "date": "2026-03-10"
+        },
+        {
+          "id": "home-decor-01",
+          "title": "Custom Wall Art Design",
+          "description": "AI-designed wall-framed picture with personalized theme, custom size, and print-ready format.",
+          "date": "2026-05-20"
+        },
+        {
+          "id": "brand-guide-01",
+          "title": "Brand Identity & Style Guide",
+          "description": "Complete brand identity package including logo, business card, letterhead, and brand style guide with professional finish.",
+          "date": "2026-02-15"
+        }
+      ]
+    },
+    {
+      "name": "Graphics & Design",
+      "key": "design",
+      "icon": "palette",
+      "items": [
+        {
+          "id": "amazon-listings",
+          "title": "Amazon/eBay Product Listings (200+)",
+          "description": "Designed and optimized 200+ SEO-friendly product listings for Amazon and eBay marketplaces.",
+          "date": "2020-01-01"
+        },
+        {
+          "id": "infographic-banners",
+          "title": "Infographic & Banner Design",
+          "description": "Created sales banners, promotional infographics, and social media visuals for e-commerce brands.",
+          "date": "2020-04-01"
+        },
+        {
+          "id": "label-packaging",
+          "title": "Product Label & Packaging Design",
+          "description": "Designed product labels, barcode labels, and packaging materials for industrial and retail products.",
+          "date": "2025-10-01"
+        },
+        {
+          "id": "barcode-label-system",
+          "title": "Barcode & QR Label Systems",
+          "description": "Designed and implemented barcode and QR label systems for ERP-integrated production workflows.",
+          "date": "2025-10-01"
+        }
+      ]
+    },
+    {
+      "name": "Video & Multimedia",
+      "key": "video",
+      "icon": "videocam",
+      "items": [
+        {
+          "id": "weight-checker-video",
+          "title": "Weight Checker App Demo",
+          "description": "Demonstration video showing the automated bundle weight checking system with serial port scale integration and ERP label printing.",
+          "date": "2026-04-01"
+        },
+        {
+          "id": "wedding-slideshow",
+          "title": "Wedding Presentation Video",
+          "description": "Custom wedding presentation video with photo montage, background music, and personalized text overlays.",
+          "date": "2026-05-15"
+        },
+        {
+          "id": "product-promo",
+          "title": "Product Promotional Reel",
+          "description": "Short-form promotional video for social media featuring product highlights, transitions, and background score.",
+          "date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "name": "Photography",
+      "key": "photo",
+      "icon": "camera_alt",
+      "items": [
+        {
+          "id": "product-photography",
+          "title": "E-Commerce Product Photography",
+          "description": "Professional product photography with editing, background removal, and optimization for marketplace listings.",
+          "date": "2020-03-01"
+        },
+        {
+          "id": "event-coverage",
+          "title": "Event Photography Coverage",
+          "description": "Event photography with editing, color grading, and digital delivery for corporate and personal events.",
+          "date": "2025-12-01"
+        }
+      ]
+    }
+  ]
+}

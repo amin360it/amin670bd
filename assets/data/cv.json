@@ -564,6 +564,22 @@
       "phone": "01727-831168"
     }
   ],
+  "media": {
+    "channelUrl": "https://www.youtube.com/@aminur670",
+    "channelHandle": "@aminur670",
+    "channelName": "Aminur670",
+    "channelAvatar": "https://yt3.ggpht.com/cNVM5rkUOhCpTkvrrF956fjyQB6eqlmLLP1Yt1kAiKKa64RGL9s6TUx-RjwgQOJ-jw7Bj25qHw=s88-c-k-c0x00ffffff-no-rj",
+    "description": "Creative content, tech projects, and more.",
+    "playlist": {
+      "id": "UU9ndhDLZxczY17jgLdDlx4g",
+      "title": "Channel Uploads"
+    },
+    "featuredVideoId": "W3YmvF_gh8Q",
+    "links": [
+      { "title": "YouTube Channel", "url": "https://www.youtube.com/@aminur670", "icon": "smart_display" },
+      { "title": "Google Drive Portfolio", "url": "#", "icon": "cloud" }
+    ]
+  },
   "menuItems": [
     {
       "path": "/",
@@ -594,6 +610,11 @@
       "path": "/projects",
       "label": "Projects",
       "icon": "folder_open"
+    },
+    {
+      "path": "/multimedia-works",
+      "label": "Multimedia Works",
+      "icon": "smart_display"
     },
     {
       "path": "/achievements",

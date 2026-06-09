@@ -28,6 +28,33 @@
       ]
     },
     {
+      "icon": "support",
+      "title": "IT & Business Support",
+      "bg": "var(--primary)",
+      "chipColor": "var(--primary-light)",
+      "borderLeft": "3px solid var(--primary)",
+      "items": [
+        {
+          "icon": "dns",
+          "title": "IT Support & System Administration",
+          "description": "End-to-end IT support for businesses — PC assembly, OS installation, hardware/software diagnostics, remote support, and user training.",
+          "highlights": ["PC Assembly, Upgrade & Repair", "Windows / Linux OS Installation & Configuration", "Hardware & Software Diagnostics", "Remote IT Support (AnyDesk, TeamViewer)", "Driver Setup & System Maintenance", "User Training & Onboarding"]
+        },
+        {
+          "icon": "settings_applications",
+          "title": "ERP & Business Systems Administration",
+          "description": "Full-cycle ERP management including module configuration, data entry, payroll, inventory, POS, and user support across various business systems.",
+          "highlights": ["ERP Module Configuration & Management", "Inventory, Payroll & Billing Operations", "POS Systems & Data Entry", "File Handling & Document Management", "ERP Install, Migration & Support", "Garments Systems & RFID Tag Generation"]
+        },
+        {
+          "icon": "lan",
+          "title": "Network Infrastructure & Security",
+          "description": "Basic network services — IP configuration, LAN/router setup, printer sharing, firewall, and general network troubleshooting for small offices and production floors.",
+          "highlights": ["Laptop / PC IP Configuration & Troubleshooting", "LAN / Router Setup & Network Configuration", "File & Printer Sharing Setup", "Firewall & Antivirus Deployment", "Network Device Diagnostics & Maintenance", "PC / Printer Network Troubleshooting"]
+        }
+      ]
+    },
+    {
       "icon": "trending_up",
       "title": "E-Commerce & Marketing",
       "bg": "var(--primary)",
@@ -109,29 +136,48 @@
       ]
     },
     {
-      "icon": "support",
-      "title": "IT & Business Support",
-      "bg": "var(--primary)",
-      "chipColor": "var(--primary-light)",
-      "borderLeft": "3px solid var(--primary)",
+      "icon": "brush",
+      "title": "Creative Services — Powered by A.I.",
+      "note": "AI-assisted creative works — content, design, print, and branding deliverables.",
+      "bg": "var(--accent-purple)",
+      "chipColor": "var(--accent-purple)",
+      "borderLeft": "3px solid var(--accent-purple)",
       "items": [
         {
-          "icon": "dns",
-          "title": "IT Support & System Administration",
-          "description": "End-to-end IT support for businesses — PC assembly, OS installation, hardware/software diagnostics, remote support, and user training.",
-          "highlights": ["PC Assembly, Upgrade & Repair", "Windows / Linux OS Installation & Configuration", "Hardware & Software Diagnostics", "Remote IT Support (AnyDesk, TeamViewer)", "Driver Setup & System Maintenance", "User Training & Onboarding"]
+          "icon": "edit_note",
+          "title": "Custom Poetry & Voice",
+          "description": "Personalized poetry and spoken-word content for events, presentations, and media projects — crafted with AI assistance and delivered in text or voice format.",
+          "highlights": ["Custom Poetry for Events & Occasions", "Voice-Recorded Spoken Word", "Presentation & Script Writing", "Multi-language Poetry Options", "Themed & Branded Content", "Quick Turnaround Delivery"]
         },
         {
-          "icon": "settings_applications",
-          "title": "ERP & Business Systems Administration",
-          "description": "Full-cycle ERP management including module configuration, data entry, payroll, inventory, POS, and user support across various business systems.",
-          "highlights": ["ERP Module Configuration & Management", "Inventory, Payroll & Billing Operations", "POS Systems & Data Entry", "File Handling & Document Management", "ERP Install, Migration & Support", "Garments Systems & RFID Tag Generation"]
+          "icon": "music_note",
+          "title": "Custom Songs & Music Production",
+          "description": "Original songs with personalized lyrics, AI-assisted music composition, and video production — suitable for wedding presentations, brand campaigns, and special celebrations.",
+          "highlights": ["Personalized Lyrics & Composition", "AI-Assisted Music Production", "Wedding & Event Presentation Songs", "Brand Campaign Audio Content", "Full Audio + Video Output", "Customizable Genre & Style"]
         },
         {
-          "icon": "lan",
-          "title": "Network Infrastructure & Security",
-          "description": "Basic network services — IP configuration, LAN/router setup, printer sharing, firewall, and general network troubleshooting for small offices and production floors.",
-          "highlights": ["Laptop / PC IP Configuration & Troubleshooting", "LAN / Router Setup & Network Configuration", "File & Printer Sharing Setup", "Firewall & Antivirus Deployment", "Network Device Diagnostics & Maintenance", "PC / Printer Network Troubleshooting"]
+          "icon": "videocam",
+          "title": "AI Video Content Creation",
+          "description": "Video content from concept to final edit — AI-powered visuals, animation, and storyboarding combined with professional editing for social media, portfolios, and promotions.",
+          "highlights": ["Content Planning & Storyboarding", "AI-Generated Visuals & Animation", "Photo Montage & Slideshow Videos", "Voiceover & Background Music Sync", "Social Media-Ready Short Clips", "Professional Editing & Color Grading"]
+        },
+        {
+          "icon": "gesture",
+          "title": "Pencil Sketch & Portrait Art",
+          "description": "Hand-drawn pencil portraits from reference photos — realistic sketch art on paper with optional framing, capturing expressions with traditional technique and AI-enhanced reference processing.",
+          "highlights": ["Portrait Sketch from Photo Reference", "Realistic Pencil Drawing on Paper", "Custom Size & Framing Options", "Gift-Ready Packaged Artwork", "AI-Enhanced Photo Reference Prep", "Digital Scan Copy Included"]
+        },
+        {
+          "icon": "wallpaper",
+          "title": "AI Home Decor Design",
+          "description": "Custom wall art and decor designs created with AI — framed pictures, canvas prints, and thematic pieces tailored to your space, style, and preferred dimensions.",
+          "highlights": ["Custom Wall-Framed Picture Design", "AI-Generated Canvas & Print Art", "Personalized Quote & Name Frames", "Custom Size & Aspect Ratio Options", "Theme-Based Decor Collections", "Printable & Ready-to-Frame Formats"]
+        },
+        {
+          "icon": "store",
+          "title": "Custom Stationery & Branding",
+          "description": "Bespoke stationery sets, t-shirt graphics, brand identity guides, and merchandise design — combining graphics software expertise with AI for a polished, professional finish.",
+          "highlights": ["Custom Stationery Sets Design", "T-Shirt Graphics & Print-Ready Art", "Brand Identity & Style Guide Creation", "Logo, Business Card & Letterhead Sets", "Packaging & Label Design", "Full Merchandise Design Suite"]
         }
       ]
     },

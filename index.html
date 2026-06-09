@@ -78,9 +78,10 @@
   <script>
     Promise.all([
       fetch('assets/data/cv.json').then(r => r.json()),
-      fetch('assets/data/projects.json').then(r => r.json())
-    ]).then(([cv, projects]) => {
-      Object.assign(DATA, cv, projects);
+      fetch('assets/data/projects.json').then(r => r.json()),
+      fetch('assets/data/multimedia.json').then(r => r.json())
+    ]).then(([cv, projects, multimedia]) => {
+      Object.assign(DATA, cv, projects, multimedia);
       DATA.projectsLoaded = true;
       const app = Vue.createApp(App);
       app.use(router);

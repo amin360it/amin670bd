@@ -20,7 +20,7 @@ const HomeView = {
       <span class="section-tag">Since 2018 in IT</span>
 
       <!-- Title + Image row -->
-      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-4">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-4">
         <div class="flex-1">
           <h1 class="hero-title">{{ DATA.personal.name }} <br><span class="gradient-text">({{ DATA.personal.nickname }})</span></h1>
         </div>
@@ -28,6 +28,24 @@ const HomeView = {
           <img :src="DATA.personal.photo" :alt="DATA.personal.name"
             class="w-full h-auto rounded-2xl object-cover" loading="lazy"
             style="box-shadow:0 8px 32px rgba(20,184,166,0.15);border:2px solid var(--border)">
+          <!-- Social Icons under image (desktop only) -->
+          <div class="hidden lg:flex flex-wrap justify-center gap-2 mt-3">
+            <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle flex items-center justify-center" title="LinkedIn" style="width:36px;height:36px">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a :href="DATA.personal.website" target="_blank" class="theme-toggle flex items-center justify-center" title="Portfolio" style="width:36px;height:36px">
+              <i class="material-icons" style="font-size:20px">language</i>
+            </a>
+            <a href="https://github.com/amin670bd" target="_blank" class="theme-toggle flex items-center justify-center" title="GitHub" style="width:36px;height:36px">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@aminur670" target="_blank" class="theme-toggle flex items-center justify-center" title="YouTube" style="width:36px;height:36px">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+            </a>
+            <a :href="'https://wa.me/' + DATA.personal.phone1.replace(/[^0-9]/g,'')" target="_blank" class="theme-toggle flex items-center justify-center" title="WhatsApp" style="width:36px;height:36px">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 2.097.602 4.055 1.638 5.708L2 22l4.374-1.604C8.02 21.378 9.965 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.833 0-3.557-.58-4.973-1.573l-.357-.237-2.597.954.96-2.549-.255-.38A7.956 7.956 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.19-5.94c-.23-.115-1.36-.67-1.57-.746-.21-.077-.363-.115-.516.115-.153.23-.593.746-.727.899-.134.153-.268.172-.498.057-.23-.115-.972-.358-1.85-1.143-.684-.613-1.146-1.37-1.28-1.602-.134-.23-.014-.355.101-.47.103-.103.23-.268.345-.402.115-.134.153-.23.23-.383.077-.153.038-.287-.019-.402-.057-.115-.516-1.244-.707-1.704-.186-.45-.374-.372-.516-.372-.134 0-.287-.019-.44-.019-.153 0-.402.057-.612.287-.21.23-.802.784-.802 1.913s.82 2.22.935 2.373c.115.153 1.614 2.465 3.91 3.456.546.236.972.377 1.305.482.548.173 1.048.149 1.442.09.44-.066 1.36-.555 1.552-1.092.192-.537.192-.997.134-1.093-.057-.096-.21-.153-.44-.268z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -76,6 +94,25 @@ const HomeView = {
           </div>
           <div v-if="i < DATA.stats.length-1" style="width:1px;height:40px;background:var(--border)"></div>
         </div>
+      </div>
+
+      <!-- Social Icons (mobile/tablet only) -->
+      <div class="flex lg:hidden flex-wrap items-center justify-center gap-2 mt-8">
+        <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle flex items-center justify-center" title="LinkedIn" style="width:36px;height:36px">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+        <a :href="DATA.personal.website" target="_blank" class="theme-toggle flex items-center justify-center" title="Portfolio" style="width:36px;height:36px">
+          <i class="material-icons" style="font-size:20px">language</i>
+        </a>
+        <a href="https://github.com/amin670bd" target="_blank" class="theme-toggle flex items-center justify-center" title="GitHub" style="width:36px;height:36px">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@aminur670" target="_blank" class="theme-toggle flex items-center justify-center" title="YouTube" style="width:36px;height:36px">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+        </a>
+        <a :href="'https://wa.me/' + DATA.personal.phone1.replace(/[^0-9]/g,'')" target="_blank" class="theme-toggle flex items-center justify-center" title="WhatsApp" style="width:36px;height:36px">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 2.097.602 4.055 1.638 5.708L2 22l4.374-1.604C8.02 21.378 9.965 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.833 0-3.557-.58-4.973-1.573l-.357-.237-2.597.954.96-2.549-.255-.38A7.956 7.956 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.19-5.94c-.23-.115-1.36-.67-1.57-.746-.21-.077-.363-.115-.516.115-.153.23-.593.746-.727.899-.134.153-.268.172-.498.057-.23-.115-.972-.358-1.85-1.143-.684-.613-1.146-1.37-1.28-1.602-.134-.23-.014-.355.101-.47.103-.103.23-.268.345-.402.115-.134.153-.23.23-.383.077-.153.038-.287-.019-.402-.057-.115-.516-1.244-.707-1.704-.186-.45-.374-.372-.516-.372-.134 0-.287-.019-.44-.019-.153 0-.402.057-.612.287-.21.23-.802.784-.802 1.913s.82 2.22.935 2.373c.115.153 1.614 2.465 3.91 3.456.546.236.972.377 1.305.482.548.173 1.048.149 1.442.09.44-.066 1.36-.555 1.552-1.092.192-.537.192-.997.134-1.093-.057-.096-.21-.153-.44-.268z"/></svg>
+        </a>
       </div>
     </div>
   `,
@@ -131,7 +168,7 @@ const AboutView = {
   template: `
       <div class="section">
         <span class="section-tag">About Me</span>
-        <h2 class="section-title">Who I Am</h2>
+        <h1 class="section-title">Who I Am</h1>
 
         <!-- Full-width Visiting Card -->
         <div class="card-glass p-6 mb-6">
@@ -165,6 +202,23 @@ const AboutView = {
                   <i class="material-icons" style="color:var(--primary);font-size:20px">language</i>
                   <a :href="DATA.personal.website" target="_blank" style="color:var(--primary)">amin670bd.github.io</a>
                 </div>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 mt-4 pt-3" style="border-top:1px solid var(--border)">
+                <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle flex items-center justify-center" title="LinkedIn" style="width:36px;height:36px">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                </a>
+                <a :href="DATA.personal.website" target="_blank" class="theme-toggle flex items-center justify-center" title="Portfolio" style="width:36px;height:36px">
+                  <i class="material-icons" style="font-size:20px">language</i>
+                </a>
+                <a href="https://github.com/amin670bd" target="_blank" class="theme-toggle flex items-center justify-center" title="GitHub" style="width:36px;height:36px">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@aminur670" target="_blank" class="theme-toggle flex items-center justify-center" title="YouTube" style="width:36px;height:36px">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+                </a>
+                <a :href="'https://wa.me/' + DATA.personal.phone1.replace(/[^0-9]/g,'')" target="_blank" class="theme-toggle flex items-center justify-center" title="WhatsApp" style="width:36px;height:36px">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 2.097.602 4.055 1.638 5.708L2 22l4.374-1.604C8.02 21.378 9.965 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.833 0-3.557-.58-4.973-1.573l-.357-.237-2.597.954.96-2.549-.255-.38A7.956 7.956 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.19-5.94c-.23-.115-1.36-.67-1.57-.746-.21-.077-.363-.115-.516.115-.153.23-.593.746-.727.899-.134.153-.268.172-.498.057-.23-.115-.972-.358-1.85-1.143-.684-.613-1.146-1.37-1.28-1.602-.134-.23-.014-.355.101-.47.103-.103.23-.268.345-.402.115-.134.153-.23.23-.383.077-.153.038-.287-.019-.402-.057-.115-.516-1.244-.707-1.704-.186-.45-.374-.372-.516-.372-.134 0-.287-.019-.44-.019-.153 0-.402.057-.612.287-.21.23-.802.784-.802 1.913s.82 2.22.935 2.373c.115.153 1.614 2.465 3.91 3.456.546.236.972.377 1.305.482.548.173 1.048.149 1.442.09.44-.066 1.36-.555 1.552-1.092.192-.537.192-.997.134-1.093-.057-.096-.21-.153-.44-.268z"/></svg>
+                </a>
               </div>
             </div>
           </div>
@@ -245,7 +299,7 @@ const SkillsView = {
   template: `
     <div class="section">
       <span class="section-tag">Tech Stack Matrix</span>
-      <h2 class="section-title">Technical & Creative Inventory</h2>
+      <h1 class="section-title">Technical & Creative Inventory</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div v-for="(skill,i) in DATA.skills" :key="i" class="card-glass p-5">
           <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:var(--text-heading)">
@@ -270,7 +324,7 @@ const ExperienceView = {
   template: `
     <div class="section">
       <span class="section-tag">Career Trajectory</span>
-      <h2 class="section-title">Employment History</h2>
+      <h1 class="section-title">Employment History</h1>
       <div class="timeline ">
           <div v-for="(exp,i) in DATA.experience" :key="i" class="timeline-item">
           <div class="timeline-dot"></div>
@@ -299,7 +353,7 @@ const EducationView = {
   template: `
     <div class="section">
       <span class="section-tag">Knowledge Base</span>
-      <h2 class="section-title">Education &amp; Certifications</h2>
+      <h1 class="section-title">Education &amp; Certifications</h1>
 
       <h3 class="text-lg font-bold mb-4 flex items-center gap-3" style="color:var(--text-heading)">
         <i class="material-icons" style="color:var(--primary)">school</i> Education
@@ -442,7 +496,7 @@ const ProjectsView = {
   template: `
     <div class="section">
       <span class="section-tag">Case Studies</span>
-      <h2 class="section-title">Key Projects & Recent Works</h2>
+      <h1 class="section-title">Key Projects & Recent Works</h1>
 
       <!-- Featured Project -->
       <div v-if="DATA.featuredProject.title" class="card-glass-alt p-6 lg:p-8 mb-10">
@@ -458,15 +512,15 @@ const ProjectsView = {
         </div>
         <!-- Mini Gallery + Controls -->
         <div v-if="featSlideImages.length > 1" class="flex items-center gap-2 mt-2 mb-6">
-          <button @click="prevFeat" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
+          <button @click="prevFeat" aria-label="Previous slide" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
             <i class="material-icons" style="font-size:18px">chevron_left</i>
           </button>
           <div class="flex items-center gap-2 overflow-x-auto pb-1 flex-1" style="scrollbar-width:thin">
-            <button v-for="(img,i) in featSlideImages" :key="i" @click="goFeat(i)" class="flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300" :style="{border:i===featSlide?'2px solid var(--primary)':'2px solid transparent',opacity:i===featSlide?1:0.5,cursor:'pointer',padding:0,background:'var(--bg-card)'}">
-              <img :src="typeof img === 'string' ? img : img.src" :alt="'thumb ' + i" style="width:80px;height:60px;object-fit:cover;display:block" loading="lazy">
+            <button v-for="(img,i) in featSlideImages" :key="i" @click="goFeat(i)" :aria-label="'Go to slide ' + (i+1)" class="flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300" :style="{border:i===featSlide?'2px solid var(--primary)':'2px solid transparent',opacity:i===featSlide?1:0.5,cursor:'pointer',padding:0,background:'var(--bg-card)'}">
+              <img :src="typeof img === 'string' ? img : img.src" :alt="DATA.featuredProject.title + ' thumbnail'" style="width:80px;height:60px;object-fit:cover;display:block" loading="lazy">
             </button>
           </div>
-          <button @click="nextFeat" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
+          <button @click="nextFeat" aria-label="Next slide" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
             <i class="material-icons" style="font-size:18px">chevron_right</i>
           </button>
         </div>
@@ -605,7 +659,7 @@ const AchievementsView = {
   template: `
     <div class="section">
       <span class="section-tag">Recognitions</span>
-      <h2 class="section-title">Professional Achievements</h2>
+      <h1 class="section-title">Professional Achievements</h1>
       <div v-for="(cat,ci) in DATA.achievementCategories" :key="ci" class="mb-8 last:mb-0">
         <h3 class="text-lg font-bold mb-4 flex items-center gap-2" :style="{ color: cat.color }">
           <i class="material-icons">{{ cat.icon }}</i> {{ cat.title }}
@@ -640,7 +694,7 @@ const ServicesView = {
   template: `
     <div class="section">
       <span class="section-tag">What I Offer</span>
-      <h2 class="section-title">Professional Services</h2>
+      <h1 class="section-title">Professional Services</h1>
       <p class="text-base mb-2 leading-relaxed" style="color:var(--text);max-width:720px">
         I deliver web, software, e-commerce, design, and industrial automation solutions — from remote freelance projects to on-site production floor integrations.
       </p>
@@ -651,13 +705,13 @@ const ServicesView = {
 
       <!-- Section renderer -->
       <template v-for="(group,gi) in servicesData?.groups ?? []" :key="gi">
-        <div class="flex items-center gap-3 mt-12 mb-6">
+        <div class="flex items-center gap-3 mb-4" style="margin-top:5rem">
           <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" :style="{background: group.bg}">
             <i class="material-icons text-white" style="font-size:20px">{{ group.icon }}</i>
           </div>
           <div>
             <h3 class="text-lg font-bold" style="color:var(--text-heading)">{{ group.title }}</h3>
-            <p v-if="group.note" class="text-xs" style="color:var(--text-label)">{{ group.note }}</p>
+            <p v-if="group.note" class="text-sm" style="color:var(--text-label)">{{ group.note }}</p>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
@@ -670,13 +724,13 @@ const ServicesView = {
               </div>
               <h3 class="font-bold" style="font-size:0.95rem;color:var(--text-heading)">{{ s.title }}</h3>
             </div>
-            <p class="text-sm mb-3 leading-relaxed" style="color:var(--text)">{{ s.description }}</p>
+            <p class="text-base mb-3 leading-relaxed" style="color:var(--text)">{{ s.description }}</p>
             <ul class="space-y-2 mt-auto pt-3">
               <li v-for="(h,j) in s.highlights" :key="j"
-                class="text-sm leading-relaxed flex items-start gap-2"
+                class="text-sm flex items-center gap-2"
                 style="color:var(--text)">
-                <i class="material-icons text-sm shrink-0 mt-px" :style="{color: group.chipColor}">check_circle</i>
-                {{ h }}
+                <i class="material-icons text-sm shrink-0 leading-none" :style="{color: group.chipColor}">check_circle</i>
+                <span class="leading-relaxed" style="color:var(--text)">{{ h }}</span>
               </li>
             </ul>
           </div>
@@ -690,6 +744,211 @@ const ServicesView = {
       .then(data => { this.servicesData = data; })
       .catch(() => { this.servicesData = { groups: [] }; });
   }
+};
+
+// --- MULTIMEDIA WORKS VIEW ---
+const MultimediaWorksView = {
+  name: 'MultimediaWorksView',
+  data() {
+    return {
+      DATA,
+      multimediaData: null,
+      activeFilter: 'all',
+      selectedYear: 'all',
+      selectedMonth: 'all'
+    };
+  },
+  computed: {
+    allItems() {
+      const items = [];
+      if (!this.multimediaData) return items;
+      this.multimediaData.multimediaCategories.forEach(cat => {
+        cat.items.forEach(item => {
+          items.push({ ...item, categoryKey: cat.key, categoryName: cat.name, categoryIcon: cat.icon });
+        });
+      });
+      return items;
+    },
+    availableYears() {
+      const years = new Set();
+      this.allItems.forEach(p => { if (p.date) years.add(p.date.substring(0,4)); });
+      return [...years].sort().reverse();
+    },
+    availableMonths() {
+      const months = new Set();
+      this.allItems
+        .filter(p => this.selectedYear === 'all' || (p.date && p.date.startsWith(this.selectedYear)))
+        .forEach(p => { if (p.date) months.add(p.date.substring(0,7)); });
+      return [...months].sort().reverse();
+    },
+    filteredItems() {
+      let items = this.allItems;
+      if (this.activeFilter !== 'all') items = items.filter(p => p.categoryKey === this.activeFilter);
+      if (this.selectedYear !== 'all') items = items.filter(p => p.date && p.date.startsWith(this.selectedYear));
+      if (this.selectedMonth !== 'all') items = items.filter(p => p.date && p.date.startsWith(this.selectedMonth));
+      return items;
+    }
+  },
+  methods: {
+    setFilter(key) { this.activeFilter = key; },
+    setYear(year) { this.selectedYear = year; this.selectedMonth = 'all'; },
+    setMonth(month) { this.selectedMonth = month; },
+    getMonthName(ym) {
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      return months[parseInt(ym.substring(5,7)) - 1] + ' ' + ym.substring(0,4);
+    }
+  },
+  mounted() {
+    fetch('assets/data/multimedia.json')
+      .then(r => r.json())
+      .then(data => { this.multimediaData = data; })
+      .catch(() => { this.multimediaData = { multimediaCategories: [] }; });
+  },
+  template: `
+    <div class="section">
+      <span class="section-tag">Multimedia Works</span>
+      <h1 class="section-title">Media & Videos</h1>
+      <p class="text-base mb-4 leading-relaxed" style="color:var(--text);max-width:720px">
+        Browse my YouTube channel, creative projects, and delivered multimedia works.
+      </p>
+
+      <!-- Links Bar -->
+      <div class="flex flex-wrap gap-3 mb-6" v-if="DATA.media?.links?.length">
+        <a v-for="(link,i) in DATA.media.links" :key="i"
+          :href="link.url" target="_blank"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all"
+          style="border:1px solid var(--border);color:var(--text);text-decoration:none">
+          <i class="material-icons" style="font-size:18px;color:var(--primary)">{{ link.icon }}</i>
+          {{ link.title }}
+          <i class="material-icons" style="font-size:14px">open_in_new</i>
+        </a>
+      </div>
+
+      <!-- Channel Profile -->
+      <div class="card-glass p-5 sm:p-6 mb-8 flex flex-col sm:flex-row items-center gap-5">
+        <div class="w-20 h-20 rounded-full overflow-hidden shrink-0" style="min-width:80px;border:3px solid var(--primary)">
+          <img :src="DATA.media?.channelAvatar" :alt="DATA.media?.channelName" class="w-full h-full object-cover"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'w-full h-full flex items-center justify-center text-white text-2xl font-bold\\' style=\\'background:linear-gradient(135deg,#c00,#ff4444)\\'>A</div>'">
+        </div>
+        <div class="text-center sm:text-left flex-1">
+          <h2 class="text-xl font-bold" style="color:var(--text-heading)">{{ DATA.media?.channelName }}</h2>
+          <p class="text-sm mt-0.5" style="color:var(--text-muted)">{{ DATA.media?.channelHandle }}</p>
+          <p class="text-sm mt-2 leading-relaxed" style="color:var(--text-muted)">{{ DATA.media?.description }}</p>
+          <div class="flex flex-wrap gap-2 mt-3 justify-center sm:justify-start">
+            <a :href="(DATA.media?.channelUrl || '') + '?sub_confirmation=1'" target="_blank"
+              class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white font-semibold"
+              style="background:#c00;font-size:0.85rem">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+              Subscribe
+            </a>
+            <a :href="DATA.media?.channelUrl" target="_blank"
+              class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full font-semibold transition-all"
+              style="font-size:0.85rem;border:1px solid var(--border);color:var(--text)">
+              <i class="material-icons" style="font-size:16px">open_in_new</i> Visit Channel
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Playlist Player -->
+      <div v-if="DATA.media?.playlist?.id" class="card-glass p-5 mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="material-icons" style="color:var(--primary);font-size:24px">playlist_play</i>
+          <h2 class="text-lg font-bold" style="color:var(--text-heading)">{{ DATA.media?.playlist?.title }}</h2>
+        </div>
+        <div class="aspect-video rounded-xl overflow-hidden" style="background:var(--border)">
+          <iframe width="100%" height="100%"
+            :src="'https://www.youtube.com/embed/videoseries?list=' + DATA.media?.playlist?.id"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="border-radius:12px">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Featured Video -->
+      <div class="card-glass p-5 mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="material-icons" style="color:var(--primary);font-size:24px">featured_video</i>
+          <h2 class="text-lg font-bold" style="color:var(--text-heading)">Featured Video</h2>
+        </div>
+        <div class="aspect-video rounded-xl overflow-hidden" style="background:var(--border)">
+          <iframe width="100%" height="100%"
+            :src="'https://www.youtube.com/embed/' + (DATA.media?.featuredVideoId || '')"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="border-radius:12px">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- All Multimedia Works Filter + Grid -->
+      <span class="section-tag">All Works</span>
+      <h2 class="section-title">Multimedia Portfolio</h2>
+
+      <!-- Filter Bar -->
+      <div class="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-3 mb-6 pt-4 pb-3 -mx-6 px-6"
+        style="background:var(--bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)"
+        v-if="multimediaData && allItems.length">
+        <div class="flex flex-wrap gap-2 items-center">
+          <button v-for="cat in [{key:'all',label:'All'}].concat(multimediaData.multimediaCategories.map(c=>({key:c.key,label:c.name})))" :key="cat.key"
+            @click="setFilter(cat.key)"
+            class="project-filter-btn" :class="{ active: activeFilter === cat.key }">
+            {{ cat.label }}
+          </button>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <div class="flex items-center gap-1.5">
+            <span class="text-sm font-medium" style="color:var(--text-label)">Year:</span>
+            <select v-model="selectedYear" @change="setYear(selectedYear)" class="text-sm font-medium px-2 py-1 rounded-lg" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer;outline:none">
+              <option value="all">All</option>
+              <option v-for="y in availableYears" :key="y" :value="y">{{ y }}</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-1.5" v-if="availableMonths.length">
+            <span class="text-sm font-medium" style="color:var(--text-label)">Month:</span>
+            <select v-model="selectedMonth" @change="setMonth(selectedMonth)" class="text-sm font-medium px-2 py-1 rounded-lg" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer;outline:none">
+              <option value="all">All</option>
+              <option v-for="m in availableMonths" :key="m" :value="m">{{ getMonthName(m) }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <transition-group
+        :key="activeFilter + '-' + selectedYear + '-' + selectedMonth"
+        name="project"
+        tag="div"
+        class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+        mode="out-in"
+        v-if="filteredItems.length">
+        <div v-for="(item,i) in filteredItems" :key="item.id || i"
+          class="project-card-item rounded-xl p-5 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="project-cat-tag text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+              <i class="material-icons text-xs">{{ item.categoryIcon }}</i>
+              {{ item.categoryName }}
+            </span>
+            <span v-if="item.date" class="text-xs font-medium px-2 py-0.5 rounded shrink-0"
+              style="background:rgba(20,184,166,0.12);color:var(--primary-light)">
+              {{ item.date.substring(0,7) }}
+            </span>
+          </div>
+          <h3 class="font-semibold text-base" style="color:var(--text-heading)">{{ item.title }}</h3>
+          <p class="text-base mt-2 mb-4 leading-relaxed" style="color:var(--text)">
+            {{ item.description }}
+          </p>
+        </div>
+      </transition-group>
+
+      <div v-if="filteredItems.length === 0 && multimediaData && allItems.length" class="text-center py-8" style="color:var(--text-muted)">
+        No works found for the selected filters.
+      </div>
+    </div>
+  `
 };
 
 // --- CONTACT VIEW ---
@@ -787,7 +1046,7 @@ const ContactView = {
   template: `
     <div class="section">
       <span class="section-tag">Get In Touch</span>
-      <h2 class="section-title">Contact Me</h2>
+      <h1 class="section-title">Contact Me</h1>
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <!-- Info -->
         <div class="lg:col-span-2 space-y-5">
@@ -807,6 +1066,28 @@ const ContactView = {
               <div class="flex justify-between"><span style="color:var(--text-label)">Available</span><span class="font-medium" style="color:var(--text-heading)">{{ DATA.personal.available }}</span></div>
               <div class="flex justify-between"><span style="color:var(--text-label)">Relocation</span><span class="font-medium" style="color:var(--text-heading)">Yes</span></div>
             </div>
+          </div>
+
+          <div class="card-glass p-6">
+            <h3 class="text-lg font-bold mb-3" style="color:var(--text-heading)"><i class="material-icons" style="color:var(--primary);font-size:18px">location_on</i>Location</h3>
+            <div class="card-glass--glass flex items-start gap-3 p-4 rounded-xl mb-3" style="display:flex">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                <i class="material-icons text-white" style="font-size:16px">location_on</i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.location }}</h4>
+                <p class="text-xs mt-0.5" style="color:var(--text)">Current Location</p>
+              </div>
+            </div>
+            <a :href="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(DATA.personal.location)" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
+                <i class="material-icons text-white" style="font-size:16px">map</i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-sm" style="color:var(--primary)">View on Google Maps</h4>
+                <p class="text-xs mt-0.5" style="color:var(--text)">Open in Google Maps</p>
+              </div>
+            </a>
           </div>
         </div>
 
@@ -983,15 +1264,15 @@ const ProjectDetailView = {
         </div>
         <!-- Mini Gallery + Controls -->
         <div v-if="slideImages.length > 1" class="flex items-center gap-2 mt-2">
-          <button @click="prevSlide" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
+          <button @click="prevSlide" aria-label="Previous slide" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
             <i class="material-icons" style="font-size:18px">chevron_left</i>
           </button>
           <div class="flex items-center gap-2 overflow-x-auto pb-1 flex-1" style="scrollbar-width:thin">
-            <button v-for="(img,i) in slideImages" :key="i" @click="goToSlide(i)" class="flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300" :style="{border:i===currentSlide?'2px solid var(--primary)':'2px solid transparent',opacity:i===currentSlide?1:0.5,cursor:'pointer',padding:0,background:'var(--bg-card)'}">
-              <img :src="typeof img === 'string' ? img : img.src" :alt="'thumb ' + i" style="width:80px;height:60px;object-fit:cover;display:block" loading="lazy">
+            <button v-for="(img,i) in slideImages" :key="i" @click="goToSlide(i)" :aria-label="'Go to slide ' + (i+1)" class="flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300" :style="{border:i===currentSlide?'2px solid var(--primary)':'2px solid transparent',opacity:i===currentSlide?1:0.5,cursor:'pointer',padding:0,background:'var(--bg-card)'}">
+              <img :src="typeof img === 'string' ? img : img.src" :alt="project.title + ' thumbnail'" style="width:80px;height:60px;object-fit:cover;display:block" loading="lazy">
             </button>
           </div>
-          <button @click="nextSlide" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
+          <button @click="nextSlide" aria-label="Next slide" class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110" style="background:var(--bg-card);color:var(--text-heading);border:1px solid var(--border);cursor:pointer">
             <i class="material-icons" style="font-size:18px">chevron_right</i>
           </button>
         </div>
@@ -1083,6 +1364,7 @@ const routes = [
   { path: '/education', component: EducationView, meta: { title: 'Education' } },
   { path: '/projects', component: ProjectsView, meta: { title: 'Projects' } },
   { path: '/project/:id', component: ProjectDetailView, meta: { title: 'Project' } },
+  { path: '/multimedia-works', component: MultimediaWorksView, meta: { title: 'Multimedia Works' } },
   { path: '/achievements', component: AchievementsView, meta: { title: 'Achievements' } },
   { path: '/services', component: ServicesView, meta: { title: 'Services' } },
   { path: '/contact', component: ContactView, meta: { title: 'Contact' } },
@@ -1242,19 +1524,19 @@ const App = {
           <router-link to="/" @click="closeMobile" class="text-xl font-extrabold tracking-tight gradient-text">Amin670BD</router-link>
           <div class="flex items-center gap-1.5 shrink-0">
             <a href="./assets/Aminur670_CV_2026.pdf" download
-              class="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-300 shrink-0"
-              style="border:1px solid var(--primary);color:var(--primary)">
-              <i class="material-icons" style="font-size:14px">download</i>
+              class="flex items-center gap-1.5 px-3 py-2.5 text-xs font-semibold rounded-lg transition-all duration-300 shrink-0"
+              style="height:36px;border:1px solid var(--toggle-border);background:var(--toggle-bg);backdrop-filter:blur(6px);color:var(--text-heading)">
+              <i class="material-icons" style="font-size:20px">download</i>
               <span class="download-cv-short">CV</span><span class="download-cv-full">Download CV</span>
             </a>
-            <button @click="toggleContactModal" class="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary)">
-              <i class="material-icons" style="font-size:14px">contact_phone</i> Contacts
+            <button @click="toggleContactModal" class="flex items-center gap-1.5 px-3 py-2.5 text-xs font-semibold rounded-lg transition-all duration-300 shrink-0" style="height:36px;border:1px solid var(--toggle-border);background:var(--toggle-bg);backdrop-filter:blur(6px);color:var(--text-heading)">
+              <i class="material-icons" style="font-size:20px">contact_phone</i> <span class="download-cv-full">Contacts</span>
             </button>
-            <button @click="toggleDark" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary);background:transparent">
-              <i class="material-icons" style="font-size:16px">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
+            <button @click="toggleDark" aria-label="Toggle dark mode" class="theme-toggle flex items-center justify-center">
+              <i class="material-icons" style="font-size:20px">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
             </button>
-            <button @click="toggleMobile" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary);background:transparent">
-              <i class="material-icons" style="font-size:16px">{{ mobileMenuOpen ? 'close' : 'menu' }}</i>
+            <button @click="toggleMobile" :aria-label="mobileMenuOpen ? 'Close menu' : 'Open menu'" class="theme-toggle flex items-center justify-center">
+              <i class="material-icons" style="font-size:20px">{{ mobileMenuOpen ? 'close' : 'menu' }}</i>
             </button>
           </div>
         </div>
@@ -1275,7 +1557,7 @@ const App = {
                 <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
                 <p class="text-md mt-0.5" style="color:var(--sidebar-text)">{{ DATA.personal.title }}</p>
               </div>
-              <button @click="closeMobile" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 shrink-0" style="border:1px solid var(--primary);color:var(--primary);background:transparent">
+              <button @click="closeMobile" aria-label="Close menu" class="theme-toggle flex items-center justify-center">
                 <i class="material-icons" style="font-size:18px">close</i>
               </button>
             </div>
@@ -1299,17 +1581,20 @@ const App = {
                 <i class="material-icons">download</i> Download CV
               </a>
               <div class="flex items-center justify-center gap-3 pt-1">
-                <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle" title="LinkedIn" style="width:32px;height:32px">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="theme-toggle flex items-center justify-center" title="LinkedIn" style="width:36px;height:36px">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                 </a>
-                <a :href="DATA.personal.website" target="_blank" class="theme-toggle" title="Portfolio" style="width:32px;height:32px">
-                  <i class="material-icons" style="font-size:16px">language</i>
+                <a :href="DATA.personal.website" target="_blank" class="theme-toggle flex items-center justify-center" title="Portfolio" style="width:36px;height:36px">
+                  <i class="material-icons" style="font-size:20px">language</i>
                 </a>
-                <a :href="'https://github.com/amin670bd'" target="_blank" class="theme-toggle" title="GitHub" style="width:32px;height:32px">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <a :href="'https://github.com/amin670bd'" target="_blank" class="theme-toggle flex items-center justify-center" title="GitHub" style="width:36px;height:36px">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
                 </a>
-                <a :href="'mailto:' + DATA.personal.email" class="theme-toggle" title="Email" style="width:32px;height:32px">
-                  <i class="material-icons" style="font-size:16px">email</i>
+                <a href="https://www.youtube.com/@aminur670" target="_blank" class="theme-toggle flex items-center justify-center" title="YouTube" style="width:36px;height:36px">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+                </a>
+                <a :href="'mailto:' + DATA.personal.email" class="theme-toggle flex items-center justify-center" title="Email" style="width:36px;height:36px">
+                  <i class="material-icons" style="font-size:20px">email</i>
                 </a>
               </div>
             </div>
@@ -1325,16 +1610,16 @@ const App = {
               <h2 class="text-base font-bold flex items-center gap-1.5" style="color:var(--text-heading)">
                 <i class="material-icons" style="font-size:18px;color:var(--primary)">contact_phone</i> Contact
               </h2>
-              <button @click="showContactModal = false" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all hover:bg-black/5" style="color:var(--text-label)">
+              <button @click="showContactModal = false" aria-label="Close contact modal" class="w-8 h-8 flex items-center justify-center rounded-lg transition-all hover:bg-black/5" style="color:var(--text-label)">
                 <i class="material-icons" style="font-size:18px">close</i>
               </button>
             </div>
             <div class="flex-1 min-h-0 overflow-y-auto" style="-webkit-overflow-scrolling:touch">
-              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 p-4">
+              <div class="grid md:grid-cols-2 gap-3 p-4">
               <div class="space-y-3">
                 <p class="text-[11px] font-semibold tracking-wider" style="color:var(--text-label)">WHATSAPP</p>
                 <a class="card-glass--glass flex flex-col items-center gap-3 p-4 rounded-xl" style="text-decoration:none" @click.stop>
-                  <img src="assets/images/whatsapp_qr.png" alt="QR" class="w-14 h-14 rounded-xl" style="border:2px solid var(--border);background:white">
+                  <img src="assets/images/whatsapp_qr.png" alt="WhatsApp QR code for Md. Asaduzzaman (Aminur)" class="w-14 h-14 rounded-xl" style="border:2px solid var(--border);background:white">
                 </a>
                 <a :href="'https://wa.me/' + DATA.personal.phone1.replace(/[^0-9]/g,'')" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
                   <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
@@ -1375,57 +1660,7 @@ const App = {
                     <p class="text-xs mt-0.5" style="color:var(--text)">Email Secondary</p>
                   </div>
                 </a>
-                <p class="text-[11px] font-semibold tracking-wider" style="color:var(--text-label)">LINKS</p>
-                <a :href="'https://' + DATA.personal.linkedin" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
-                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.linkedin }}</h4>
-                    <p class="text-xs mt-0.5" style="color:var(--text)">LinkedIn</p>
-                  </div>
-                </a>
-                <a :href="DATA.personal.website" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
-                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
-                    <i class="material-icons text-white" style="font-size:16px">language</i>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.website }}</h4>
-                    <p class="text-xs mt-0.5" style="color:var(--text)">Website</p>
-                  </div>
-                </a>
-                <a :href="'https://github.com/amin670bd'" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
-                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">github.com/amin670bd</h4>
-                    <p class="text-xs mt-0.5" style="color:var(--text)">GitHub</p>
-                  </div>
-                </a>
               </div>
-              <div class="space-y-3">
-                <p class="text-[11px] font-semibold tracking-wider" style="color:var(--text-label)">LOCATION</p>
-                <div class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="display:flex">
-                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
-                    <i class="material-icons text-white" style="font-size:16px">location_on</i>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-sm" style="color:var(--text-heading)">{{ DATA.personal.location }}</h4>
-                    <p class="text-xs mt-0.5" style="color:var(--text)">Current Location</p>
-                  </div>
-                </div>
-                <a :href="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(DATA.personal.location)" target="_blank" class="card-glass--glass flex items-start gap-3 p-4 rounded-xl" style="text-decoration:none;display:flex" @click.stop>
-                  <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 gradient-bg">
-                    <i class="material-icons text-white" style="font-size:16px">map</i>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-sm" style="color:var(--primary)">View on Google Maps</h4>
-                    <p class="text-xs mt-0.5" style="color:var(--text)">Open in Google Maps</p>
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </transition>
@@ -1469,7 +1704,7 @@ const App = {
               <button @click="toggleContactModal" class="flex items-center gap-1 px-3 py-1.5 text-sm font-semibold rounded-lg transition-all duration-300" style="border:1px solid var(--primary);color:var(--primary)">
                 <i class="material-icons" style="font-size:16px">contact_phone</i> Contacts
               </button>
-              <button @click="toggleDark" class="theme-toggle">
+              <button @click="toggleDark" aria-label="Toggle dark mode" class="theme-toggle">
                 <i class="material-icons" style="transition:transform 0.3s ease">{{ darkMode ? 'light_mode' : 'dark_mode' }}</i>
               </button>
             </div>
@@ -1486,7 +1721,7 @@ const App = {
       </main>
 
       <!-- Scroll to top -->
-      <button @click="scrollToTop" class="scroll-top gradient-bg" :class="{ visible: showScrollTop }" :style="{boxShadow: '0 4px 15px rgba(20,184,166,0.4)'}">
+      <button @click="scrollToTop" aria-label="Scroll to top" class="scroll-top gradient-bg" :class="{ visible: showScrollTop }" :style="{boxShadow: '0 4px 15px rgba(20,184,166,0.4)'}">
         <i class="material-icons" style="transition:transform 0.3s ease">arrow_upward</i>
       </button>
     </div>
