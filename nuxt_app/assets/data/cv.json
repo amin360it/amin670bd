@@ -1,0 +1,635 @@
+{
+  "personal": {
+    "name": "Md. Asaduzzaman",
+    "nickname": "Aminur",
+    "title": "IT & Digital Operations Specialist",
+    "phone1": "+880 1979 670601",
+    "phone2": "+880 1719 670601",
+    "email": "amin670bd@gmail.com",
+    "email2": "amin670job@gmail.com",
+    "location": "Ashuliya, Savar, Dhaka, Bangladesh",
+    "linkedin": "linkedin.com/in/aminur670bd",
+    "website": "https://amin670bd.github.io",
+    "photo": "assets/images/profile.webp",
+    "dob": "22/01/1997",
+    "blood": "O+",
+    "religion": "Islam",
+    "currentSalary": "21,800 BDT",
+    "expectedSalary": "Negotiable",
+    "available": "Immediately"
+  },
+  "languages": [
+    {
+      "name": "Bangla",
+      "level": "Native",
+      "pct": 100
+    },
+    {
+      "name": "English",
+      "level": "Fluent",
+      "pct": 85
+    },
+    {
+      "name": "Hindi",
+      "level": "Intermediate",
+      "pct": 60
+    }
+  ],
+  "objective": "I offer a unique blend of creative, technical, and support-based services that span across IT support, ERP operations, digital systems, and administrative workflows. My goal is to contribute to a company's IT infrastructure with hands-on experience in system maintenance, user support, and process improvement.",
+  "summary": "IT professional since 2018 with 6.5+ years of hands-on employment across IT support, ERP systems, web development, and system integration. Skilled in troubleshooting, hardware/software setup, ERP data entry, and user support. Adept at managing in-house workflows, enhancing digital visibility, and ensuring smooth technical and administrative operations.",
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Sites Built"
+    },
+    {
+      "value": "60%",
+      "label": "Efficiency Boost"
+    },
+    {
+      "value": "100+",
+      "label": "Users Managed"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Office & Productivity",
+      "icon": "description",
+      "items": [
+        "MS Office (Word, Excel, PowerPoint, Outlook)",
+        "Google Workspace",
+        "Excel Automation & Macros",
+        "Report Generation",
+        "PDF Editing"
+      ]
+    },
+    {
+      "title": "Design & Graphics",
+      "icon": "palette",
+      "items": [
+        "Photoshop",
+        "Illustrator",
+        "Canva",
+        "Infographics",
+        "Posters / Labels",
+        "Logos",
+        "Invoices"
+      ]
+    },
+    {
+      "title": "Video & AI Multimedia",
+      "icon": "movie",
+      "items": [
+        "Filmora (Video Editing)",
+        "AI Image Manipulation & Editing",
+        "AI Audio & Multimedia"
+      ]
+    },
+    {
+      "title": "ERP & Business Systems",
+      "icon": "storage",
+      "items": [
+        "GPRO ERP (All Modules)",
+        "Inventory Management",
+        "Payroll / Billing",
+        "Data Entry & Verification",
+        "POS Systems",
+        "File Handling",
+        "ERP Install & Support",
+        "Garments Systems",
+        "RFID Tag Generation"
+      ]
+    },
+    {
+      "title": "E-Commerce & Marketplaces",
+      "icon": "shopping_cart",
+      "items": [
+        "Product Listing",
+        "Order / Shipping Handling",
+        "Customer Support",
+        "Bundle Tracking",
+        "Amazon Seller Central",
+        "eBay",
+        "WooCommerce",
+        "WordPress"
+      ]
+    },
+    {
+      "title": "C / C++ & .NET Stack",
+      "icon": "code",
+      "items": [
+        "C / C++",
+        "C# & WinForms",
+        ".NET SDK 9/10",
+        "ADO.NET",
+        "Crystal Reports",
+        ".NET Framework",
+        "MS Access"
+      ]
+    },
+    {
+      "title": "PHP & Laravel Stack",
+      "icon": "code",
+      "items": [
+        "Laravel",
+        "Blade Templates",
+        "Eloquent ORM",
+        "Artisan CLI",
+        "REST APIs",
+        "MVC Architecture",
+        "PHP & MySQL",
+        "PDO"
+      ]
+    },
+    {
+      "title": "Frontend Stack",
+      "icon": "code",
+      "items": [
+        "Vue 3 (Options / Composition API)",
+        "Vue Router",
+        "Pinia",
+        "Vite",
+        "HTML / CSS / JavaScript",
+        "Tailwind / Bootstrap 4/5",
+        "jQuery",
+        "Responsive Design"
+      ]
+    },
+    {
+      "title": "Databases & SQL",
+      "icon": "table_chart",
+      "items": [
+        "MySQL / phpMyAdmin",
+        "MySQL Workbench",
+        "SQL Server",
+        "MS Access",
+        "Excel VBA Macros"
+      ]
+    },
+    {
+      "title": "AI & Automation Tools",
+      "icon": "smart_toy",
+      "items": [
+        "Prompt Engineering",
+        "GitHub Copilot",
+        "ChatGPT",
+        "Opencode / OpenRouter",
+        "Qwen AI / Gemini",
+        "n8n Workflow Automation"
+      ]
+    },
+    {
+      "title": "Web Dev & CMS",
+      "icon": "travel_explore",
+      "items": [
+        "WordPress",
+        "Elementor",
+        "WooCommerce",
+        "LMS",
+        "Plugin Dev",
+        "Payment Systems",
+        "ACF",
+        "Custom Post Types",
+        "REST API",
+        "Child Themes",
+        "SEO Plugins"
+      ]
+    },
+    {
+      "title": "IT Support & System Admin",
+      "icon": "dns",
+      "items": [
+        "Windows / Linux OS Install",
+        "Hard / Soft Diagnostics",
+        "Remote IT Support",
+        "System Maintenance",
+        "User Training",
+        "Driver Setup",
+        "PC Assembly & Upgrade"
+      ]
+    },
+    {
+      "title": "System Integration & Hardware",
+      "icon": "settings_ethernet",
+      "items": [
+        "Barcode Printer Configuration",
+        "Automated Label Printing",
+        "Weight Scale Integration",
+        "NXP MCU RFID Terminals",
+        "MOXA Serial Cards",
+        "Network Configuration"
+      ]
+    },
+    {
+      "title": "Email & Communication",
+      "icon": "forward_to_inbox",
+      "items": [
+        "Corporate Email Setup",
+        "Bulk Mailing Tools",
+        "Email Automation",
+        "Face-to-Face Communication",
+        "Social Media Management"
+      ]
+    },
+    {
+      "title": "Networking & Security",
+      "icon": "lan",
+      "items": [
+        "IP Config & Subnetting",
+        "LAN / Router Setup",
+        "File / Printer Sharing",
+        "Firewall & Antivirus",
+        "IP Camera Installation",
+        "Network Cabling",
+        "RS-485 Cabling"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Sr. Officer (In-Charge, Barcode)",
+      "company": "Dhaka Thai ALCOMAXX PLC",
+      "location": "Ashuliya, Savar, Dhaka",
+      "period": "Sep 2025 - Present",
+      "highlights": [
+        "Lead barcode operations, product labeling, bundling, and production coordination across packing lines",
+        "Developed and maintained C# desktop applications for weight scale integration with LightHouse ERP",
+        "Troubleshot utility software, barcode printers, and IT systems across packing lines",
+        "Improved workflow efficiency and reduced downtime through barcode system optimization",
+        "Designed and implemented automated label printing systems increasing daily output from 2,500 to 8,000+ labels",
+        "Coordinated with production and quality teams to ensure accurate product tracking and traceability"
+      ]
+    },
+    {
+      "title": "Officer - IT (G-Pro)",
+      "company": "Keya Cosmetic Ltd.",
+      "location": "Gazipur, Dhaka",
+      "period": "May 2022 - Jul 2025",
+      "highlights": [
+        "Administered GPRO ERP modules including cutting, store, production, payroll, billing, and inventory management",
+        "Configured IP settings and network cabling for 30+ production floor workstations",
+        "Set up and maintained printer connectivity across the facility",
+        "Installed and configured IP cameras for production floor surveillance",
+        "Managed 30+ production lines each with 10+ NXP MCU-based RFID terminals as IoT checkpoints",
+        "Configured and maintained MOXA multiport serial cards over RS-485 telephone-type cabling to collect data from RFID terminals into GPRO ERP",
+        "Provided IT training and support to 30+ end-users on ERP modules and software tools",
+        "Assisted with routine server backups and basic system maintenance",
+        "Automated routine data entry and reporting tasks using Excel macros and ERP export tools"
+      ]
+    },
+    {
+      "title": "IT Assistant",
+      "company": "Rahamat Sweaters Ltd.",
+      "location": "Gazipur, Dhaka",
+      "period": "Jan 2022 - May 2022",
+      "highlights": [
+        "Designed barcode and label systems for production tracking and warehouse management",
+        "Performed ERP data entry, verification, and synchronization across multiple departments",
+        "Provided hardware and software support for production floor workstations",
+        "Assisted in inventory reconciliation and stock movement documentation"
+      ]
+    },
+    {
+      "title": "Web Developer",
+      "company": "Faith Media Ltd.",
+      "location": "Mohakhali, Dhaka",
+      "period": "Jan 2021 - Jul 2021",
+      "highlights": [
+        "Developed and maintained WordPress/WooCommerce websites with custom themes and plugins",
+        "Created SEO-optimized content, product listings, and competitive pricing strategies for e-commerce clients",
+        "Designed infographics, promotional banners, and website visuals using Photoshop and Illustrator",
+        "Implemented LMS and membership plugins for client educational platforms",
+        "Optimized site performance through caching, image compression, and database optimization"
+      ]
+    },
+    {
+      "title": "Remote IT Assistant to CEO",
+      "company": "TIC Accessories Inc.",
+      "location": "New York, USA",
+      "period": "Jan 2020 - Dec 2020",
+      "highlights": [
+        "Managed Amazon Seller Central and eBay Seller Hub — listings, pricing, inventory sync, and order processing for 200+ products",
+        "Automated Excel reports and email marketing campaigns for sales and inventory tracking",
+        "Provided remote IT support via AnyDesk and TeamViewer to New York office staff",
+        "Created professional product photography and edited images for marketplace listings",
+        "Monitored competitor pricing and adjusted listings to maintain competitive edge"
+      ]
+    },
+    {
+      "title": "ICT Teacher & IT Trainer",
+      "company": "EEE & IT Training Center",
+      "location": "Naogaon",
+      "period": "Jul 2019 - Dec 2019",
+      "highlights": [
+        "Trained SSC and HSC students in MS Office, programming fundamentals, and hardware troubleshooting",
+        "Developed practical IT curriculum modules with hands-on exercises for real-world skill building",
+        "Guided students through computer assembly, OS installation, and basic networking labs",
+        "Conducted assessments and provided one-on-one mentoring to improve student outcomes"
+      ]
+    },
+    {
+      "title": "IT Assistant",
+      "company": "ZSN Computers",
+      "location": "Naogaon",
+      "period": "Jul 2018 - Dec 2018",
+      "highlights": [
+        "Assembled custom PCs and installed operating systems, drivers, and essential software",
+        "Provided hardware diagnostics, repair services, and software troubleshooting for walk-in clients",
+        "Maintained workshop inventory of components and managed customer service requests",
+        "Performed system upgrades including RAM, storage, and graphics card installations"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Diploma in Computer Engineering",
+      "school": "Bogura Polytechnic Institute",
+      "year": "2018",
+      "grade": "CGPA: 2.92 / 4.00",
+      "gradeValue": 2.92,
+      "gradeMax": 4,
+      "location": "Bogura",
+      "icon": "computer",
+      "skills": [
+        "C Programming",
+        "Python",
+        "Java",
+        "Web Development",
+        "Database Management",
+        "Computer Networking"
+      ],
+      "achievements": [
+        {
+          "text": "Res-Q & Remote Control — IoT-based rescue car for multi-sector demo missions | Champion at BPI Innovation & Projects Fair 2017",
+          "award": true
+        },
+        {
+          "text": "B.P.I. Virtual Institute — Awarded at Zilla ICT Project Fair 2017",
+          "award": true
+        },
+        {
+          "text": "Easy C IDE — Lightweight C compiler IDE with auto-save feature",
+          "award": false
+        },
+        {
+          "text": "B.P.I. Innovation Lab — Hardware, software & network setup at BPI",
+          "award": false
+        }
+      ]
+    },
+    {
+      "degree": "S.S.C. (Vocational, ICT)",
+      "school": "Naogaon Technical School & College",
+      "year": "2013",
+      "grade": "GPA: 4.88 / 5.00",
+      "gradeValue": 4.88,
+      "gradeMax": 5,
+      "location": "Naogaon",
+      "icon": "school",
+      "skills": [
+        "Computer Application",
+        "ICT",
+        "Programming Basics",
+        "Hardware Fundamentals"
+      ],
+      "achievements": [
+        {
+          "text": "ICT Lab Installation — PC setup & network config for Naogaon Technical School",
+          "award": false
+        },
+        {
+          "text": "Practical training in MS Office, Computer Applications & Hardware",
+          "award": false
+        },
+        {
+          "text": "GPA 4.88 / 5.00 — Outstanding academic performance",
+          "award": true
+        }
+      ]
+    }
+  ],
+  "training": [
+    {
+      "title": "Web Design & Development",
+      "topics": [
+        "WordPress",
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
+      "institution": "Bangladesh IT Institute, Dhaka",
+      "year": "2017",
+      "duration": "3 months",
+      "icon": "web"
+    },
+    {
+      "title": "Software Development",
+      "topics": [
+        "Win-Forms",
+        "C#.NET",
+        "SQL Server"
+      ],
+      "institution": "Smart Softwares & Training Center, Bogura",
+      "year": "2016",
+      "duration": "6 months",
+      "icon": "code"
+    },
+    {
+      "title": "Graphics Design",
+      "topics": [
+        "Photoshop",
+        "Illustrator"
+      ],
+      "institution": "Rahim IT Solutions, Bogura",
+      "year": "2015",
+      "duration": "3 months",
+      "icon": "palette"
+    },
+    {
+      "title": "CompTIA A+",
+      "topics": [
+        "Hardware",
+        "Software",
+        "IT-ICT",
+        "MS Office"
+      ],
+      "institution": "Opurbo Computers & Training Center, Naogaon",
+      "year": "2013",
+      "duration": "6 months",
+      "icon": "settings"
+    }
+  ],
+  "achievementCategories": [
+    {
+      "title": "Technical Impact",
+      "icon": "rocket_launch",
+      "color": "var(--primary)",
+      "items": [
+        {
+          "title": "YAOHUA Scale Desktop App",
+          "description": "Developed a desktop app for YAOHUA digital scale integration, reducing packing production time by 60% and tripling bundle QR label output from 2.5K to 8K+ daily."
+        },
+        {
+          "title": "15+ Websites Built",
+          "description": "Developed 15+ responsive websites and e-commerce platforms using WordPress + Elementor."
+        },
+        {
+          "title": "E-Commerce Listings Management",
+          "description": "Managed 200+ SEO-optimized product listings for Amazon, eBay, and WooCommerce."
+        }
+      ]
+    },
+    {
+      "title": "Training & Leadership",
+      "icon": "school",
+      "color": "var(--accent-emerald)",
+      "items": [
+        {
+          "title": "ERP Module Training",
+          "description": "Administered and trained 30+ users on ERP modules including HR, Payroll, Store, Inventory."
+        },
+        {
+          "title": "Student IT Education",
+          "description": "Delivered IT training to 80+ students on MS Office and system troubleshooting during session."
+        }
+      ]
+    },
+    {
+      "title": "Awards & Recognition",
+      "icon": "emoji_events",
+      "color": "var(--accent-amber)",
+      "items": [
+        {
+          "title": "Res-Q — Champion",
+          "description": "BPI College Projects Fair 2017 — IoT-based rescue car for multi-sector demo missions."
+        },
+        {
+          "title": "BPI Virtual Institute — Champion",
+          "description": "ICT Fair 2017, Bogura District & Rajshahi Division Level."
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Md. Mamunur Rashid",
+      "title": "Manager (IT, G-Pro)",
+      "company": "Keya Knit Composite Ltd.",
+      "phone": "01906-472201"
+    },
+    {
+      "name": "Md. Al Amin",
+      "title": "Sr. Officer (IT, G-Pro)",
+      "company": "Keya Knit Composite Ltd.",
+      "phone": "01521-447631"
+    },
+    {
+      "name": "Md. Abdur Rahim",
+      "title": "Head of Sales & Marketing",
+      "company": "Alpha.Net.Bd",
+      "phone": "01712-685203"
+    },
+    {
+      "name": "Md. Sagar Islam",
+      "title": "Production Coordinator",
+      "company": "Casual Garments Ltd.",
+      "phone": "01727-831168"
+    },
+    {
+      "name": "Md. Mamunur Rashid",
+      "title": "Manager (IT, G-Pro)",
+      "company": "Keya Knit Composite Ltd.",
+      "phone": "01906-472201"
+    },
+    {
+      "name": "Md. Al Amin",
+      "title": "Sr. Officer (IT, G-Pro)",
+      "company": "Keya Knit Composite Ltd.",
+      "phone": "01521-447631"
+    },
+    {
+      "name": "Md. Abdur Rahim",
+      "title": "Head of Sales & Marketing",
+      "company": "Alpha.Net.Bd",
+      "phone": "01712-685203"
+    },
+    {
+      "name": "Md. Sagar Islam",
+      "title": "Production Coordinator",
+      "company": "Casual Garments Ltd.",
+      "phone": "01727-831168"
+    }
+  ],
+  "media": {
+    "channelUrl": "https://www.youtube.com/@aminur670",
+    "channelHandle": "@aminur670",
+    "channelName": "Aminur670",
+    "channelAvatar": "https://yt3.ggpht.com/cNVM5rkUOhCpTkvrrF956fjyQB6eqlmLLP1Yt1kAiKKa64RGL9s6TUx-RjwgQOJ-jw7Bj25qHw=s88-c-k-c0x00ffffff-no-rj",
+    "description": "Creative content, tech projects, and more.",
+    "playlist": {
+      "id": "UU9ndhDLZxczY17jgLdDlx4g",
+      "title": "Channel Uploads"
+    },
+    "featuredVideoId": "W3YmvF_gh8Q",
+    "links": [
+      { "title": "YouTube Channel", "url": "https://www.youtube.com/@aminur670", "icon": "smart_display" },
+      { "title": "Google Drive Portfolio", "url": "#", "icon": "cloud" }
+    ]
+  },
+  "menuItems": [
+    {
+      "path": "/",
+      "label": "Home",
+      "icon": "home"
+    },
+    {
+      "path": "/about",
+      "label": "About",
+      "icon": "person"
+    },
+    {
+      "path": "/skills",
+      "label": "Skills",
+      "icon": "settings"
+    },
+    {
+      "path": "/experience",
+      "label": "Experience",
+      "icon": "work"
+    },
+    {
+      "path": "/education",
+      "label": "Education",
+      "icon": "school"
+    },
+    {
+      "path": "/projects",
+      "label": "Projects",
+      "icon": "folder_open"
+    },
+    {
+      "path": "/multimedia-works",
+      "label": "Multimedia Works",
+      "icon": "smart_display"
+    },
+    {
+      "path": "/achievements",
+      "label": "Achievements",
+      "icon": "emoji_events"
+    },
+    {
+      "path": "/services",
+      "label": "Services",
+      "icon": "handyman"
+    },
+    {
+      "path": "/contact",
+      "label": "Contact",
+      "icon": "email"
+    }
+  ]
+}

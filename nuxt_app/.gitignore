@@ -1,0 +1,17 @@
+node_modules/
+.nuxt/
+
+# Local env
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://amin670bd.github.io/#/skills</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://amin670bd.github.io/#/experience</loc>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://amin670bd.github.io/#/education</loc>
@@ -25,15 +25,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://amin670bd.github.io/#/multimedia-works</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://amin670bd.github.io/#/achievements</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://amin670bd.github.io/#/references</loc>
-    <priority>0.5</priority>
+    <loc>https://amin670bd.github.io/#/services</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://amin670bd.github.io/#/contact</loc>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 </urlset>

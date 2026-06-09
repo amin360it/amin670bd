@@ -1,0 +1,213 @@
+{
+  "groups": [
+    {
+      "icon": "laptop_mac",
+      "title": "Web & App Development",
+      "bg": "var(--primary)",
+      "chipColor": "var(--primary-light)",
+      "borderLeft": "3px solid var(--primary)",
+      "items": [
+        {
+          "icon": "web",
+          "title": "Web Development & CMS",
+          "description": "Custom WordPress, WooCommerce, Vue, and Laravel development with responsive design, SEO optimization, and payment system integration.",
+          "highlights": ["WordPress, Elementor, WooCommerce", "Vue 3 SPA Development", "Laravel REST API & Backend", "Custom Theme & Plugin Development", "Payment Gateway Integration, LMS, ACF", "SEO Optimization & Performance Tuning"]
+        },
+        {
+          "icon": "important_devices",
+          "title": "Hybrid Mobile App (PWA, Web, Android)",
+          "description": "Cross-platform mobile solutions combining PWA and Capacitor — installable web apps and hybrid Android APKs from a single Vue/React codebase.",
+          "highlights": ["Progressive Web App (PWA) Development", "Hybrid Android APK via Capacitor", "Vue 3 / React + Capacitor Integration", "Offline Mode, Push Notifications & Service Workers", "Play Store Deployment & App Updates", "Camera, GPS & Native Plugin Access"]
+        },
+        {
+          "icon": "code",
+          "title": "Custom Software & Tools Development",
+          "description": "Bespoke desktop applications, internal business tools, utility software, and process automation scripts tailored to your workflow.",
+          "highlights": ["Bespoke Desktop Applications", "Internal Business & Productivity Tools", "Utility Software & CLI Tools", "Process Automation Scripts", "C# .NET WinForms & ADO.NET", "System Integration & Custom Reporting"]
+        }
+      ]
+    },
+    {
+      "icon": "support",
+      "title": "IT & Business Support",
+      "bg": "var(--primary)",
+      "chipColor": "var(--primary-light)",
+      "borderLeft": "3px solid var(--primary)",
+      "items": [
+        {
+          "icon": "dns",
+          "title": "IT Support & System Administration",
+          "description": "End-to-end IT support for businesses — PC assembly, OS installation, hardware/software diagnostics, remote support, and user training.",
+          "highlights": ["PC Assembly, Upgrade & Repair", "Windows / Linux OS Installation & Configuration", "Hardware & Software Diagnostics", "Remote IT Support (AnyDesk, TeamViewer)", "Driver Setup & System Maintenance", "User Training & Onboarding"]
+        },
+        {
+          "icon": "settings_applications",
+          "title": "ERP & Business Systems Administration",
+          "description": "Full-cycle ERP management including module configuration, data entry, payroll, inventory, POS, and user support across various business systems.",
+          "highlights": ["ERP Module Configuration & Management", "Inventory, Payroll & Billing Operations", "POS Systems & Data Entry", "File Handling & Document Management", "ERP Install, Migration & Support", "Garments Systems & RFID Tag Generation"]
+        },
+        {
+          "icon": "lan",
+          "title": "Network Infrastructure & Security",
+          "description": "Basic network services — IP configuration, LAN/router setup, printer sharing, firewall, and general network troubleshooting for small offices and production floors.",
+          "highlights": ["Laptop / PC IP Configuration & Troubleshooting", "LAN / Router Setup & Network Configuration", "File & Printer Sharing Setup", "Firewall & Antivirus Deployment", "Network Device Diagnostics & Maintenance", "PC / Printer Network Troubleshooting"]
+        }
+      ]
+    },
+    {
+      "icon": "trending_up",
+      "title": "E-Commerce & Marketing",
+      "bg": "var(--primary)",
+      "chipColor": "var(--primary-light)",
+      "borderLeft": "3px solid var(--primary)",
+      "items": [
+        {
+          "icon": "shopping_cart",
+          "title": "E-Commerce & Online Store Solutions",
+          "description": "Full WooCommerce store development on WordPress — from theme customization and product catalog setup to photography, infographics, order management, and promotional email campaigns.",
+          "highlights": ["WooCommerce Store Development on WordPress", "Theme Customization & Product Catalog Setup", "Product Photography, Editing & Infographics", "Order, Shipping & Inventory Management", "Promotional Email Campaigns & Newsletters", "Store Maintenance & Performance Optimization"]
+        },
+        {
+          "icon": "campaign",
+          "title": "Email Marketing & Campaigns",
+          "description": "End-to-end email campaign management — from strategy and copywriting to automation, analytics, and subscriber list management.",
+          "highlights": ["Campaign Setup & Automation", "Newsletter & Lead Nurture Sequences", "Bulk Mailing Tools (Mailchimp, SendGrid)", "Email Copywriting & Analytics", "Subscriber List Management & Segmentation", "A/B Testing & Performance Reporting"]
+        },
+        {
+          "icon": "webhook",
+          "title": "Email & Web Template Design",
+          "description": "Custom-coded HTML email templates and responsive web page templates designed for branding, engagement, and cross-client compatibility.",
+          "highlights": ["HTML Email Template Design & Coding", "Responsive Email Layouts (Dark Mode Ready)", "Landing Page & Web Template Design", "Mailchimp / SendGrid Template Integration", "Brand-consistent Visual Email Design", "Cross-client Email Rendering Testing"]
+        }
+      ]
+    },
+    {
+      "icon": "auto_awesome",
+      "title": "Design & Multimedia",
+      "bg": "var(--primary)",
+      "chipColor": "var(--primary-light)",
+      "borderLeft": "3px solid var(--primary)",
+      "items": [
+        {
+          "icon": "palette",
+          "title": "Graphic Design & Branding",
+          "description": "Professional print and digital design — business identity, promotional materials, product visuals, and social media creatives.",
+          "highlights": ["Business Cards, Flyers & Banners", "Social Media Posts & Cover Art", "Product Photography & Editing", "Infographics, Labels & Invoices", "Logo & Brand Identity Design", "Brochures, Menus & Print-ready Artwork"]
+        },
+        {
+          "icon": "videocam",
+          "title": "Video Editing",
+          "description": "Creative video editing and post-production for social media reels, promotional clips, event recaps, and multimedia presentations.",
+          "highlights": ["Short-form Reels & Social Media Clips", "Promotional & Corporate Video Editing", "Trimming, Transitions & Color Grading", "Text Overlays, Captions & Titles", "Background Music & Audio Sync", "CapCut & Mobile-first Video Optimization"]
+        },
+        {
+          "icon": "movie_creation",
+          "title": "AI-Powered Multimedia Production",
+          "description": "End-to-end multimedia content created with AI — comics, cartoons, digital art, image manipulation, audio editing, music scoring, and motion graphics for media and marketing.",
+          "highlights": ["AI Comic Strip & Cartoon Generation", "AI Digital Art & Image Compositing", "AI Photo Retouching & Manipulation", "AI Audio Editing & Voiceover Production", "AI Music Composition & Background Scoring", "AI Animation & Motion Graphics"]
+        }
+      ]
+    },
+    {
+      "icon": "psychology",
+      "title": "AI Services",
+      "bg": "var(--primary)",
+      "chipColor": "var(--primary-light)",
+      "borderLeft": "3px solid var(--primary)",
+      "items": [
+        {
+          "icon": "description",
+          "title": "AI Writing & Document Help",
+          "description": "Practical AI-powered writing for everyday needs — resumes, cover letters, official emails, applications, reports, and business documents done fast.",
+          "highlights": ["Resume & Cover Letter Writing", "Official Email & Letter Drafting", "Job Application & Proposal Writing", "Report & Document Formatting", "Proofreading & Paraphrasing", "Multi-language Translation"]
+        },
+        {
+          "icon": "auto_awesome",
+          "title": "AI Image & Photo Services",
+          "description": "Real-world image solutions — product photos, portrait retouching, background removal, old photo restoration, and custom visuals for personal or business use.",
+          "highlights": ["Product Photo Editing & Retouching", "Background Removal & Replacement", "Old Photo Restoration & Colorization", "Passport & ID Photo Processing", "AI Portrait & Profile Picture Creation", "Social Media Visual & Thumbnail Design"]
+        },
+        {
+          "icon": "smart_toy",
+          "title": "AI Automation & Chatbot Setup",
+          "description": "Practical automation for small businesses — AI chatbots for customer queries, automated email replies, data entry help, and simple workflow bots.",
+          "highlights": ["AI Customer Reply Chatbot Setup", "Automated Email & Message Responses", "Data Entry & Spreadsheet Automation", "PDF Data Extraction & Processing", "Social Media Auto-Reply & Scheduling", "Simple n8n Workflow Automation"]
+        }
+      ]
+    },
+    {
+      "icon": "brush",
+      "title": "Creative Services — Powered by A.I.",
+      "note": "AI-assisted creative works — content, design, print, and branding deliverables.",
+      "bg": "var(--accent-purple)",
+      "chipColor": "var(--accent-purple)",
+      "borderLeft": "3px solid var(--accent-purple)",
+      "items": [
+        {
+          "icon": "edit_note",
+          "title": "Custom Poetry & Voice",
+          "description": "Personalized poetry and spoken-word content for events, presentations, and media projects — crafted with AI assistance and delivered in text or voice format.",
+          "highlights": ["Custom Poetry for Events & Occasions", "Voice-Recorded Spoken Word", "Presentation & Script Writing", "Multi-language Poetry Options", "Themed & Branded Content", "Quick Turnaround Delivery"]
+        },
+        {
+          "icon": "music_note",
+          "title": "Custom Songs & Music Production",
+          "description": "Original songs with personalized lyrics, AI-assisted music composition, and video production — suitable for wedding presentations, brand campaigns, and special celebrations.",
+          "highlights": ["Personalized Lyrics & Composition", "AI-Assisted Music Production", "Wedding & Event Presentation Songs", "Brand Campaign Audio Content", "Full Audio + Video Output", "Customizable Genre & Style"]
+        },
+        {
+          "icon": "videocam",
+          "title": "AI Video Content Creation",
+          "description": "Video content from concept to final edit — AI-powered visuals, animation, and storyboarding combined with professional editing for social media, portfolios, and promotions.",
+          "highlights": ["Content Planning & Storyboarding", "AI-Generated Visuals & Animation", "Photo Montage & Slideshow Videos", "Voiceover & Background Music Sync", "Social Media-Ready Short Clips", "Professional Editing & Color Grading"]
+        },
+        {
+          "icon": "gesture",
+          "title": "Pencil Sketch & Portrait Art",
+          "description": "Hand-drawn pencil portraits from reference photos — realistic sketch art on paper with optional framing, capturing expressions with traditional technique and AI-enhanced reference processing.",
+          "highlights": ["Portrait Sketch from Photo Reference", "Realistic Pencil Drawing on Paper", "Custom Size & Framing Options", "Gift-Ready Packaged Artwork", "AI-Enhanced Photo Reference Prep", "Digital Scan Copy Included"]
+        },
+        {
+          "icon": "wallpaper",
+          "title": "AI Home Decor Design",
+          "description": "Custom wall art and decor designs created with AI — framed pictures, canvas prints, and thematic pieces tailored to your space, style, and preferred dimensions.",
+          "highlights": ["Custom Wall-Framed Picture Design", "AI-Generated Canvas & Print Art", "Personalized Quote & Name Frames", "Custom Size & Aspect Ratio Options", "Theme-Based Decor Collections", "Printable & Ready-to-Frame Formats"]
+        },
+        {
+          "icon": "store",
+          "title": "Custom Stationery & Branding",
+          "description": "Bespoke stationery sets, t-shirt graphics, brand identity guides, and merchandise design — combining graphics software expertise with AI for a polished, professional finish.",
+          "highlights": ["Custom Stationery Sets Design", "T-Shirt Graphics & Print-Ready Art", "Brand Identity & Style Guide Creation", "Logo, Business Card & Letterhead Sets", "Packaging & Label Design", "Full Merchandise Design Suite"]
+        }
+      ]
+    },
+    {
+      "icon": "precision_manufacturing",
+      "title": "Industrial & On-Site",
+      "note": "Specialized services for manufacturing environments — available for on-site work.",
+      "bg": "var(--accent-amber)",
+      "chipColor": "var(--accent-amber)",
+      "borderLeft": "3px solid var(--accent-amber)",
+      "items": [
+        {
+          "icon": "storage",
+          "title": "Desktop Automation & Hardware Integration",
+          "description": "Custom C# .NET desktop applications integrated with industrial hardware — weight scales, barcode printers, serial ports, and ERP systems for production environments.",
+          "highlights": ["C# .NET WinForms & ADO.NET Applications", "YAOHUA Digital Weight Scale Integration", "Automated Label & Barcode Printing Systems", "Serial Port & Hardware Communication", "Crystal Reports & Data Export Solutions", "Excel VBA Macros & Process Automation"]
+        },
+        {
+          "icon": "settings_ethernet",
+          "title": "Industrial RFID, Barcode & IoT Systems",
+          "description": "Production floor data collection infrastructure — RFID terminals, MOXA serial communication over RJ-6 (RS-485), barcode automation, and IoT checkpoint systems.",
+          "highlights": ["RFID NXP MCU Terminal Setup & Management", "MOXA Multiport Serial Card Configuration", "RJ-6 (RS-485) Cabling & Infrastructure", "Barcode Printer Configuration & Label Automation", "Production Floor RFID Checkpoints & Data Collection", "ERP-to-Floor Device Integration (MOXA / RFID)"]
+        },
+        {
+          "icon": "dns",
+          "title": "Production Floor IT & Systems Support",
+          "description": "IT support tailored for manufacturing environments — workstation setup, printer/network troubleshooting, ERP user admin, and equipment integration across production lines.",
+          "highlights": ["PC / Printer Setup & Troubleshooting on Production Floor", "LAN, IP Config & Network Diagnostics", "ERP User Administration & Module Support", "File & Printer Sharing for Workshop Environments", "30+ Workstation & Device Management", "RJ-6 / MOXA Device Networking & Support"]
+        }
+      ]
+    }
+  ]
+}
