@@ -36,9 +36,9 @@
       "items": [
         {
           "icon": "dns",
-          "title": "IT Support & System Administration",
-          "description": "End-to-end IT support for businesses — PC assembly, OS installation, hardware/software diagnostics, remote support, and user training.",
-          "highlights": ["PC Assembly, Upgrade & Repair", "Windows / Linux OS Installation & Configuration", "Hardware & Software Diagnostics", "Remote IT Support (AnyDesk, TeamViewer)", "Driver Setup & System Maintenance", "User Training & Onboarding"]
+          "title": "Software & Hardware Troubleshooting & IT Support",
+          "description": "Full-spectrum PC troubleshooting and IT support — hardware diagnostics, OS repair, software issue resolution, driver fixes, and system optimization for offices and production floors.",
+          "highlights": ["Windows OS Installation, Repair & Recovery", "Hardware Diagnostics: RAM, HDD/SSD, PSU, Motherboard", "Driver Conflict Resolution & Peripheral Setup", "Slow PC Optimization & Malware Removal", "Data Backup, Recovery & System Migration", "PC Assembly, Upgrade & Remote IT Support"]
         },
         {
           "icon": "settings_applications",

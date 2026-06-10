@@ -67,14 +67,17 @@
 <body>
   <div id="app"></div>
 
-  <!-- Script Vue 3 + Vue Router (Local) -->
+  <!-- tinyVue 1.0 (zero dependencies, Vue 3 compatible syntax) -->
+  <script src="tinyVue/framework.js"></script>
+  <script src="tinyVue/data.js"></script>
+  <script src="tinyVue/components.js"></script>
+  <script src="tinyVue/app-bootstrap.js"></script>
+
+  <!-- Original Vue 3 sources kept for reference (not loaded) -->
+  <!--
   <script src="assets/js/vue.global.prod.js"></script>
   <script src="assets/js/vue-router.global.prod.js"></script>
-
-  <!-- App Script -->
   <script src="assets/js/app.js"></script>
-
-  <!-- Bootstrap: fetch JSON data, then mount Vue -->
   <script>
     Promise.all([
       fetch('assets/data/cv.json').then(r => r.json()),
@@ -95,6 +98,7 @@
       app.mount('#app');
     });
   </script>
+  -->
 
 
 </body>

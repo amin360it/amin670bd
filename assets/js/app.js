@@ -26,7 +26,7 @@ const HomeView = {
         </div>
         <div class="lg:shrink-0 w-full lg:w-48 xl:w-56">
           <img :src="DATA.personal.photo" :alt="DATA.personal.name"
-            class="w-full h-auto rounded-2xl object-cover" loading="lazy"
+            class="w-full h-auto rounded-2xl object-contain" loading="lazy"
             style="box-shadow:0 8px 32px rgba(20,184,166,0.15);border:2px solid var(--border)">
           <!-- Social Icons under image (desktop only) -->
           <div class="hidden lg:flex flex-wrap justify-center gap-2 mt-3">
@@ -173,8 +173,8 @@ const AboutView = {
         <!-- Full-width Visiting Card -->
         <div class="card-glass p-6 mb-6">
           <div class="flex flex-col sm:flex-row items-start gap-5">
-            <div class="w-full sm:w-44 md:w-52 lg:w-60 shrink-0 rounded-2xl overflow-hidden aspect-square" style="border:3px solid rgba(20,184,166,0.3)">
-              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
+            <div class="w-full sm:w-44 md:w-52 lg:w-60 shrink-0 rounded-2xl overflow-hidden" style="border:3px solid rgba(20,184,166,0.3)">
+              <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-auto object-contain" loading="lazy">
             </div>
             <div class="min-w-0 flex-1">
               <h3 class="text-xl font-bold" style="color:var(--text-heading)">{{ DATA.personal.name }}</h3>
@@ -1669,8 +1669,8 @@ const App = {
       <aside class="sidebar">
         <div class="sidebar-scroll">
           <div class="p-6 text-center">
-              <div class="w-full sm:w-44 md:w-52 lg:w-60 mx-auto mb-4 rounded-2xl overflow-hidden aspect-square" style="border:3px solid rgba(20,184,166,0.3)">
-                <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-full object-cover" loading="lazy">
+              <div class="w-full sm:w-44 md:w-52 lg:w-60 mx-auto mb-4 rounded-2xl overflow-hidden" style="border:3px solid rgba(20,184,166,0.3)">
+                <img :src="DATA.personal.photo" :alt="DATA.personal.name" class="w-full h-auto object-contain" loading="lazy">
               </div>
             <h2 class="text-xl font-bold" style="color:var(--sidebar-heading)">{{ DATA.personal.name }}</h2>
             <p class="text-lg font-medium" style="color:var(--primary)">({{ DATA.personal.nickname }})</p>
